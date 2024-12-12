@@ -42,8 +42,8 @@ body{background:linear-gradient(186deg, #81D5E9 0%, #C7EFF9 6%, #F6F6F6 40%); ba
 .portfolio{padding: 100px 10px;}
 .portfolio > div{max-width:1024px; margin: 0 auto;}
 .portfolio h3{font-family: 'Montserrat'; font-size: 90px; font-weight:700; color: #FE0000; margin:0 0 20px; line-height: 63px; text-align:right;}
-.portfolio > div > div{display:flex; flex-wrap:wrap; justify-content: space-between;}
-.portfolio .work{width: 32%; max-width: 320px; aspect-ratio:1/1; border-radius: 15px; box-shadow: 0 7px 18px -2px rgba(35,37,37,0.4); overflow:hidden;}
+.portfolio > div > div {display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 20px;}
+.portfolio .work{border-radius: 15px; box-shadow: 0 7px 18px -2px rgba(35,37,37,0.4); overflow:hidden;}
 .portfolio .work img{display: block; margin: 0 auto; width:100%;}
 
 /* #KAPCSOLAT */
