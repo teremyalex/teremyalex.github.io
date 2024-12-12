@@ -42,7 +42,13 @@ h1{font-family: 'Montserrat'; font-size: 90px; font-weight:700; line-height:63px
 .tudas .graph .bar{background: linear-gradient(90deg, #FFD8D8, #FF8989); max-width: 377px; width: 100%; height: 40px; border-radius: 8px;}  
 .tudas .graph .bar div{background: linear-gradient(90deg, #FF5C5C, #FE0000); background-size:377px; width: 100%; height: 40px; border-radius: 8px;}
 
-
+/* PORTFOLIÓ */
+.portfolio{padding: 100px 10px;}
+.portfolio > div{max-width:1024px; margin: 0 auto;}
+.portfolio h3{font-family: 'Montserrat'; font-size: 90px; font-weight:700; color: #FE0000; margin:0 0 20px; line-height: 63px; text-align:right;}
+.portfolio > div > div{display:flex; flex-wrap:wrap; justify-content: space-between;}
+.portfolio .work{width: 32%; max-width: 320px; aspect-ratio:1/1; border-radius: 15px; box-shadow: 0 7px 18px -2px rgba(35,37,37,0.4); overflow:hidden;}
+.portfolio .work img{display: block; margin: 0 auto; width:100%;}
 
 
     
@@ -124,18 +130,18 @@ h1{font-family: 'Montserrat'; font-size: 90px; font-weight:700; line-height:63px
         </section>
 
         <!--#PORTFOLIO-->
-        <section style="padding: 100px 10px;">
-            <div style="max-width:1024px; margin: 0 auto;">
-                <h3 style="font-family: 'Montserrat'; font-size: 90px; font-weight:700; color: #FE0000; margin:0 0 20px; line-height: 63px; text-align:right;">#PORTFOLIÓ</h3>
-                <div style="display:flex; flex-wrap:wrap; justify-content: space-between;">
-                    <div style="width: 32%; max-width: 320px; aspect-ratio:1/1; border-radius: 15px; box-shadow: 0 7px 18px -2px rgba(35,37,37,0.4); overflow:hidden;">
-                        <img style="display: block; margin: 0 auto; width:100%;" src="img/rachelcare.jpg">
+        <section class="portfolio">
+            <div>
+                <h3>#PORTFOLIÓ</h3>
+                <div>
+                    <div class="work">
+                        <img src="img/rachelcare.jpg">
                     </div>
-                    <div style="width: 32%; max-width: 320px; aspect-ratio:1/1; border-radius: 15px; box-shadow: 0 7px 18px -2px rgba(35,37,37,0.4); overflow:hidden;">
-                        <img style="display: block; margin: 0 auto; width:100%;" src="img/nyhchess.jpg">
+                    <div class="work">
+                        <img src="img/nyhchess.jpg">
                     </div>
-                    <div style="width: 32%; max-width: 320px; aspect-ratio:1/1; border-radius: 15px; box-shadow: 0 7px 18px -2px rgba(35,37,37,0.4); overflow:hidden;">
-                        <img style="display: block; margin: 0 auto; width:100%;" src="img/dietmaker.jpg">
+                    <div class="work">
+                        <img src="img/dietmaker.jpg">
                     </div>
  
                 </div>
