@@ -15,11 +15,11 @@ body{background:linear-gradient(186deg, #81D5E9 0%, #C7EFF9 6%, #F6F6F6 40%); ba
 .header{background:url(img/header.png) top center no-repeat; padding: 236px 10px 200px; box-sizing:border-box;}
 .header > div{display:flex; flex-wrap:wrap; max-width:1024px; margin: 0 auto;}
 .header > div > div{width:50%; margin: 0 0 0 auto; text-align:right;}
-h1{font-family: 'Montserrat'; font-size: 90px; font-weight:700; line-height:63px; color: #FE0000; margin:0 0 20px; border-right: 100px solid; padding: 0 10px 0 0;}
-.frontend{font-family: 'Montserrat'; font-size: 36px; font-style:italic;}
-.designer{font-family: 'Montserrat'; font-size: 24px; font-weight: 300; font-style:italic; margin: 0 0 20px;}
-.icons{display:flex; flex-wrap:wrap; justify-content: flex-end; gap: 25px;}
-.icons img{height:50px;}
+.header h1{font-family: 'Montserrat'; font-size: 90px; font-weight:700; line-height:63px; color: #FE0000; margin:0 0 20px; border-right: 100px solid; padding: 0 10px 0 0;}
+.header .frontend{font-family: 'Montserrat'; font-size: 36px; font-style:italic;}
+.header .designer{font-family: 'Montserrat'; font-size: 24px; font-weight: 300; font-style:italic; margin: 0 0 20px;}
+.header .icons{display:flex; flex-wrap:wrap; justify-content: flex-end; gap: 25px;}
+.header .icons img{height:50px;}
 
 /* #RÓLAM */
 .rolam{padding: 100px 10px;}
@@ -57,6 +57,14 @@ h1{font-family: 'Montserrat'; font-size: 90px; font-weight:700; line-height:63px
 .kapcsolat .social img{width: 30px;}
 
 @media (max-width:500px){
+/* HEADER */
+.header > div > div {width: 100%;}
+.headerh1 {font-size: 50px; line-height: 35px; border-right: 70px solid;}
+.header .frontend {font-size: 24px;}
+.header .designer {font-size: 20px;}
+.header .icons {gap: 10px;}
+.header .icons img {height: 35px;}
+    
 /* RÓLAM */
 .rolam > div > div, .rolam img {width: 100%;}
     
