@@ -32,6 +32,15 @@ h1{font-family: 'Montserrat'; font-size: 90px; font-weight:700; line-height:63px
 .rolam h3{font-family: 'Montserrat'; font-size: 90px; font-weight:700; color: #FE0000; margin:0 0 20px; line-height: 63px;}
 .rolam p{margin: 0 0 10px;}
 
+/* #ISMERET */
+.ismeret{padding: 100px 10px;}
+.ismeret > div{display:flex; flex-wrap:wrap; max-width:1024px; margin: 0 auto;}
+.ismeret > div > div{width:50%; text-align:justify;}
+.ismeret h3{font-family: 'Montserrat'; font-size: 90px; font-weight:700; color: #FE0000; margin:0 0 20px; line-height: 63px;}
+.ismeret .graph > div{display:flex; flex-wrap:wrap; align-items: center; justify-content: flex-end; gap: 10px; margin: 0 0 10px;}
+.ismeret .graph .title{font-size:20px;}
+.ismeret .graph .bar{background: linear-gradient(90deg, #FFD8D8, #FF8989); max-width: 377px; width: 100%; height: 40px; border-radius: 8px;}  
+.ismeret .graph .bar div{background: linear-gradient(90deg, #FF5C5C, #FE0000); background-size:377px; max-width: calc(377px*0.1); width: 100%; height: 40px; border-radius: 8px;}
 </style>
 
     
@@ -70,38 +79,38 @@ h1{font-family: 'Montserrat'; font-size: 90px; font-weight:700; line-height:63px
         </section>
         
         <!--#ISMERET-->
-        <section style="padding: 100px 10px;">
-            <div style="display:flex; flex-wrap:wrap; max-width:1024px; margin: 0 auto;">
-                <div style="width:50%; text-align:justify;">
-                    <h3 style="font-family: 'Montserrat'; font-size: 90px; font-weight:700; color: #FE0000; margin:0 0 20px; line-height: 63px;">#ISMERET</h3>
+        <section class="ismeret">
+            <div>
+                <div>
+                    <h3>#ISMERET</h3>
                     <p>Frontend fejlesztőként ötvözöm az erős grafikai alapokat és a technikai precizitást, hogy vizuálisan kiemelkedő és funkcionálisan hatékony megoldásokat hozzak létre. Különösen élvezem, amikor összetett problémákat oldhatok meg, mert ezek lehetőséget adnak az erős logikai gondolkodásom és a részletek iránti érzékenységem kihasználására. Célom, hogy olyan projekteken dolgozzak, ahol a kreatív ötletek és a technológiai újítások találkoznak, miközben folyamatosan fejlesztem a tudásomat.</p>
                 </div>
-                <div style="width:50%;">
-                    <div style="display:flex; flex-wrap:wrap; align-items: center; justify-content: flex-end; gap: 10px; margin: 0 0 10px;">
-                        <div style="font-size:20px;">HTML</div>
-                        <div style="background: linear-gradient(90deg, #FFD8D8, #FF8989); max-width: 377px; width: 100%; height: 40px; border-radius: 8px;">
-                            <div style="background: linear-gradient(90deg, #FF5C5C, #FE0000); background-size:377px; max-width: calc(377px*0.95); width: 100%; height: 40px; border-radius: 8px;">
+                <div>
+                    <div class="graph">
+                        <div class="title">HTML</div>
+                        <div class="bar">
+                            <div>
                             </div>
                         </div>
                     </div>
-                    <div style="display:flex; flex-wrap:wrap; align-items: center; justify-content: flex-end; gap: 10px; margin: 0 0 10px;">
-                        <div style="font-size:20px;">CSS</div>
-                        <div style="background: linear-gradient(90deg, #FFD8D8, #FF8989); max-width: 377px; width: 100%; height: 40px; border-radius: 8px;">
-                            <div style="background: linear-gradient(90deg, #FF5C5C, #FE0000); background-size:377px; max-width: calc(377px*0.9); width: 100%; height: 40px; border-radius: 8px;">
+                    <div class="graph">
+                        <div class="title">CSS</div>
+                        <div class="bar">
+                            <div>
                             </div>
                         </div>
                     </div>
-                    <div style="display:flex; flex-wrap:wrap; align-items: center; justify-content: flex-end; gap: 10px; margin: 0 0 10px;">
-                        <div style="font-size:20px;">JavaScript</div>
-                        <div style="background: linear-gradient(90deg, #FFD8D8, #FF8989); max-width: 377px; width: 100%; height: 40px; border-radius: 8px;">
-                            <div style="background: linear-gradient(90deg, #FF5C5C, #FE0000); background-size:377px; max-width: calc(377px*0.4); width: 100%; height: 40px; border-radius: 8px;">
+                    <div class="graph">
+                        <div class="title">JavaScript</div>
+                        <div class="bar">
+                            <div>
                             </div>
                         </div>
                     </div>
-                    <div style="display:flex; flex-wrap:wrap; align-items: center; justify-content: flex-end; gap: 10px; margin: 0 0 10px;">
-                        <div style="font-size:20px;">Python</div>
-                        <div style="background: linear-gradient(90deg, #FFD8D8, #FF8989); max-width: 377px; width: 100%; height: 40px; border-radius: 8px;">
-                            <div style="background: linear-gradient(90deg, #FF5C5C, #FE0000); background-size:377px; max-width: calc(377px*0.1); width: 100%; height: 40px; border-radius: 8px;">
+                    <div class="graph">
+                        <div class="title">Python</div>
+                        <div class="bar">
+                            <div>
                             </div>
                         </div>
                     </div>
