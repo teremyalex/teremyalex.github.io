@@ -116,6 +116,14 @@ body{font-size: 14px;}
     
 </style>
 
+<script>
+function portfolioDetails(work){
+    document.getElementById('grid').style.display = none;
+    document.getElementById('work').style.display = block;
+}
+    
+</script>
+
     
     <body>
         
@@ -188,7 +196,7 @@ body{font-size: 14px;}
             <div>
                 <h3>#PORTFOLIÓ</h3>
                 <div id="grid" style="display:none;">
-                    <div class="work">
+                    <div class="work" onclick="portfolioDetails(rachelcare)">
                         <img src="img/rachelcare.jpg">
                     </div>
                     <div class="work">
@@ -218,12 +226,11 @@ body{font-size: 14px;}
                 </div>
 
                 <div id="rachelcare">
-
                     <div class="block">
                         <div class="links">
-                            <a href="https://rachelcare.hu/karacsony"><img src="img/web.svg"> Website Link</a>
-                            <a href="https://github.com/teremyalex/karacsony"><img src="img/github2.svg"> GitHub Projekt</a>
-                            <a href="https://www.figma.com/design/OAOsXdEjCxabxnaN16kqT9/Rachel-Care-Kar%C3%A1csony?node-id=0-1&t=cgGM1gPT0M4dAQYY-1"><img src="img/figma2.svg"> Figma Design</a>
+                            <a href="https://rachelcare.hu/karacsony" target="_blank"><img src="img/web.svg"> Website Link</a>
+                            <a href="https://github.com/teremyalex/karacsony" target="_blank"><img src="img/github2.svg"> GitHub Projekt</a>
+                            <a href="https://www.figma.com/design/OAOsXdEjCxabxnaN16kqT9/Rachel-Care-Kar%C3%A1csony?node-id=0-1&t=cgGM1gPT0M4dAQYY-1" target="_blank"><img src="img/figma2.svg"> Figma Design</a>
                         </div>
                         <div class="cat">#KLIENS</div>
                         <div class="block-flex">
