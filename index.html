@@ -361,13 +361,16 @@ body{font-size: 14px;}
         },700)
         setTimeout(()=>{
             document.getElementById(work).style.opacity = "1";
-        },750)
+        },200)
     }
     document.querySelectorAll('.back').forEach(back => {
         back.addEventListener('click', (event)=>{
             event.preventDefault();
             document.querySelectorAll('.work-details').forEach(work => work.style.display = "none")
             document.getElementById('grid').style.display = "grid";
+            setTimeout(()=>{
+                document.getElementById('grid').classList.remove('off');
+            },50)
         })
     })
 
