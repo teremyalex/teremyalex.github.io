@@ -352,16 +352,16 @@ body{font-size: 14px;}
         </section>
     </body>
 
-    <script>
+<script>
     function portfolioDetails(work){
         document.getElementById('grid').classList.add('off');
         setTimeout(()=>{
             document.getElementById('grid').style.display = "none";
             document.getElementById(work).style.display = "block";
-        },700)
+        },600)
         setTimeout(()=>{
             document.getElementById(work).style.opacity = "1";
-        },750)
+        },620)
     }
     document.querySelectorAll('.back').forEach(back => {
         back.addEventListener('click', (event)=>{
@@ -371,11 +371,11 @@ body{font-size: 14px;}
                 setTimeout(()=>{
                     work.style.display = "none";
                     document.getElementById('grid').style.display = "grid";
-                    
-                },700)
+
+                },600)
                 setTimeout(()=>{
                     document.getElementById('grid').classList.remove('off');
-                },750)
+                },620)
             })
         })
     })
