@@ -52,6 +52,7 @@ body{background:linear-gradient(186deg, #81D5E9 0%, #C7EFF9 6%, #F6F6F6 40%); ba
 .portfolio .links a.back {color: white; background: #FE0000; width: 100px;}
 .portfolio .links img {height: 25px; margin: 0 10px;}
 .portfolio .links a.back img {filter: invert(1);}
+.portfolio .work-details {display: none; opacity:0; transition: 600ms ease-in-out;}
 .portfolio .cat {font-size: 20px; font-weight: 700; color: #FE0000; margin: 0 0 5px;}
 .portfolio .block{margin: 0 0 30px;}
 .portfolio .block-flex {display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-start; padding: 0px 0 0 20px; margin: 0 0 0 6px; border-left: 1px solid; border-image: linear-gradient(0deg, #F6F6F6, #FE0000) 1;}
@@ -219,7 +220,7 @@ body{font-size: 14px;}
                     </div>
                 </div>
 
-                <div class="work-details" id="rachelcare" style="display:none;">
+                <div class="work-details" id="rachelcare">
                     <div class="block">
                         <div class="links">
                             <a class="back" href="#"><img src="img/back.svg"> Vissza</a>
@@ -357,7 +358,10 @@ body{font-size: 14px;}
         setTimeout(()=>{
             document.getElementById('grid').style.display = "none";
             document.getElementById(work).style.display = "block";
-        },1000)
+        },700)
+        setTimeout(()=>{
+            document.getElementById(work).style.opacity = "1";
+        },750)
     }
     document.querySelectorAll('.back').forEach(back => {
         back.addEventListener('click', (event)=>{
