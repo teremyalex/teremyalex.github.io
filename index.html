@@ -48,9 +48,9 @@ body{background:linear-gradient(186deg, #81D5E9 0%, #C7EFF9 6%, #F6F6F6 40%); ba
 
 .portfolio .links {display: flex; justify-content: flex-end; gap: 10px;}
 .portfolio .links a {display: flex; align-items: center; width: 155px; height: 40px; color: #F7DF1E; text-decoration: none; font-size: 14px; background: #242325; border-radius: 6px;}
-.portfolio .links a#back {color: white; background: #FE0000;}
+.portfolio .links a.back {color: white; background: #FE0000;}
 .portfolio .links img {height: 25px; margin: 0 10px;}
-.portfolio .links a#back img {filter:brightness(10);}
+.portfolio .links a.back img {filter:brightness(10);}
 .portfolio .cat {font-size: 20px; font-weight: 700; color: #FE0000; margin: 0 0 5px;}
 .portfolio .block{margin: 0 0 30px;}
 .portfolio .block-flex {display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-start; padding: 0px 0 0 20px; margin: 0 0 0 6px; border-left: 1px solid; border-image: linear-gradient(0deg, #F6F6F6, #FE0000) 1;}
@@ -122,6 +122,12 @@ body{font-size: 14px;}
 function portfolioDetails(work){
     document.getElementById('grid').style.display = "none";
     document.getElementById(work).style.display = "block";
+}
+document.querySelectorAll('.back').forEach(back => {   
+    back.addEventListener('click', ()=>{
+        document.querySelectorAll('.work-details').forEach(work => work.style.display = "none";)
+        document.getElementById('grid').style.display = "block";
+    }
 }
     
 </script>
@@ -227,10 +233,10 @@ function portfolioDetails(work){
                     </div>
                 </div>
 
-                <div id="rachelcare" style="display:none;">
+                <div class="work-details" id="rachelcare" style="display:none;">
                     <div class="block">
                         <div class="links">
-                            <a id="back" href="#"><img src="img/back.svg"> Vissza</a>
+                            <a class="back" href="#"><img src="img/back.svg"> Vissza</a>
                             <a href="https://rachelcare.hu/karacsony" target="_blank"><img src="img/web.svg"> Website Link</a>
                             <a href="https://github.com/teremyalex/karacsony" target="_blank"><img src="img/github2.svg"> GitHub Projekt</a>
                             <a href="https://www.figma.com/design/OAOsXdEjCxabxnaN16kqT9/Rachel-Care-Kar%C3%A1csony?node-id=0-1&t=cgGM1gPT0M4dAQYY-1" target="_blank"><img src="img/figma2.svg"> Figma Design</a>
