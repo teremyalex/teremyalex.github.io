@@ -370,11 +370,12 @@ body{font-size: 14px;}
                 work.style.opacity = "0";
                 setTimeout(()=>{
                     work.style.display = "none";
+                    document.getElementById('grid').style.display = "grid";
+                    document.getElementById('grid').classList.remove('off');
                 },700)
             })
-            document.getElementById('grid').style.display = "grid";
             setTimeout(()=>{
-                document.getElementById('grid').classList.remove('off');
+                
             },50)
         })
     })
