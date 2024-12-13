@@ -361,12 +361,17 @@ body{font-size: 14px;}
         },700)
         setTimeout(()=>{
             document.getElementById(work).style.opacity = "1";
-        },200)
+        },700)
     }
     document.querySelectorAll('.back').forEach(back => {
         back.addEventListener('click', (event)=>{
             event.preventDefault();
-            document.querySelectorAll('.work-details').forEach(work => work.style.display = "none")
+            document.querySelectorAll('.work-details').forEach(work => {
+                document.getElementById(work).style.opacity = "0";
+                setTimeout(()=>{
+                    work.style.display = "none";
+                },700)
+            }
             document.getElementById('grid').style.display = "grid";
             setTimeout(()=>{
                 document.getElementById('grid').classList.remove('off');
