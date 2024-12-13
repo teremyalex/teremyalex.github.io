@@ -117,21 +117,6 @@ body{font-size: 14px;}
 }
     
 </style>
-
-<script>
-function portfolioDetails(work){
-    document.getElementById('grid').style.display = "none";
-    document.getElementById(work).style.display = "block";
-}
-document.querySelectorAll('.back').forEach(back => {   
-    back.addEventListener('click', ()=>{
-        document.querySelectorAll('.work-details').forEach(work => work.style.display = "none";)
-        document.getElementById('grid').style.display = "block";
-    }
-}
-    
-</script>
-
     
     <body>
         
@@ -364,4 +349,20 @@ document.querySelectorAll('.back').forEach(back => {
             </div>
         </section>
     </body>
+
+    <script>
+    function portfolioDetails(work){
+        document.getElementById('grid').style.display = "none";
+        document.getElementById(work).style.display = "block";
+    }
+    document.querySelectorAll('.back').forEach(back => {
+        back.addEventListener('click', (event)=>{
+            event.preventDefault();
+            document.querySelectorAll('.work-details').forEach(work => work.style.display = "none")
+            document.getElementById('grid').style.display = "grid";
+        })
+    })
+
+</script>
+    
 </html>
