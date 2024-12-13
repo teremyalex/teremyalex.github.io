@@ -371,12 +371,12 @@ body{font-size: 14px;}
                 setTimeout(()=>{
                     work.style.display = "none";
                     document.getElementById('grid').style.display = "grid";
-                    document.getElementById('grid').classList.remove('off');
+                    
                 },700)
+                setTimeout(()=>{
+                    document.getElementById('grid').classList.remove('off');
+                },50)
             })
-            setTimeout(()=>{
-                
-            },50)
         })
     })
 
