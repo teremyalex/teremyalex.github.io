@@ -47,7 +47,7 @@ body{background:linear-gradient(186deg, #81D5E9 0%, #C7EFF9 6%, #F6F6F6 40%); ba
 .portfolio .work{border-radius: 15px; box-shadow: 0 7px 18px -2px rgba(35,37,37,0.4); overflow:hidden; cursor: pointer;}
 .portfolio .work img{display: block; margin: 0 auto; width:100%;}
 
-.portfolio .links {display: flex; justify-content: flex-end; gap: 10px;}
+.portfolio .links {display: flex; flex-wrap:wrap; justify-content: flex-end; gap: 10px;}
 .portfolio .links a {display: flex; align-items: center; width: 155px; height: 40px; color: #F7DF1E; text-decoration: none; font-size: 14px; background: #242325; border-radius: 6px;}
 .portfolio .links a.back {color: white; background: #FE0000; width: 100px;}
 .portfolio .links img {height: 25px; margin: 0 10px;}
@@ -87,6 +87,10 @@ body{background:linear-gradient(186deg, #81D5E9 0%, #C7EFF9 6%, #F6F6F6 40%); ba
 
 /* #PORTFOLIÓ */
 .portfolio h3 {font-size: 66px; line-height: 45px;}
+.portfolio .block-flex div, .portfolio .block-flex img {width: 100%; margin: 0 0 20px;}
+.portfolio .links a.back {width: 72px;}
+.portfolio .links a {width: 115px; height: 30px; font-size: 11px; border-radius: 4px;}
+.portfolio .links img {height: 20px; margin: 0 5px;}
 /* #KAPCSOLAT */
 .kapcsolat h3 {font-size: 66px; line-height: 45px;}
 }
