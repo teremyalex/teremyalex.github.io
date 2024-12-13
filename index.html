@@ -361,13 +361,13 @@ body{font-size: 14px;}
         },700)
         setTimeout(()=>{
             document.getElementById(work).style.opacity = "1";
-        },700)
+        },750)
     }
     document.querySelectorAll('.back').forEach(back => {
         back.addEventListener('click', (event)=>{
             event.preventDefault();
             document.querySelectorAll('.work-details').forEach(work => {
-                document.getElementById(work).style.opacity = "0";
+                work.style.opacity = "0";
                 setTimeout(()=>{
                     work.style.display = "none";
                 },700)
