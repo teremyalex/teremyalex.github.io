@@ -1,0 +1,696 @@
+<!DOCTYPE html>
+<html lang="hu-HU"> 
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Teremy Alex frontend fejlesztő portfolió</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    </head>
+    
+<style>
+body{background:linear-gradient(186deg, #81D5E9 0%, #C7EFF9 6%, #F6F6F6 40%); background-repeat: no-repeat; color: #242325; font-family: 'Poppins'; font-size:16px; font-weight: 300; margin: 0;}
+/* #HEADER */
+.header{background:url(img/header.png) top center no-repeat; padding: 236px 10px 200px; box-sizing:border-box;}
+.header > div{display:flex; flex-wrap:wrap; max-width:1024px; margin: 0 auto;}
+.header > div > div{margin: 0 0 0 auto; text-align:right;}
+.header h1{font-family: 'Montserrat'; font-size: 90px; font-weight:700; line-height:63px; color: #FE0000; margin:0 0 20px; border-right: 100px solid; padding: 0 10px 0 0;}
+.header .frontend{font-family: 'Montserrat'; font-size: 36px; font-weight:400; font-style:italic;}
+.header .designer{font-family: 'Montserrat'; font-size: 24px; font-weight: 300; font-style:italic; margin: 0 0 20px;}
+.header .icons{display:flex; flex-wrap:wrap; justify-content: flex-end; gap: 25px;}
+.header .icons img{height:50px;}
+
+/* #RÓLAM */
+.rolam{padding: 100px 10px;}
+.rolam > div{display:flex; flex-wrap:wrap; justify-content: space-between; align-items: flex-start; max-width:1024px; margin: 0 auto;}
+.rolam img{width: 32%; border-radius:50%; display: block; margin: 0;}
+.rolam > div > div{width:62%; text-align:justify;}
+.rolam h3{font-family: 'Montserrat'; font-size: 90px; font-weight:700; color: #FE0000; margin:0 0 20px; line-height: 63px;}
+.rolam p{margin: 0 0 10px;}
+
+/* #ISMERET */
+.tudas{padding: 100px 10px;}
+.tudas > div{display:flex; flex-wrap:wrap; max-width:1024px; margin: 0 auto;}
+.tudas > div > div{width:50%; text-align:justify;}
+.tudas h3{font-family: 'Montserrat'; font-size: 90px; font-weight:700; color: #FE0000; margin:0 0 20px; line-height: 63px;}
+.tudas .graph{display:flex; flex-wrap:wrap; align-items: center; justify-content: flex-end; gap: 10px; margin: 0 0 10px;}
+.tudas .graph .bar{background: linear-gradient(90deg, #FFD8D8, #FF8989); max-width: 377px; width: 100%; height: 40px; border-radius: 8px;}  
+.tudas .graph .bar div{background: linear-gradient(90deg, #FF5C5C, #FE0000); background-size:377px; width: 100%; height: 40px; border-radius: 8px; padding: 0 0 0 10px; box-sizing: border-box; color: white; font-size: 20px; display: flex; align-items: center;}
+
+/* #PORTFOLIÓ */
+.portfolio{padding: 100px 10px;}
+.portfolio > div{max-width:1024px; margin: 0 auto;}
+.portfolio h3{font-family: 'Montserrat'; font-size: 90px; font-weight:700; color: #FE0000; margin:0 0 20px; line-height: 63px; text-align:right;}
+.portfolio #grid {display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; transition: 400ms cubic-bezier(0.08, 0.66, 0.22, 1);}
+.portfolio #grid.off{transform:translateX(-600px); opacity: 0;}
+.portfolio .work{border-radius: 15px; box-shadow: 0 7px 18px -2px rgba(35,37,37,0.4); overflow:hidden; cursor: pointer;}
+.portfolio .work img{display: block; margin: 0 auto; width:100%;}
+
+.portfolio .links {display: flex; flex-wrap:wrap; justify-content: flex-end; gap: 10px;}
+.portfolio .links a {display: flex; align-items: center; width: 155px; height: 40px; color: #F7DF1E; text-decoration: none; font-size: 14px; background: #242325; border-radius: 6px;}
+.portfolio .links a.back {color: white; background: #FE0000; width: 100px;}
+.portfolio .links img {height: 25px; margin: 0 10px;}
+.portfolio .links a.back img {filter: invert(1);}
+.portfolio .work-details {display: none; opacity:0; transition: 600ms ease-in-out;}
+.portfolio .cat {font-size: 20px; font-weight: 700; color: #FE0000; margin: 0 0 5px;}
+.portfolio .block{margin: 0 0 30px;}
+.portfolio .block-flex {display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-start; padding: 0px 0 0 20px; margin: 0 0 0 6px; border-left: 1px solid; border-image: linear-gradient(0deg, #F6F6F6, #FE0000) 1;}
+.portfolio .block-flex div{width:50%;}
+.portfolio .block-flex img{width:44%; display:block; border-radius: 15px;}
+.portfolio h4 {font-size: 32px; font-family: 'Poppins'; font-weight: 500; line-height: 37px; margin: 0;}
+.portfolio p {margin: 0; text-align: justify;}
+
+
+/* #KAPCSOLAT */
+.kapcsolat{padding: 100px 10px;}
+.kapcsolat > div{max-width:1024px; margin: 0 auto;}
+.kapcsolat h3{font-family: 'Montserrat'; font-size: 90px; font-weight:700; color: #FE0000; margin:0 0 50px; line-height: 63px; text-align:center;}
+.kapcsolat .contact{display: flex; gap: 5px; width: 212px; margin: 0 auto;}
+.kapcsolat .contact img{width: 18px;}
+.kapcsolat a{font-size: 16px; color:#242325; text-decoration: none; vertical-align: super;}
+.kapcsolat .social{text-align:center; margin: 30px 0;}
+.kapcsolat .social img{width: 30px;}
+
+@media (max-width:1023px){
+/* HEADER */
+.header h1 {font-size: 66px; line-height: 45px; border-right: 70px solid;}
+.header .frontend {font-size: 30px;}
+.header .designer {font-size: 22px;}
+    
+/* #RÓLAM */
+.rolam h3 {font-size: 66px; line-height: 45px;}
+/* #ISMERET */
+.tudas h3 {font-size: 66px; line-height: 45px;}
+.tudas > div > div {width: 100%;}
+.tudas .graph {justify-content: center;}
+
+/* #PORTFOLIÓ */
+.portfolio h3 {font-size: 66px; line-height: 45px;}
+.portfolio .block-flex div, .portfolio .block-flex img {width: 100%; margin: 0 0 20px;}
+.portfolio .links a.back {width: 72px;}
+.portfolio .links a {width: 115px; height: 30px; font-size: 11px; border-radius: 4px;}
+.portfolio .links img {height: 20px; margin: 0 5px;}
+/* #KAPCSOLAT */
+.kapcsolat h3 {font-size: 66px; line-height: 45px;}
+}
+    
+@media (max-width:500px){
+body{font-size: 14px;}
+/* HEADER */
+.header{padding: 110px 10px;}
+.header > div > div {width: 100%;}
+.header h1 {font-size: 50px; line-height: 35px; border-right: 50px solid;}
+.header .frontend {font-size: 24px;}
+.header .designer {font-size: 20px;}
+.header .icons {gap: 10px;}
+.header .icons img {height: 35px;}
+    
+/* #RÓLAM */
+.rolam {padding: 50px 10px;}
+.rolam > div > div {width: 100%;}
+.rolam img {width: 60%; margin: 0 auto 20px;}
+.rolam h3 {font-size: 42px; line-height: 35px;}
+/* #ISMERET */
+.tudas {padding: 50px 10px;}
+.tudas h3 {font-size: 42px; line-height: 35px;}
+/* #PORTFOLIÓ */
+.portfolio {padding: 50px 10px;}
+.portfolio h3 {font-size: 42px; line-height: 35px;}
+/* #KAPCSOLAT */
+.kapcsolat {padding: 50px 10px;}
+.kapcsolat h3 {font-size: 42px; line-height: 35px;}
+}
+    
+</style>
+    
+    <body>
+        
+        <!--#HEADER-->
+        <section class="header">
+            <div>
+                <div>
+                    <h1>TEREMY<br>ALEX</h1>
+                    <div class="frontend">frontend fejlesztő</div>
+                    <div class="designer">designer</div>
+                    <div class="icons">
+                        <img src="img/html.svg">
+                        <img src="img/css.svg">
+                        <img src="img/javascript.svg">
+                        <img src="img/figma.svg">
+                        <img src="img/photoshop.svg">
+                        <img src="img/maya.svg">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!--#RÓLAM-->
+        <section class="rolam">
+            <div>
+                <img src="img/rolam.jpg">
+                <div>
+                    <h3>#RÓLAM</h3>
+                    <p>Azokat a projekteket élvezem a legjobban, ahol lehetőségem van valami újat építeni, és ahol a kreativitás és a problémamegoldás találkozik. Szenvedélyem a tervezés és a fejlesztés, különösen, ha a végeredmény stílusos, letisztult, és hatékonyan működik.</p>
+                    <p>A grafikai tervezéssel 2012 körül kezdtem foglalkozni, ahol a design és a vizuális kommunikáció alapjait sajátítottam el. 2014-ben hoztam létre az első blogomat, amelynek megjelenését hamar testreszabtam. Ekkor kezdtem el mélyebben foglalkozni a HTML és a CSS alapjaival, és néha egy-egy kisebb JavaScript projektet is megvalósítottam.</p>
+                    <p>Az évek során a webfejlesztés iránti érdeklődésem fokozatosan nőtt, és 2023-tól már komolyabban, 2024-től pedig intenzíven foglalkozom JavaScript fejlesztéssel. Célom, hogy kreatív és funkcionális megoldásokat hozzak létre, amelyek nemcsak a technikai elvárásoknak felelnek meg, hanem esztétikusak is.</p>
+                </div>    
+            </div>
+        </section>
+        
+        <!--#ISMERET-->
+        <section class="tudas">
+            <div>
+                <div>
+                    <h3>#ISMERET</h3>
+                    <p>Frontend fejlesztőként ötvözöm az erős grafikai alapokat és a technikai precizitást, hogy vizuálisan kiemelkedő és funkcionálisan hatékony megoldásokat hozzak létre. Különösen élvezem, amikor összetett problémákat oldhatok meg, mert ezek lehetőséget adnak az erős logikai gondolkodásom és a részletek iránti érzékenységem kihasználására. Célom, hogy olyan projekteken dolgozzak, ahol a kreatív ötletek és a technológiai újítások találkoznak, miközben folyamatosan fejlesztem a tudásomat.</p>
+                </div>
+                <div>
+                    <div class="graph">
+                        <div class="bar">
+                            <div style="max-width: calc(377px*0.95);">HTML</div>
+                        </div>
+                    </div>
+                    <div class="graph">
+                        <div class="bar">
+                            <div style="max-width: calc(377px*0.9);">CSS</div>
+                        </div>
+                    </div>
+                    <div class="graph">
+                        <div class="bar">
+                            <div style="max-width: calc(377px*0.4);">JavaScript</div>
+                        </div>
+                    </div>
+                    <div class="graph">
+                        <div class="bar">
+                            <div style="max-width: calc(377px*0.1);">Python</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!--#PORTFOLIO-->
+        <section class="portfolio">
+            <div>
+                <h3>#PORTFOLIÓ</h3>
+                <div id="grid">
+                    <div class="work" onclick="portfolioDetails('rachelcare')">
+                        <img src="img/rachelcare.jpg">
+                    </div>
+                    <div class="work" onclick="portfolioDetails('nyhchess')">
+                        <img src="img/nyhchess.jpg">
+                    </div>
+                    <div class="work" onclick="portfolioDetails('dietmaker')">
+                        <img src="img/dietmaker.jpg">
+                    </div>
+                    <div class="work" onclick="portfolioDetails('alacord')">
+                        <img src="img/alacord.jpg">
+                    </div>
+                    <div class="work" onclick="portfolioDetails('gumicukor')">
+                        <img src="img/gumicukor.jpg">
+                    </div>
+                    <div class="work" onclick="portfolioDetails('live')">
+                        <img src="img/dietmaker.jpg">
+                    </div>
+                    <div class="work" onclick="portfolioDetails('smidkarpit')">
+                        <img src="img/smidkarpit.jpg">
+                    </div>
+                    <div class="work" onclick="portfolioDetails('yourmee')">
+                        <img src="img/yourmee.jpg">
+                    </div>
+                    <div class="work" onclick="portfolioDetails('honeyhill')">
+                        <img src="img/honeyhill.jpg">
+                    </div>
+                </div>
+
+                <!-- 1. RACHELCARE -->
+                <div class="work-details" id="rachelcare">
+                    <div class="block">
+                        <div class="links">
+                            <a class="back" href="#"><img src="img/back.svg"> Vissza</a>
+                            <a href="https://rachelcare.hu/karacsony" target="_blank"><img src="img/web.svg"> Website Link</a>
+                            <a href="https://github.com/teremyalex/karacsony" target="_blank"><img src="img/github2.svg"> GitHub Projekt</a>
+                            <a href="https://www.figma.com/design/OAOsXdEjCxabxnaN16kqT9/Rachel-Care-Kar%C3%A1csony?node-id=0-1&t=cgGM1gPT0M4dAQYY-1" target="_blank"><img src="img/figma2.svg"> Figma Design</a>
+                        </div>
+                        <div class="cat">#KLIENS</div>
+                        <div class="block-flex">
+                            <div>
+                                <h4>Rachel Care</h4>
+                                <p>A Rachel Care egy modern kozmetikai márka, amely a legújabb kozmetikai összetevőket ötvözi a természet erejével. Termékeik, például az anti-aging arckrémek és szemkörnyékápolók, nemcsak intenzív hidratálást és bőrfeszesítést nyújtanak, hanem természetes hatóanyagok szinergikus kombinációját alkalmazzák a bőr szépségének és egészségének megőrzéséhez.</p>
+                            </div>
+                            <img src="img/rachelcare1.jpg">
+                        </div>
+                    </div>
+                    <div class="block">
+                        <div class="cat">#FELADAT</div>
+                        <div class="block-flex">
+                            <div>
+                                <h4>Landing Page</h4>
+                                <p>Feladatom egy karácsonyi landing page létrehozása volt, amely illeszkedik a Rachel Care többi értékesítési oldalához. Az oldal díszdobozos karácsonyi csomagokat kínált, ünnepi hangulatot teremtve a vásárlók számára.</p>
+                            </div>
+                            <img src="img/rachelcare2.jpg">
+                        </div>
+                    </div>
+                    <div class="block">
+                        <div class="cat">#TECHNOLÓGIÁK</div>
+                        <div class="block-flex">
+                            <div>
+                                <h4>HTML, CSS, JavaScript, Figma, Photoshop, AI</h4>
+                                <p>A landing page design-ja Figmában készült, melyet Photoshop és annak beépített AI funkciói egészítettek ki. Az oldal HTML, CSS és JavaScript használatával készült, különös figyelmet fordítva a kosár- és vásárlási folyamat reszponzív működésére.</p>
+                            </div>
+                            <img src="img/rachelcare3.jpg">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 2. NYHCHESS -->
+                <div class="work-details" id="nyhchess">
+                    <div class="block">
+                        <div class="links">
+                            <a class="back" href="#"><img src="img/back.svg"> Vissza</a>
+                            <a href="https://rachelcare.hu/karacsony" target="_blank"><img src="img/web.svg"> Website Link</a>
+                            <a href="https://github.com/teremyalex/tlchessfoundation.com" target="_blank"><img src="img/github2.svg"> GitHub Projekt</a>
+                        </div>
+                        <div class="cat">#KLIENS</div>
+                        <div class="block-flex">
+                            <div>
+                                <h4>NYH Chess</h4>
+                                <p>A Trembácz László Sakk Alapítvány és az <a href="https://www.youtube.com/@nyhchess">NYH Chess YouTube</a> csatorna hivatalos weboldala, amely a sakk iránt érdeklődők számára kínál hasznos tartalmakat és alkalmazásokat. Az oldal célja, hogy innovatív eszközökkel támogassa a játékosokat, miközben előkelő helyezést érjen el SEO szempontból a keresőmotorokban. Emellett a platform fontos szerepet játszik a támogatók vonzásában, hogy tovább fejleszthessék a sakk közösségét.</p>
+                            </div>
+                            <img src="img/nyhchess1.jpg">
+                        </div>
+                    </div>
+                    <div class="block">
+                        <div class="cat">#FELADAT</div>
+                        <div class="block-flex">
+                            <div>
+                                <h4>Weboldal</h4>
+                                <p>A feladatom egy reszponzív és SEO-optimalizált weboldal fejlesztése volt, amely bemutatja a NYH Chess tevékenységeit és alkalmazásait. Az oldal támogatja a látogatók elköteleződését, valamint lehetőséget biztosít a támogatók számára, hogy csatlakozzanak a kezdeményezéshez. Az innovatív sakkalkalmazások, amelyek célja, hogy a világ legjobbjai legyenek, a projekt központi elemei közé tartoztak.</p>
+                            </div>
+                            <img src="img/nyhchess2.jpg">
+                        </div>
+                    </div>
+                    <div class="block">
+                        <div class="cat">#TECHNOLÓGIÁK</div>
+                        <div class="block-flex">
+                            <div>
+                                <h4>HTML, CSS, JavaScript, Photoshop, AI</h4>
+                                <p>Az oldal HTML, CSS, JavaScript és AI használatával készült. Nagy hangsúly lett fektetve a kalkulátorok fejlesztésére, amik ma már a Googleben a legjobb helyeken vannak.</p>
+                            </div>
+                            <img src="img/nyhchess3.jpg">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 3. DIETMAKER -->
+                <div class="work-details" id="dietmaker">
+                    <div class="block">
+                        <div class="links">
+                            <a class="back" href="#"><img src="img/back.svg"> Vissza</a>
+                            <a href="https://dietmaker.hu/" target="_blank"><img src="img/web.svg"> Website Link</a>
+                        </div>
+                        <div class="cat">#KLIENS</div>
+                        <div class="block-flex">
+                            <div>
+                                <h4>Diet Maker</h4>
+                                <p>A Diet Maker egy online platform, amely könyv és ebook formában kínál személyre szabott diétákat az egészséges és fenntartható fogyás érdekében. A weboldalon elérhető diéta webshop egyszerű vásárlási élményt biztosít, miközben a blog hasznos tippekkel és szakértői tanácsokkal támogatja a látogatókat. A rendszeresen küldött hírlevelek segítségével az érdeklődők folyamatosan motivációt és friss információkat kapnak. Céljuk, hogy mindenki megtalálja az életmódjához legjobban illő diétás megoldást.</p>
+                            </div>
+                            <img src="img/dietmaker1.jpg">
+                        </div>
+                    </div>
+                    <div class="block">
+                        <div class="cat">#FELADAT</div>
+                        <div class="block-flex">
+                            <div>
+                                <h4>Weboldal</h4>
+                                <p>A feladatom egy reszponzív weboldal létrehozása volt, amely tartalmaz egy diéta webshopot, blogot és hírlevél funkciót. A webshop könyvek és ebookok értékesítésére lett optimalizálva, miközben a blog tartalmai a SEO-t és a látogatók bizalmának növelését szolgálták. Az oldal célja, hogy átfogó diétás megoldást kínáljon a felhasználóknak egy felhasználóbarát felületen keresztül.</p>
+                            </div>
+                            <img src="img/dietmaker2.jpg">
+                        </div>
+                    </div>
+                    <div class="block">
+                        <div class="cat">#TECHNOLÓGIÁK</div>
+                        <div class="block-flex">
+                            <div>
+                                <h4>Wordpress, HTML, CSS, JavaScript, Photoshop</h4>
+                                <p>A oldal Wordpress motor alatt készült egyedi sablonnal HTML, CSS és JavaScript használatával. A vásárlást a Woocommerce plugin biztosítja.</p>
+                            </div>
+                            <img src="img/dietmaker3.jpg">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 4. ALACORD -->
+                <div class="work-details" id="alacord">
+                    <div class="block">
+                        <div class="links">
+                            <a class="back" href="#"><img src="img/back.svg"> Vissza</a>
+                            <a href="https://alacord.hu/" target="_blank"><img src="img/web.svg"> Website Link</a>
+                        </div>
+                        <div class="cat">#KLIENS</div>
+                        <div class="block-flex">
+                            <div>
+                                <h4>Alacord</h4>
+                                <p>Az Alacord egy egyedi bútortervezéssel és kivitelezéssel foglalkozó vállalkozás, amely konyhák, szekrények és más bútorok személyre szabott megoldásait kínálja. A vállalkozás célja, hogy prémium minőségű szolgáltatással és egyedi látványtervekkel támogassa ügyfeleit az otthonuk stílusos és funkcionális kialakításában. Nagy hangsúlyt fektettek az ügyfélközpontú megközelítésre, a részletek precíz kidolgozására, valamint a modern és időtálló designra.</p>
+                            </div>
+                            <img src="img/alacord1.jpg">
+                        </div>
+                    </div>
+                    <div class="block">
+                        <div class="cat">#FELADAT</div>
+                        <div class="block-flex">
+                            <div>
+                                <h4>Weboldal</h4>
+                                <p>Egy bemutató weboldalt kellett létrehozni, amely professzionális módon mutatja be az Alacord szolgáltatásait és referenciáit. Az oldal tartalmazott egy blogot, amely a SEO-t és a bizalomépítést támogatta, valamint hírlevél funkcióval segítette az ügyfelek elköteleződését. A munkához kapcsolódott 3D látványtervek készítése, amelyek az ügyfelek igényeire szabott konyhák vizualizálásában segítettek, valamint a tervek alapján a konyhák kivitelezése egy tapasztalt asztalos csapattal.</p>
+                            </div>
+                            <img src="img/alacord2.jpg">
+                        </div>
+                    </div>
+                    <div class="block">
+                        <div class="cat">#TECHNOLÓGIÁK</div>
+                        <div class="block-flex">
+                            <div>
+                                <h4>Wordpress, HTML, CSS, JavaScript, Photoshop, Autodesk Maya</h4>
+                                <p>A oldal Wordpress motor alatt készült egyedi sablonnal HTML, CSS és JavaScript használatával. A látványtervek a honlapon Mayával készültek, Photoshoppal utómunkázva. A konyhakatalógust InDesignnal szerkesztettem.</p>
+                            </div>
+                            <img src="img/alacord3.jpg">
+                        </div>
+                    </div>                    
+                </div>
+
+                <!-- 5. GUMICUKOR -->
+                <div class="work-details" id="gumicukor">
+                    <div class="block">
+                        <div class="links">
+                            <a class="back" href="#"><img src="img/back.svg"> Vissza</a>
+                            <a href="https://landing.epikforge.com/gumicukorshop/" target="_blank"><img src="img/web.svg"> Website Link</a>
+                            <a href="https://github.com/teremyalex/gumicukorshop" target="_blank"><img src="img/github2.svg"> GitHub Projekt</a>
+                            <a href="https://www.figma.com/design/6OqTtlmJn0F5yK8yfi3iH9/Gumicukorshop?t=cgGM1gPT0M4dAQYY-1" target="_blank"><img src="img/figma2.svg"> Figma Design</a>
+                        </div>
+                        <div class="cat">#KLIENS</div>
+                        <div class="block-flex">
+                            <div>
+                                <h4>Sweet Zozi Candy</h4>
+                                <p>A Gumicukor Shop, hivatalos nevén Sweet Zozi Candy Gumicukorshop, egy magyarországi édességbolt, amely prémium minőségű gumicukrok széles választékát kínálja. Különlegességük, hogy minden BUBS gumicukor vegán, zselatin- és egyéb állati eredetű adalékoktól mentes, valamint nem tartalmaznak AZO színezéket és pálmaolajat sem.</p>
+                            </div>
+                            <img src="img/gumicukor1.jpg">
+                        </div>
+                    </div>
+                    <div class="block">
+                        <div class="cat">#FELADAT</div>
+                        <div class="block-flex">
+                            <div>
+                                <h4>Landing Page</h4>
+                                <p>Feladatom egy új termék bevezetésének landing page létrehozása volt. Különlegessége, hogy a terméket előfizetéses rendszerben is lehessen értékesíteni. Három csomag közül lehetett választani és mindegyiknek volt vegán változata is.</p>
+                            </div>
+                            <img src="img/gumicukor2.jpg">
+                        </div>
+                    </div>
+                    <div class="block">
+                        <div class="cat">#TECHNOLÓGIÁK</div>
+                        <div class="block-flex">
+                            <div>
+                                <h4>HTML, CSS, JavaScript, Figma, Photoshop</h4>
+                                <p>A landing page design-ja Figmával és Photoshoppal készült. Az oldal HTML, CSS és JavaScript használatával készült, különös figyelmet fordítva az előfizetéses rendszer, kosár- és vásárlási folyamat reszponzív működésére.</p>
+                            </div>
+                            <img src="img/gumicukor3.jpg">
+                        </div>
+                    </div> 
+                </div>
+
+                <!-- 6. LIVE -->
+                <div class="work-details" id="live">
+                    <div class="block">
+                        <div class="links">
+                            <a class="back" href="#"><img src="img/back.svg"> Vissza</a>
+                            <a href="https://rachelcare.hu/karacsony" target="_blank"><img src="img/web.svg"> Website Link</a>
+                            <a href="https://github.com/teremyalex/karacsony" target="_blank"><img src="img/github2.svg"> GitHub Projekt</a>
+                            <a href="https://www.figma.com/design/OAOsXdEjCxabxnaN16kqT9/Rachel-Care-Kar%C3%A1csony?node-id=0-1&t=cgGM1gPT0M4dAQYY-1" target="_blank"><img src="img/figma2.svg"> Figma Design</a>
+                        </div>
+                        <div class="cat">#KLIENS</div>
+                        <div class="block-flex">
+                            <div>
+                                <h4>Rachel Care</h4>
+                                <p>A Rachel Care egy modern kozmetikai márka, amely a legújabb kozmetikai összetevőket ötvözi a természet erejével. Termékeik, például az anti-aging arckrémek és szemkörnyékápolók, nemcsak intenzív hidratálást és bőrfeszesítést nyújtanak, hanem természetes hatóanyagok szinergikus kombinációját alkalmazzák a bőr szépségének és egészségének megőrzéséhez.</p>
+                            </div>
+                            <img src="img/rachelcare1.jpg">
+                        </div>
+                    </div>
+                    <div class="block">
+                        <div class="cat">#FELADAT</div>
+                        <div class="block-flex">
+                            <div>
+                                <h4>Landing Page</h4>
+                                <p>Feladatom egy karácsonyi landing page létrehozása volt, amely illeszkedik a Rachel Care többi értékesítési oldalához. Az oldal díszdobozos karácsonyi csomagokat kínált, ünnepi hangulatot teremtve a vásárlók számára.</p>
+                            </div>
+                            <img src="img/rachelcare2.jpg">
+                        </div>
+                    </div>
+                    <div class="block">
+                        <div class="cat">#TECHNOLÓGIÁK</div>
+                        <div class="block-flex">
+                            <div>
+                                <h4>HTML, CSS, JavaScript, Figma, Photoshop, AI</h4>
+                                <p>A landing page design-ja Figmában készült, melyet Photoshop és annak beépített AI funkciói egészítettek ki. Az oldal HTML, CSS és JavaScript használatával készült, különös figyelmet fordítva a kosár- és vásárlási folyamat reszponzív működésére.</p>
+                            </div>
+                            <img src="img/rachelcare3.jpg">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 7. SMIDKARPIT -->
+                <div class="work-details" id="smidkarpit">
+                    <div class="block">
+                        <div class="links">
+                            <a class="back" href="#"><img src="img/back.svg"> Vissza</a>
+                            <a href="https://landing.epikforge.com/smid-karpit/" target="_blank"><img src="img/web.svg"> Website Link</a>
+                            <a href="https://github.com/teremyalex/smid-karpit" target="_blank"><img src="img/github2.svg"> GitHub Projekt</a>
+                            <a href="https://www.figma.com/design/6dApiTw6Mkp7cZG2itenRt/Smid?node-id=58-20&t=cgGM1gPT0M4dAQYY-1" target="_blank"><img src="img/figma2.svg"> Figma Design</a>
+                        </div>
+                        <div class="cat">#KLIENS</div>
+                        <div class="block-flex">
+                            <div>
+                                <h4>Smid Kárpit</h4>
+                                <p>A Smid Kárpit egy Nyíregyházán működő kárpitos vállalkozás, amely bútorok teljes körű újrakárpitozását kínálja. Szolgáltatásaik közé tartozik a szövetek, rugók, és szivacsok cseréje, valamint kisebb fa javítások is. Nagy hangsúlyt fektetnek a minőségi alapanyagok használatára, és széles szín- és szövetválasztékkal dolgoznak.</p>
+                            </div>
+                            <img src="img/smidkarpit1.jpg">
+                        </div>
+                    </div>
+                    <div class="block">
+                        <div class="cat">#FELADAT</div>
+                        <div class="block-flex">
+                            <div>
+                                <h4>Landing Page</h4>
+                                <p>A feladatom egy letisztult, reszponzív weboldal létrehozása volt, amely bemutatja a Smid Kárpit szolgáltatásait és kiemeli a minőség iránti elkötelezettségüket. Az oldal célja, hogy vizuálisan vonzó módon mutassa be a kárpitozás, szövetcsere és kisebb bútorjavítás lehetőségeit, miközben könnyű navigációt biztosít az érdeklődők számára. Emellett a design és a tartalom segíti az ügyfeleket abban, hogy bizalmat építsenek a vállalkozás iránt.</p>
+                            </div>
+                            <img src="img/smidkarpit2.jpg">
+                        </div>
+                    </div>
+                    <div class="block">
+                        <div class="cat">#TECHNOLÓGIÁK</div>
+                        <div class="block-flex">
+                            <div>
+                                <h4>HTML, CSS, Figma, Photoshop, AI</h4>
+                                <p>A landing page design-ja Figmában készült, melyet Photoshop és az AI egészítettek ki. Az oldal HTML és CSS használatával készült egy adatbekérő űrlappal, amit, ha kitölt a látogató, akkor a kliens visszahívja őt időpont egyeztetés miatt.</p>
+                            </div>
+                            <img src="img/smidkarpit3.jpg">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 8. YOURMEE -->
+                <div class="work-details" id="yourmee">
+                    <div class="block">
+                        <div class="links">
+                            <a class="back" href="#"><img src="img/back.svg"> Vissza</a>
+                            <a href="https://landing.epikforge.com/yourmee/" target="_blank"><img src="img/web.svg"> Website Link</a>
+                            <a href="https://github.com/teremyalex/yourmee" target="_blank"><img src="img/github2.svg"> GitHub Projekt</a>
+                            <a href="https://www.figma.com/design/gZ5YCoszEyefOfXetiko43/F%C3%BCrjPiac?m=auto&t=cgGM1gPT0M4dAQYY-1" target="_blank"><img src="img/figma2.svg"> Figma Design</a>
+                        </div>
+                        <div class="cat">#KLIENS</div>
+                        <div class="block-flex">
+                            <div>
+                                <h4>Yourméé</h4>
+                                <p>A Yourméé egy nyíregyházi vállalkozás, amely prémium minőségű fürjtojásokat és azokból készült száraztésztákat kínál. Termékeik között megtalálhatók a 40 fürjtojással készült tészták, füstölt-pácolt fürjtojások, valamint speciális fürjtojás nyitó ollók. A cég nagy hangsúlyt fektet a természetes alapanyagok használatára, termékeik tartósítószer-, színezék- és adalékanyag-mentesek. Céljuk, hogy különleges gasztronómiai élményt nyújtsanak vásárlóiknak, ötvözve a hagyományos ízeket az innovatív megközelítéssel.</p>
+                            </div>
+                            <img src="img/yourmee1.jpg">
+                        </div>
+                    </div>
+                    <div class="block">
+                        <div class="cat">#FELADAT</div>
+                        <div class="block-flex">
+                            <div>
+                                <h4>Landing Page</h4>
+                                <p>A feladatom egy reszponzív weboldal létrehozása volt, amely támogatja a Yourméé prémium tésztáinak online értékesítését. Az oldal fő funkciója három testreszabható tészta csomag bemutatása, ahol a vásárlók saját igényeik szerint válogathatják össze a csomag tartalmát. A vásárlási folyamatot úgy terveztem meg, hogy a szállítási költséget dinamikusan, a termékek súlya alapján számolja ki a rendszer. Az eredmény egy felhasználóbarát és könnyen navigálható webshop lett, amely hatékonyan segíti a termékek értékesítését.</p>
+                            </div>
+                            <img src="img/yourmee2.jpg">
+                        </div>
+                    </div>
+                    <div class="block">
+                        <div class="cat">#TECHNOLÓGIÁK</div>
+                        <div class="block-flex">
+                            <div>
+                                <h4>HTML, CSS, JavaScript, Figma, Photoshop, AI</h4>
+                                <p>A landing page design-ja Figmában készült, melyet Photoshop és annak beépített AI funkciói egészítettek ki. Az oldal HTML, CSS és JavaScript használatával készült, különös figyelmet fordítva a kosár- és vásárlási folyamat reszponzív működésére és a dinamikus szállítási költség számítására.</p>
+                            </div>
+                            <img src="img/yourmee3.jpg">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 9. HONEYHILL -->
+                <div class="work-details" id="honeyhill">
+                    <div class="block">
+                        <div class="links">
+                            <a class="back" href="#"><img src="img/back.svg"> Vissza</a>
+                            <a href="https://landing.epikforge.com/honeyhill/kettos-hatas/" target="_blank"><img src="img/web.svg"> Website Link</a>
+                            <a href="https://github.com/teremyalex/honeyhill" target="_blank"><img src="img/github2.svg"> GitHub Projekt</a>
+                            <a href="https://www.figma.com/design/s52lUj3Cdw0pW5qTRhl3cu/Honey-Hill?m=auto&t=cgGM1gPT0M4dAQYY-1" target="_blank"><img src="img/figma2.svg"> Figma Design</a>
+                        </div>
+                        <div class="cat">#KLIENS</div>
+                        <div class="block-flex">
+                            <div>
+                                <h4>Honey Hill</h4>
+                                <p>A HoneyHill egy magyar vállalkozás, amely prémium méhészeti termékeket kínál, mint például tiszta méhpempő, propolisz, virágpor és méhkenyér. Kiemelt termékeik közé tartozik a méhmérges balzsam és a propoliszos krém, amelyek Érték és Minőség Nagydíjjal is elismertek. A cég nagy hangsúlyt fektet a természetes alapanyagokra és a személyre szabott, szakszerű tanácsadásra, hogy vásárlóik a legmegfelelőbb módon alkalmazhassák termékeiket. Céljuk, hogy a méhek természet adta erejével támogassák az egészség megőrzését és helyreállítását.</p>
+                            </div>
+                            <img src="img/honeyhill1.jpg">
+                        </div>
+                    </div>
+                    <div class="block">
+                        <div class="cat">#FELADAT</div>
+                        <div class="block-flex">
+                            <div>
+                                <h4>Landing Page</h4>
+                                <p>A feladatom egy reszponzív landing oldal létrehozása volt a HoneyHill „Kettős Hatás” termékcsomagjának népszerűsítésére. Az oldal a Royal Méh Balzsam és a Méhpempő termékekre fókuszált, kiemelve azok természetes hatóanyagait és egészségmegőrző előnyeit. A landing page célja, hogy vizuálisan vonzó és informatív módon mutassa be a csomagot, miközben egyszerű és felhasználóbarát vásárlási lehetőséget biztosít. Az oldal szerkezete támogatja a látogatók gyors tájékozódását és a vásárlási folyamat zökkenőmentességét.</p>
+                            </div>
+                            <img src="img/honeyhill2.jpg">
+                        </div>
+                    </div>
+                    <div class="block">
+                        <div class="cat">#TECHNOLÓGIÁK</div>
+                        <div class="block-flex">
+                            <div>
+                                <h4>HTML, CSS, JavaScript, Figma, Photoshop, AI</h4>
+                                <p>A landing page design-ja Figmával, Photoshoppal és AI-vel készült. Az oldal HTML, CSS és JavaScript használatával készült, különös figyelmet fordítva a kosár- és vásárlási folyamat reszponzív működésére.</p>
+                            </div>
+                            <img src="img/honeyhill3.jpg">
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!--#EGYÉB-->
+        <section class="tudas">
+            <div>
+                <div>
+                    <h3>#EGYÉB</h3>
+                    <p>Az online marketing, média és értékesítés területén szerzett tapasztalataim kiegészítik webfejlesztési ismereteimet, lehetővé téve, hogy komplex projekteken dolgozzak. Erős UX/UI és WordPress ismeretekkel rendelkezem, amelyek mellett kiemelten foglalkoztam hírlevel rendszerek automatizálásával és SEO optimalizálással is. Az utóbbi időben mesterséges intelligenciával és PPC kampányokkal is foglalkoztam, továbbá kiadványszerkesztési, 3D modellezési és videóvágási alapismeretekkel is rendelkezem. Mindezek mellett nyitott vagyok az új technológiák és módszerek elsajátítására, hogy folyamatosan bővítsem a tudásomat.</p>
+                </div>
+                <div>
+                    <div class="graph">
+                        <div class="bar">
+                            <div style="max-width: calc(377px*0.9);">UX/UI</div>
+                        </div>
+                    </div>
+                    <div class="graph">
+                        <div class="bar">
+                            <div style="max-width: calc(377px*0.9);">Hírlevél</div>
+                        </div>
+                    </div>
+                    <div class="graph">
+                        <div class="bar">
+                            <div style="max-width: calc(377px*0.85);">Wordpress</div>
+                        </div>
+                    </div>
+                    <div class="graph">
+                        <div class="bar">
+                            <div style="max-width: calc(377px*0.85);">AI</div>
+                        </div>
+                    </div>
+                    <div class="graph">
+                       <div class="bar">
+                            <div style="max-width: calc(377px*0.8);">SEO</div>
+                        </div>
+                    </div>
+                    <div class="graph">
+                        <div class="bar">
+                            <div style="max-width: calc(377px*0.8);">PPC</div>
+                        </div>
+                    </div>
+                    <div class="graph">
+                        <div class="bar">
+                            <div style="max-width: calc(377px*0.7);">Kiadvány szerkesztés</div>
+                        </div>
+                    </div>
+                    <div class="graph">
+                        <div class="bar">
+                            <div style="max-width: calc(377px*0.6);">3D</div>
+                        </div>
+                    </div>
+                    <div class="graph">
+                        <div class="bar">
+                            <div style="max-width: calc(377px*0.5);">Élő közvetítés</div>
+                        </div>
+                    </div>
+                    <div class="graph">
+                        <div class="bar">
+                            <div style="max-width: calc(377px*0.45);">Videóvágás</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!--#KAPCSOLAT>-->
+        <section class="kapcsolat">
+            <div>
+                <h3>#KAPCSOLAT</h3>
+                <div class="contact">
+                    <img src="img/at.svg"> <a href="mailto:teremyalex@gmail.com">teremyalex@gmail.com</a>
+                </div> 
+                <div class="contact">
+                    <img src="img/phone.svg"> <a href="tel:+36303877830">+3630/381-7830</a>
+                </div>
+                <div class="social">
+                    <a href="www.linkedin.com/in/teremyalex"><img src="img/linkedin.svg"></a>
+                    <a href="https://github.com/teremyalex?tab=repositories"><img src="img/github.svg"></a>
+                </div>
+            </div>
+        </section>
+    </body>
+
+<script>
+    function portfolioDetails(work){
+        document.getElementById('grid').classList.add('off');
+        setTimeout(()=>{
+            document.getElementById('grid').style.display = "none";
+            document.getElementById(work).style.display = "block";
+        },400)
+        setTimeout(()=>{
+            document.getElementById(work).style.opacity = "1";
+            document.querySelector('.portfolio').scrollIntoView({ behavior: 'smooth' });
+        },420)
+    }
+    document.querySelectorAll('.back').forEach(back => {
+        back.addEventListener('click', (event)=>{
+            event.preventDefault();
+            document.querySelectorAll('.work-details').forEach(work => {
+                work.style.opacity = "0";
+                setTimeout(()=>{
+                    work.style.display = "none";
+                    document.getElementById('grid').style.display = "grid";
+
+                },400)
+                setTimeout(()=>{
+                    document.getElementById('grid').classList.remove('off');
+                },420)
+            })
+        })
+    })
+
+</script>
+    
+</html>
