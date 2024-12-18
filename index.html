@@ -34,9 +34,8 @@ body{background:linear-gradient(186deg, #81D5E9 0%, #C7EFF9 6%, #F6F6F6 40%); ba
 .tudas > div{display:flex; flex-wrap:wrap; max-width:1024px; margin: 0 auto;}
 .tudas > div > div{width:50%; text-align:justify;}
 .tudas h3{font-family: 'Montserrat'; font-size: 90px; font-weight:700; color: #FE0000; margin:0 0 20px; line-height: 63px;}
-.tudas .graph{display:flex; flex-wrap:wrap; align-items: center; justify-content: flex-end; gap: 10px; margin: 0 0 10px;}
-.tudas .graph .bar{background: linear-gradient(90deg, #FFD8D8, #FF8989); max-width: 377px; width: 100%; height: 40px; border-radius: 8px;}  
-.tudas .graph .bar div{background: linear-gradient(90deg, #FF5C5C, #FE0000); background-size:377px; width: 100%; height: 40px; border-radius: 8px; padding: 0 0 0 10px; box-sizing: border-box; color: white; font-size: 20px; display: flex; align-items: center;}
+.tudas .bar{background: linear-gradient(90deg, #FFD8D8, #FF8989); max-width: 377px; width: 100%; height: 40px; margin: 0 0 10px auto; border-radius: 8px;}  
+.tudas .bar div{background: linear-gradient(90deg, #FF5C5C, #FE0000); background-size:377px; width: 100%; height: 40px; border-radius: 8px; padding: 0 0 0 10px; box-sizing: border-box; color: white; font-size: 20px; display: flex; align-items: center;}
 
 /* #PORTFOLIÓ */
 .portfolio{padding: 100px 10px;}
@@ -83,7 +82,7 @@ body{background:linear-gradient(186deg, #81D5E9 0%, #C7EFF9 6%, #F6F6F6 40%); ba
 /* #ISMERET */
 .tudas h3 {font-size: 66px; line-height: 45px;}
 .tudas > div > div {width: 100%;}
-.tudas .graph {justify-content: center;}
+.tudas .bar {margin: 0 auto 10px;}
 
 /* #PORTFOLIÓ */
 .portfolio h3 {font-size: 66px; line-height: 45px;}
@@ -166,30 +165,20 @@ body{font-size: 14px;}
                     <p>Frontend fejlesztőként ötvözöm az erős grafikai alapokat és a technikai precizitást, hogy vizuálisan kiemelkedő és funkcionálisan hatékony megoldásokat hozzak létre. HTML, CSS és JavaScript segítségével dinamikus és interaktív webes alkalmazásokat készítek, akár REST API-val is. Az összetett problémák megoldása lehetőséget ad az erős logikai gondolkodásom és a részletek iránti érzékenységem kihasználására. Célom, hogy olyan projekteken dolgozzak, ahol a kreatív ötletek és a technológiai újítások találkoznak, miközben folyamatosan fejlesztem a tudásomat.</p>
                 </div>
                 <div>
-                    <div class="graph">
-                        <div class="bar">
-                            <div style="max-width: calc(377px*0.95);">HTML</div>
-                        </div>
+                    <div class="bar">
+                        <div style="max-width: calc(377px*0.95);">HTML</div>
                     </div>
-                    <div class="graph">
-                        <div class="bar">
-                            <div style="max-width: calc(377px*0.9);">CSS</div>
-                        </div>
+                    <div class="bar">
+                        <div style="max-width: calc(377px*0.9);">CSS</div>
                     </div>
-                    <div class="graph">
-                        <div class="bar">
-                            <div style="max-width: calc(377px*0.4);">JavaScript</div>
-                        </div>
+                    <div class="bar">
+                        <div style="max-width: calc(377px*0.4);">JavaScript</div>
                     </div>
-                    <div class="graph">
-                        <div class="bar">
-                            <div style="max-width: calc(377px*0.25);">jQuery</div>
-                        </div>
+                    <div class="bar">
+                        <div style="max-width: calc(377px*0.25);">jQuery</div>
                     </div>
-                    <div class="graph">
-                        <div class="bar">
-                            <div style="max-width: calc(377px*0.1);">Python</div>
-                        </div>
+                    <div class="bar">
+                        <div style="max-width: calc(377px*0.1);">Python</div>
                     </div>
                 </div>
             </div>
@@ -594,55 +583,35 @@ body{font-size: 14px;}
                     <p>Az online marketing, média és értékesítés területén szerzett tapasztalataim kiegészítik webfejlesztési ismereteimet, lehetővé téve, hogy komplex projekteken dolgozzak. Erős UX/UI és WordPress ismeretekkel rendelkezem, amelyek mellett kiemelten foglalkoztam hírlevel rendszerek automatizálásával és SEO optimalizálással is. Az utóbbi időben mesterséges intelligenciával és PPC kampányokkal is foglalkoztam, továbbá kiadványszerkesztési, 3D modellezési és videóvágási alapismeretekkel is rendelkezem. Mindezek mellett nyitott vagyok az új technológiák és módszerek elsajátítására, hogy folyamatosan bővítsem a tudásomat.</p>
                 </div>
                 <div>
-                    <div class="graph">
-                        <div class="bar">
-                            <div style="max-width: calc(377px*0.9);">UX/UI</div>
-                        </div>
+                    <div class="bar">
+                        <div style="max-width: calc(377px*0.9);">UX/UI</div>
                     </div>
-                    <div class="graph">
-                        <div class="bar">
-                            <div style="max-width: calc(377px*0.9);">Hírlevél</div>
-                        </div>
+                    <div class="bar">
+                        <div style="max-width: calc(377px*0.9);">Hírlevél</div>
                     </div>
-                    <div class="graph">
-                        <div class="bar">
-                            <div style="max-width: calc(377px*0.85);">Wordpress</div>
-                        </div>
+                    <div class="bar">
+                        <div style="max-width: calc(377px*0.85);">Wordpress</div>
                     </div>
-                    <div class="graph">
-                        <div class="bar">
-                            <div style="max-width: calc(377px*0.85);">AI</div>
-                        </div>
+                    <div class="bar">
+                        <div style="max-width: calc(377px*0.85);">AI</div>
                     </div>
-                    <div class="graph">
-                       <div class="bar">
-                            <div style="max-width: calc(377px*0.8);">SEO</div>
-                        </div>
+                   <div class="bar">
+                        <div style="max-width: calc(377px*0.8);">SEO</div>
                     </div>
-                    <div class="graph">
-                        <div class="bar">
-                            <div style="max-width: calc(377px*0.8);">PPC</div>
-                        </div>
+                    <div class="bar">
+                        <div style="max-width: calc(377px*0.8);">PPC</div>
                     </div>
-                    <div class="graph">
-                        <div class="bar">
-                            <div style="max-width: calc(377px*0.7);">Kiadvány szerkesztés</div>
-                        </div>
+                    <div class="bar">
+                        <div style="max-width: calc(377px*0.7);">Kiadvány szerkesztés</div>
                     </div>
-                    <div class="graph">
-                        <div class="bar">
-                            <div style="max-width: calc(377px*0.6);">3D</div>
-                        </div>
+                    <div class="bar">
+                        <div style="max-width: calc(377px*0.6);">3D</div>
                     </div>
-                    <div class="graph">
-                        <div class="bar">
-                            <div style="max-width: calc(377px*0.5);">Élő közvetítés</div>
-                        </div>
+                    <div class="bar">
+                        <div style="max-width: calc(377px*0.5);">Élő közvetítés</div>
                     </div>
-                    <div class="graph">
-                        <div class="bar">
-                            <div style="max-width: calc(377px*0.45);">Videóvágás</div>
-                        </div>
+                    <div class="bar">
+                        <div style="max-width: calc(377px*0.45);">Videóvágás</div>
                     </div>
                 </div>
             </div>
