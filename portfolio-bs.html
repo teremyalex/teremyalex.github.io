@@ -1,0 +1,683 @@
+<!DOCTYPE html>
+<html lang="hu-HU">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teremy Alex frontend fejlesztő portfolió</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+</head>
+
+<style>
+    body{background:linear-gradient(186deg, #81D5E9 0%, #C7EFF9 6%, #F6F6F6 40%); background-repeat: no-repeat; color: #242325; font-family: 'Poppins'; font-size:16px; font-weight: 300; margin: 0;}
+    .header {
+        padding: 236px 0 200px;
+    }
+    .portfolio #grid.off{transform:translateX(-600px); opacity: 0;}
+
+    @media (max-width:500px){
+        body{font-size: 14px;}
+        .header {
+            padding: 100px 10px;
+        }
+    }
+</style>
+
+<body >
+
+<!--#HEADER-->
+<section class="header" style="background:url(img/header.png) top center no-repeat;">
+    <div class="container text-end">
+        <div>
+            <h1 class="display-1 fw-bold mb-3 pe-2" style="font-family: 'Montserrat'; color: #FE0000; border-right: 70px solid; line-height: 56px;">TEREMY<br>ALEX</h1>
+            <div class="fs-2 fw-normal fst-italic" style="font-family: 'Montserrat';">frontend fejlesztő</div>
+            <div class="fs-4 fst-italic mb-3" style="font-family: 'Montserrat';">designer</div>
+            <div class="d-flex flex-wrap justify-content-end gap-4">
+                <img height="50" src="img/html.svg">
+                <img height="50" src="img/css.svg">
+                <img height="50" src="img/javascript.svg">
+                <img height="50" src="img/figma.svg">
+                <img height="50" src="img/photoshop.svg">
+                <img height="50" src="img/maya.svg">
+            </div>
+        </div>
+    </div>
+</section>
+
+<!--#RÓLAM-->
+<section class="rolam py-5 px-1">
+    <div class="container d-sm-flex align-items-start justify-content-center gap-5">
+        <img src="img/rolam.jpg" class="col-sm-3 rounded-circle mb-4 img-fluid">
+        <div class="col-sm-7" style="text-align:justify;">
+            <h3 class="display-1 fw-bold lh-1" style="font-family: 'Montserrat'; color: #FE0000;">#RÓLAM</h3>
+            <p>Azokat a projekteket élvezem a legjobban, ahol lehetőségem van valami újat építeni, és ahol a kreativitás és a problémamegoldás találkozik. Szeretek csapatban dolgozni, mert hiszem, hogy a közös ötletelés és az együttműködés mindig jobb eredményekhez vezet. Szenvedélyem a tervezés és a fejlesztés, különösen, ha a végeredmény stílusos, letisztult, és hatékonyan működik.</p>
+            <p>A grafikai tervezéssel 2012 körül kezdtem foglalkozni, ahol a design és a vizuális kommunikáció alapjait sajátítottam el. 2014-ben hoztam létre az első blogomat, és ekkor kezdtem el mélyebben foglalkozni a HTML és a CSS alapjaival, és néha egy-egy kisebb JavaScript feladatot is megvalósítottam.</p>
+            <p>Az évek során a webfejlesztés iránti érdeklődésem fokozatosan nőtt, főleg a saját honlapjaimat fejlesztettem ekkor még. Majd 2022-tól már komolyabban, 2024-től pedig intenzíven foglalkozom frontend fejlesztéssel. Célom, hogy kreatív és funkcionális megoldásokat hozzak létre, amelyek nemcsak a technikai elvárásoknak felelnek meg, hanem esztétikusak és piacképesek is.</p>
+        </div>
+    </div>
+</section>
+
+<!--#ISMERET-->
+<section class="tudas py-5 px-1">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-5" style="text-align:justify;">
+                <h3 class="display-1 fw-bold lh-1" style="font-family: 'Montserrat'; color: #FE0000;">#ISMERET</h3>
+                <p>Frontend fejlesztőként ötvözöm az erős grafikai alapokat és a technikai precizitást, hogy vizuálisan
+                    kiemelkedő és funkcionálisan hatékony megoldásokat hozzak létre. HTML, CSS és JavaScript
+                    segítségével dinamikus és interaktív webes alkalmazásokat készítek, akár REST API-val is. Az
+                    összetett problémák megoldása lehetőséget ad az erős logikai gondolkodásom és a részletek iránti
+                    érzékenységem kihasználására. Célom, hogy olyan projekteken dolgozzak, ahol a kreatív ötletek és a
+                    technológiai újítások találkoznak, miközben folyamatosan fejlesztem a tudásomat.</p>
+            </div>
+            <div class="col col-lg-5 col-xl-4 offset-lg-1" >
+                <div style="height:40px; background: linear-gradient(90deg, #FFD8D8, #FF8989);" class="rounded mb-2">
+                    <div class="rounded h-100 ps-2 text-light d-flex align-items-center fs-5"
+                         style="background: linear-gradient(90deg, #FF5C5C, #FE0000); max-width: calc(100%*0.95);">HTML
+                    </div>
+                </div>
+
+                <div style="height:40px; background: linear-gradient(90deg, #FFD8D8, #FF8989);" class="rounded mb-2">
+                    <div class="rounded h-100 ps-2 text-light d-flex align-items-center fs-5"
+                         style="background: linear-gradient(90deg, #FF5C5C, #FE0000); max-width: calc(100%*0.92);">CSS
+                    </div>
+                </div>
+
+                <div style="height:40px; background: linear-gradient(90deg, #FFD8D8, #FF8989);" class="rounded mb-2">
+                    <div class="rounded h-100 ps-2 text-light d-flex align-items-center fs-5"
+                         style="background: linear-gradient(90deg, #FF5C5C, #FE0000); max-width: calc(100%*0.88);">Bootstrap
+                    </div>
+                </div>
+
+                <div style="height:40px; background: linear-gradient(90deg, #FFD8D8, #FF8989);" class="rounded mb-2">
+                    <div class="rounded h-100 ps-2 text-light d-flex align-items-center fs-5"
+                         style="background: linear-gradient(90deg, #FF5C5C, #FE0000); max-width: calc(100%*0.4);">
+                        JavaScript
+                    </div>
+                </div>
+
+                <div style="height:40px; background: linear-gradient(90deg, #FFD8D8, #FF8989);" class="rounded mb-2">
+                    <div class="rounded h-100 ps-2 text-light d-flex align-items-center fs-5"
+                         style="background: linear-gradient(90deg, #FF5C5C, #FE0000); max-width: calc(100%*0.25);">
+                        jQuery
+                    </div>
+                </div>
+
+                <div style="height:40px; background: linear-gradient(90deg, #FFD8D8, #FF8989);" class="rounded mb-2">
+                    <div class="rounded h-100 ps-2 text-light d-flex align-items-center fs-5"
+                         style="background: linear-gradient(90deg, #FF5C5C, #FE0000); max-width: calc(100%*0.1);">Python
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!--#PORTFOLIO-->
+<section class="portfolio py-5 px-1">
+    <div class="container">
+        <h3 class="col-11 display-1 fw-bold lh-1 text-end" style="font-family: 'Montserrat'; color: #FE0000; transition: 400ms cubic-bezier(0.08, 0.66, 0.22, 1);">#PORTFÓLIÓ</h3>
+        <div id="grid" class="row justify-content-center gap-4" style="transition: 400ms cubic-bezier(0.08, 0.66, 0.22, 1);">
+            <div class="col-10 col-sm-5 col-lg-3 overflow-hidden rounded-4 p-0" style="cursor:pointer;" onclick="portfolioDetails('rachelcare')">
+                <img class="w-100" src="img/rachelcare.jpg">
+            </div>
+            <div class="col-10 col-sm-5 col-lg-3 overflow-hidden rounded-4 p-0" style="cursor:pointer;" onclick="portfolioDetails('nyhchess')">
+                <img class="w-100" src="img/nyhchess.jpg">
+            </div>
+            <div class="col-10 col-sm-5 col-lg-3 overflow-hidden rounded-4 p-0" style="cursor:pointer;" onclick="portfolioDetails('dietmaker')">
+                <img class="w-100" src="img/dietmaker.jpg">
+            </div>
+            <div class="col-10 col-sm-5 col-lg-3 overflow-hidden rounded-4 p-0" style="cursor:pointer;" onclick="portfolioDetails('alacord')">
+                <img class="w-100" src="img/alacord.jpg">
+            </div>
+            <div class="col-10 col-sm-5 col-lg-3 overflow-hidden rounded-4 p-0" style="cursor:pointer;" onclick="portfolioDetails('gumicukor')">
+                <img class="w-100" src="img/gumicukor.jpg">
+            </div>
+            <div class="col-10 col-sm-5 col-lg-3 overflow-hidden rounded-4 p-0" style="cursor:pointer;" onclick="portfolioDetails('live')">
+                <img class="w-100" src="img/live.jpg">
+            </div>
+            <div class="col-10 col-sm-5 col-lg-3 overflow-hidden rounded-4 p-0" style="cursor:pointer;" onclick="portfolioDetails('smidkarpit')">
+                <img class="w-100" src="img/smidkarpit.jpg">
+            </div>
+            <div class="col-10 col-sm-5 col-lg-3 overflow-hidden rounded-4 p-0" style="cursor:pointer;" onclick="portfolioDetails('yourmee')">
+                <img class="w-100" src="img/yourmee.jpg">
+            </div>
+            <div class="col-10 col-sm-5 col-lg-3 overflow-hidden rounded-4 p-0" style="cursor:pointer;" onclick="portfolioDetails('honeyhill')">
+                <img class="w-100" src="img/honeyhill.jpg">
+            </div>
+        </div>
+
+        <!-- 1. RACHELCARE -->
+        <div class="work-details d-none opacity-0" style="transition: 600ms ease-in-out;" id="rachelcare">
+            <div class="links d-flex flex-wrap justify-content-end gap-2">
+                <a class="back btn text-light d-flex align-items-center" style="background: #FE0000;" href="#" role="button"><img class="me-2" style="height: 25px; filter:invert(1);" src="img/back.svg"> Vissza</a>
+                <a class="back btn d-flex align-items-center btn-dark fw-light" style="color: #F7DF1E;" href="https://rachelcare.hu/karacsony" target="_blank"><img class="me-2" src="img/web.svg"> Website Link</a>
+                <a class="back btn d-flex align-items-center btn-dark fw-light" style="color: #F7DF1E;" href="https://github.com/teremyalex/karacsony" target="_blank"><img class="me-2" src="img/github2.svg"> GitHub
+                    Projekt</a>
+                <a class="back btn d-flex align-items-center btn-dark fw-light" style="color: #F7DF1E;" href="https://www.figma.com/design/OAOsXdEjCxabxnaN16kqT9/Rachel-Care-Kar%C3%A1csony?node-id=0-1&t=cgGM1gPT0M4dAQYY-1"
+                   target="_blank"><img class="me-2" src="img/figma2.svg"> Figma Design</a>
+            </div>
+            <div class="mb-4">
+                <div class="fs-5 fw-bold mb-1" style="color:#FE0000;">#KLIENS</div>
+                <div class="row justify-content-between align-items-start ms-1 border-start" style="border-image: linear-gradient(0deg, #F6F6F6, #FE0000) 1;">
+                    <div class="col-12 col-md-6">
+                        <h4 class="fs-2 fw-medium lh-1 m-0">Rachel Care</h4>
+                        <p>A Rachel Care egy modern kozmetikai márka, amely a legújabb kozmetikai összetevőket ötvözi a
+                            természet erejével. Termékeik, például az anti-aging arckrémek és szemkörnyékápolók, nemcsak
+                            intenzív hidratálást és bőrfeszesítést nyújtanak, hanem természetes hatóanyagok szinergikus
+                            kombinációját alkalmazzák a bőr szépségének és egészségének megőrzéséhez.</p>
+                    </div>
+                    <div class="col-12 col-md-6">
+                        <img class="img-fluid rounded-4 p-0" src="img/rachelcare1.jpg">
+                    </div>
+                </div>
+            </div>
+            <div class="mb-4">
+                <div class="fs-5 fw-bold mb-1" style="color:#FE0000;">#FELADAT</div>
+                <div class="row justify-content-between align-items-start ms-1 border-start" style="border-image: linear-gradient(0deg, #F6F6F6, #FE0000) 1;">
+                    <div class="col-12 col-md-6">
+                        <h4 class="fs-2 fw-medium lh-1 m-0">Landing Page</h4>
+                        <p>Feladatom egy karácsonyi landing page létrehozása volt, amely illeszkedik a Rachel Care többi
+                            értékesítési oldalához. Az oldal díszdobozos karácsonyi csomagokat kínált, ünnepi hangulatot
+                            teremtve a vásárlók számára.</p>
+                    </div>
+                    <div class="col-12 col-md-6">
+                        <img class="img-fluid rounded-4 p-0" src="img/rachelcare2.jpg">
+                    </div>
+                </div>
+            </div>
+            <div class="mb-4">
+                <div class="fs-5 fw-bold mb-1" style="color:#FE0000;">#TECHNOLÓGIÁK</div>
+                <div class="row justify-content-between align-items-start ms-1 border-start" style="border-image: linear-gradient(0deg, #F6F6F6, #FE0000) 1;">
+                    <div class="col-12 col-md-6">
+                        <h4 class="fs-2 fw-medium lh-1 m-0">HTML, CSS, JavaScript, Figma, Photoshop, AI</h4>
+                        <p>A landing page design-ja Figmában készült, melyet Photoshop és annak beépített AI funkciói
+                            egészítettek ki. Az oldal HTML, CSS és JavaScript használatával készült, különös figyelmet
+                            fordítva a kosár- és vásárlási folyamat reszponzív működésére.</p>
+                    </div>
+                    <div class="col-12 col-md-6">
+                        <img class="img-fluid rounded-4 p-0" src="img/rachelcare3.jpg">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 2. NYHCHESS -->
+        <div class="work-details d-none opacity-0" style="transition: 600ms ease-in-out;" id="nyhchess">
+            <div class="links d-flex flex-wrap justify-content-end gap-2">
+                <a class="back btn text-light d-flex align-items-center" style="background: #FE0000;" href="#" role="button"><img class="me-2" style="height: 25px; filter:invert(1);" src="img/back.svg"> Vissza</a>
+                <a class="back btn d-flex align-items-center btn-dark fw-light" style="color: #F7DF1E;" href="https://tlchessfoundation.com" target="_blank"><img class="me-2" src="img/web.svg"> Website Link</a>
+                <a class="back btn d-flex align-items-center btn-dark fw-light" style="color: #F7DF1E;" href="https://github.com/teremyalex/tlchessfoundation.com" target="_blank"><img class="me-2" src="img/github2.svg"> GitHub
+                    Projekt</a>
+            </div>
+            <div class="mb-4">
+                <div class="fs-5 fw-bold mb-1" style="color:#FE0000;">#KLIENS</div>
+                <div class="row justify-content-between align-items-start ms-1 border-start" style="border-image: linear-gradient(0deg, #F6F6F6, #FE0000) 1;">
+                    <div class="col-12 col-md-6">
+                        <h4 class="fs-2 fw-medium lh-1 m-0">NYH Chess</h4>
+                        <p>A Trembácz László Sakk Alapítvány és az <a href="https://www.youtube.com/@nyhchess">NYH Chess YouTube</a> csatorna hivatalos weboldala, amely a sakk iránt érdeklődők számára kínál hasznos tartalmakat és alkalmazásokat. Az oldal célja, hogy innovatív eszközökkel támogassa a játékosokat, miközben előkelő helyezést érjen el SEO szempontból a keresőmotorokban. Emellett a platform fontos szerepet játszik a támogatók vonzásában, hogy tovább fejleszthessék a sakk közösségét.</p>
+                    </div>
+                    <div class="col-12 col-md-6">
+                        <img class="img-fluid rounded-4 p-0" src="img/nyhchess1.jpg">
+                    </div>
+                </div>
+            </div>
+            <div class="mb-4">
+                <div class="fs-5 fw-bold mb-1" style="color:#FE0000;">#FELADAT</div>
+                <div class="row justify-content-between align-items-start ms-1 border-start" style="border-image: linear-gradient(0deg, #F6F6F6, #FE0000) 1;">
+                    <div class="col-12 col-md-6">
+                        <h4 class="fs-2 fw-medium lh-1 m-0">Weboldal</h4>
+                        <p>A feladatom egy reszponzív és SEO-optimalizált weboldal fejlesztése volt, amely bemutatja a NYH Chess tevékenységeit és alkalmazásait. Az oldal támogatja a látogatók elköteleződését, valamint lehetőséget biztosít a támogatók számára, hogy csatlakozzanak a kezdeményezéshez. Az innovatív sakkalkalmazások, amelyek célja, hogy a világ legjobbjai legyenek, a projekt központi elemei közé tartoztak.</p>
+                    </div>
+                    <div class="col-12 col-md-6">
+                        <img class="img-fluid rounded-4 p-0" src="img/nyhchess2.jpg">
+                    </div>
+                </div>
+            </div>
+            <div class="mb-4">
+                <div class="fs-5 fw-bold mb-1" style="color:#FE0000;">#TECHNOLÓGIÁK</div>
+                <div class="row justify-content-between align-items-start ms-1 border-start" style="border-image: linear-gradient(0deg, #F6F6F6, #FE0000) 1;">
+                    <div class="col-12 col-md-6">
+                        <h4 class="fs-2 fw-medium lh-1 m-0">HTML, CSS, JavaScript, Photoshop, AI</h4>
+                        <p>Az oldal HTML, CSS, JavaScript és AI használatával készült. Nagy hangsúly lett fektetve a kalkulátorok fejlesztésére, amik ma már a Googleben a legjobb helyeken vannak.</p>
+                    </div>
+                    <div class="col-12 col-md-6">
+                        <img class="img-fluid rounded-4 p-0" src="img/nyhchess3.jpg">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 3. DIETMAKER -->
+        <div class="work-details d-none opacity-0" style="transition: 600ms ease-in-out;" id="dietmaker">
+            <div class="links d-flex flex-wrap justify-content-end gap-2">
+                <a class="back btn text-light d-flex align-items-center" style="background: #FE0000;" href="#" role="button"><img class="me-2" style="height: 25px; filter:invert(1);" src="img/back.svg"> Vissza</a>
+                <a class="back btn d-flex align-items-center btn-dark fw-light" style="color: #F7DF1E;" href="https://dietmaker.hu/" target="_blank"><img class="me-2" src="img/web.svg"> Website Link</a>
+            </div>
+            <div class="mb-4">
+                <div class="fs-5 fw-bold mb-1" style="color:#FE0000;">#KLIENS</div>
+                <div class="row justify-content-between align-items-start ms-1 border-start" style="border-image: linear-gradient(0deg, #F6F6F6, #FE0000) 1;">
+                    <div class="col-12 col-md-6">
+                        <h4 class="fs-2 fw-medium lh-1 m-0">Diet Maker</h4>
+                        <p>A Diet Maker egy online platform, amely könyv és ebook formában kínál személyre szabott diétákat az egészséges és fenntartható fogyás érdekében. A weboldalon elérhető diéta webshop egyszerű vásárlási élményt biztosít, miközben a blog hasznos tippekkel és szakértői tanácsokkal támogatja a látogatókat. A rendszeresen küldött hírlevelek segítségével az érdeklődők folyamatosan motivációt és friss információkat kapnak. Céljuk, hogy mindenki megtalálja az életmódjához legjobban illő diétás megoldást.</p>
+                    </div>
+                    <div class="col-12 col-md-6">
+                        <img class="img-fluid rounded-4 p-0" src="img/dietmaker1.jpg">
+                    </div>
+                </div>
+            </div>
+            <div class="mb-4">
+                <div class="fs-5 fw-bold mb-1" style="color:#FE0000;">#FELADAT</div>
+                <div class="row justify-content-between align-items-start ms-1 border-start" style="border-image: linear-gradient(0deg, #F6F6F6, #FE0000) 1;">
+                    <div class="col-12 col-md-6">
+                        <h4 class="fs-2 fw-medium lh-1 m-0">Weboldal</h4>
+                        <p>A feladatom egy reszponzív weboldal létrehozása volt, amely tartalmaz egy diéta webshopot, blogot és hírlevél funkciót. A webshop könyvek és ebookok értékesítésére lett optimalizálva, miközben a blog tartalmai a SEO-t és a látogatók bizalmának növelését szolgálták. Az oldal célja, hogy átfogó diétás megoldást kínáljon a felhasználóknak egy felhasználóbarát felületen keresztül.</p>
+                    </div>
+                    <div class="col-12 col-md-6">
+                        <img class="img-fluid rounded-4 p-0" src="img/dietmaker2.jpg">
+                    </div>
+                </div>
+            </div>
+            <div class="mb-4">
+                <div class="fs-5 fw-bold mb-1" style="color:#FE0000;">#TECHNOLÓGIÁK</div>
+                <div class="row justify-content-between align-items-start ms-1 border-start" style="border-image: linear-gradient(0deg, #F6F6F6, #FE0000) 1;">
+                    <div class="col-12 col-md-6">
+                        <h4 class="fs-2 fw-medium lh-1 m-0">Wordpress, HTML, CSS, JavaScript, Photoshop</h4>
+                        <p>A oldal Wordpress motor alatt készült egyedi sablonnal HTML, CSS és JavaScript használatával. A vásárlást a Woocommerce plugin biztosítja.</p>
+                    </div>
+                    <div class="col-12 col-md-6">
+                        <img class="img-fluid rounded-4 p-0" src="img/dietmaker3.jpg">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 4. ALACORD -->
+        <div class="work-details d-none opacity-0" style="transition: 600ms ease-in-out;" id="alacord">
+            <div class="links d-flex flex-wrap justify-content-end gap-2">
+                <a class="back btn text-light d-flex align-items-center" style="background: #FE0000;" href="#" role="button"><img class="me-2" style="height: 25px; filter:invert(1);" src="img/back.svg"> Vissza</a>
+                <a class="back btn d-flex align-items-center btn-dark fw-light" style="color: #F7DF1E;" href="https://alacord.hu/" target="_blank"><img class="me-2" src="img/web.svg"> Website Link</a>
+            </div>
+            <div class="mb-4">
+                <div class="fs-5 fw-bold mb-1" style="color:#FE0000;">#KLIENS</div>
+                <div class="row justify-content-between align-items-start ms-1 border-start" style="border-image: linear-gradient(0deg, #F6F6F6, #FE0000) 1;">
+                    <div class="col-12 col-md-6">
+                        <h4 class="fs-2 fw-medium lh-1 m-0">Alacord</h4>
+                        <p>Az Alacord egy egyedi bútortervezéssel és kivitelezéssel foglalkozó vállalkozás, amely konyhák, szekrények és más bútorok személyre szabott megoldásait kínálja. A vállalkozás célja, hogy prémium minőségű szolgáltatással és egyedi látványtervekkel támogassa ügyfeleit az otthonuk stílusos és funkcionális kialakításában. Nagy hangsúlyt fektettek az ügyfélközpontú megközelítésre, a részletek precíz kidolgozására, valamint a modern és időtálló designra.</p>
+                    </div>
+                    <div class="col-12 col-md-6">
+                        <img class="img-fluid rounded-4 p-0" src="img/alacord1.jpg">
+                    </div>
+                </div>
+            </div>
+            <div class="mb-4">
+                <div class="fs-5 fw-bold mb-1" style="color:#FE0000;">#FELADAT</div>
+                <div class="row justify-content-between align-items-start ms-1 border-start" style="border-image: linear-gradient(0deg, #F6F6F6, #FE0000) 1;">
+                    <div class="col-12 col-md-6">
+                        <h4 class="fs-2 fw-medium lh-1 m-0">Weboldal</h4>
+                        <p>Egy bemutató weboldalt kellett létrehozni, amely professzionális módon mutatja be az Alacord szolgáltatásait és referenciáit. Az oldal tartalmazott egy blogot, amely a SEO-t és a bizalomépítést támogatta, valamint hírlevél funkcióval segítette az ügyfelek elköteleződését. A munkához kapcsolódott 3D látványtervek készítése, amelyek az ügyfelek igényeire szabott konyhák vizualizálásában segítettek, valamint a tervek alapján a konyhák kivitelezése egy tapasztalt asztalos csapattal.</p>
+                    </div>
+                    <div class="col-12 col-md-6">
+                        <img class="img-fluid rounded-4 p-0" src="img/alacord2.jpg">
+                    </div>
+                </div>
+            </div>
+            <div class="mb-4">
+                <div class="fs-5 fw-bold mb-1" style="color:#FE0000;">#TECHNOLÓGIÁK</div>
+                <div class="row justify-content-between align-items-start ms-1 border-start" style="border-image: linear-gradient(0deg, #F6F6F6, #FE0000) 1;">
+                    <div class="col-12 col-md-6">
+                        <h4 class="fs-2 fw-medium lh-1 m-0">Wordpress, HTML, CSS, JavaScript, Photoshop, Autodesk Maya</h4>
+                        <p>A oldal Wordpress motor alatt készült egyedi sablonnal HTML, CSS és JavaScript használatával. A látványtervek a honlapon Mayával készültek, Photoshoppal utómunkázva. A konyhakatalógust InDesignnal szerkesztettem.</p>
+                    </div>
+                    <div class="col-12 col-md-6">
+                        <img class="img-fluid rounded-4 p-0" src="img/alacord3.jpg">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 5. GUMICUKOR -->
+        <div class="work-details d-none opacity-0" style="transition: 600ms ease-in-out;" id="gumicukor">
+            <div class="links d-flex flex-wrap justify-content-end gap-2">
+                <a class="back btn text-light d-flex align-items-center" style="background: #FE0000;" href="#" role="button"><img class="me-2" style="height: 25px; filter:invert(1);" src="img/back.svg"> Vissza</a>
+                <a class="back btn d-flex align-items-center btn-dark fw-light" style="color: #F7DF1E;" href="https://landing.epikforge.com/gumicukorshop/" target="_blank"><img class="me-2" src="img/web.svg"> Website Link</a>
+                <a class="back btn d-flex align-items-center btn-dark fw-light" style="color: #F7DF1E;" href="https://github.com/teremyalex/gumicukorshop" target="_blank"><img class="me-2" src="img/github2.svg"> GitHub
+                    Projekt</a>
+                <a class="back btn d-flex align-items-center btn-dark fw-light" style="color: #F7DF1E;" href="https://www.figma.com/design/6OqTtlmJn0F5yK8yfi3iH9/Gumicukorshop?t=cgGM1gPT0M4dAQYY-1" target="_blank"><img class="me-2" src="img/figma2.svg"> Figma Design</a>
+            </div>
+            <div class="mb-4">
+                <div class="fs-5 fw-bold mb-1" style="color:#FE0000;">#KLIENS</div>
+                <div class="row justify-content-between align-items-start ms-1 border-start" style="border-image: linear-gradient(0deg, #F6F6F6, #FE0000) 1;">
+                    <div class="col-12 col-md-6">
+                        <h4 class="fs-2 fw-medium lh-1 m-0">Sweet Zozi Candy</h4>
+                        <p>A Gumicukor Shop, hivatalos nevén Sweet Zozi Candy Gumicukorshop, egy magyarországi édességbolt, amely prémium minőségű gumicukrok széles választékát kínálja. Különlegességük, hogy minden BUBS gumicukor vegán, zselatin- és egyéb állati eredetű adalékoktól mentes, valamint nem tartalmaznak AZO színezéket és pálmaolajat sem.</p>
+                    </div>
+                    <div class="col-12 col-md-6">
+                        <img class="img-fluid rounded-4 p-0" src="img/gumicukor1.jpg">
+                    </div>
+                </div>
+            </div>
+            <div class="mb-4">
+                <div class="fs-5 fw-bold mb-1" style="color:#FE0000;">#FELADAT</div>
+                <div class="row justify-content-between align-items-start ms-1 border-start" style="border-image: linear-gradient(0deg, #F6F6F6, #FE0000) 1;">
+                    <div class="col-12 col-md-6">
+                        <h4 class="fs-2 fw-medium lh-1 m-0">Landing Page</h4>
+                        <p>Feladatom egy új termék bevezetésének landing page létrehozása volt. Különlegessége, hogy a terméket előfizetéses rendszerben is lehessen értékesíteni. Három csomag közül lehetett választani és mindegyiknek volt vegán változata is.</p>
+                    </div>
+                    <div class="col-12 col-md-6">
+                        <img class="img-fluid rounded-4 p-0" src="img/gumicukor2.jpg">
+                    </div>
+                </div>
+            </div>
+            <div class="mb-4">
+                <div class="fs-5 fw-bold mb-1" style="color:#FE0000;">#TECHNOLÓGIÁK</div>
+                <div class="row justify-content-between align-items-start ms-1 border-start" style="border-image: linear-gradient(0deg, #F6F6F6, #FE0000) 1;">
+                    <div class="col-12 col-md-6">
+                        <h4 class="fs-2 fw-medium lh-1 m-0">HTML, CSS, JavaScript, Figma, Photoshop</h4>
+                        <p>A landing page design-ja Figmával és Photoshoppal készült. Az oldal HTML, CSS és JavaScript használatával készült, különös figyelmet fordítva az előfizetéses rendszer, kosár- és vásárlási folyamat reszponzív működésére.</p>
+                    </div>
+                    <div class="col-12 col-md-6">
+                        <img class="img-fluid rounded-4 p-0" src="img/gumicukor3.jpg">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 6. LIVE -->
+        <div class="work-details d-none opacity-0" style="transition: 600ms ease-in-out;" id="live">
+            <div class="links d-flex flex-wrap justify-content-end gap-2">
+                <a class="back btn text-light d-flex align-items-center" style="background: #FE0000;" href="#" role="button"><img class="me-2" style="height: 25px; filter:invert(1);" src="img/back.svg"> Vissza</a>
+                <a class="back btn d-flex align-items-center btn-dark fw-light" style="color: #F7DF1E;" href="https://youtube.com/live/zbAdf535rpk" target="_blank"><img class="me-2" src="img/web.svg"> Youtube Link</a>
+                <a class="back btn d-flex align-items-center btn-dark fw-light" style="color: #F7DF1E;" href="https://www.figma.com/design/SOZsUKqL1wO2VHKS8iZkAk/NYH-Chess-sablon?m=auto&t=CzZHj4XWDwm5GRok-1" target="_blank"><img class="me-2" src="img/figma2.svg"> Figma Design</a>
+            </div>
+            <div class="mb-4">
+                <div class="fs-5 fw-bold mb-1" style="color:#FE0000;">#KLIENS</div>
+                <div class="row justify-content-between align-items-start ms-1 border-start" style="border-image: linear-gradient(0deg, #F6F6F6, #FE0000) 1;">
+                    <div class="col">
+                        <h4 class="fs-2 fw-medium lh-1 m-0" class="fs-2 fw-medium lh-1 m-0">NYH Chess Youtube</h4>
+                        <p>2022 november 25.-én jött létre az NYH Chess Youtube csatorna Magyarországon azzal küldetéssel, hogy szórakoztatóbbá tegyék a sakkot. Látva a külföldi példákat nagy igény ígérkezett a világban a sakkos tartalmak iránt, ezen belül is a versenysakk bemutatására. Hamar kiderült, hogy ami elméletben jó ötletnek tűnt, az a gyakorban is működött. Pár hónap után már lekörözték nézettségben és feliratkozószámban minden magyar sakkos tartalomgyártót és mára messze az egyik legnagyobb csatorna Európában.</p>
+                    </div>
+                    <div class="col-12 col-md-6">
+                        <img class="img-fluid rounded-4 p-0" src="img/live1.jpg">
+                    </div>
+                </div>
+            </div>
+            <div class="mb-4">
+                <div class="fs-5 fw-bold mb-1" style="color:#FE0000;">#FELADAT</div>
+                <div class="row justify-content-between align-items-start ms-1 border-start" style="border-image: linear-gradient(0deg, #F6F6F6, #FE0000) 1;">
+                    <div class="col-12 col-md-6">
+                        <h4 class="fs-2 fw-medium lh-1 m-0">Élő közvetítés</h4>
+                        <p>Feladatom azt volt, hogy élőben közvetítsem az NYH Chess sakkversenyeit. A hagyományos kamerás közvetítést kiegészítettem 2D grafikai elemek. Pl.: eredményjelzők, élő játékos infografika, élő állásfigyelő.</p>
+                    </div>
+                    <div class="col-12 col-md-6">
+                        <img class="img-fluid rounded-4 p-0" src="img/live2.jpg">
+                    </div>
+                </div>
+            </div>
+            <div class="mb-4">
+                <div class="fs-5 fw-bold mb-1" style="color:#FE0000;">#TECHNOLÓGIÁK</div>
+                <div class="row justify-content-between align-items-start ms-1 border-start" style="border-image: linear-gradient(0deg, #F6F6F6, #FE0000) 1;">
+                    <div class="col-12 col-md-6">
+                        <h4 class="fs-2 fw-medium lh-1 m-0">HTML, CSS, JavaScript, Python, Companion, Figma, Photoshop, AI, OBS Studio</h4>
+                        <p>Az élő közvetítés OBS Studio segítségével futott. Az infografikákhoz szolgáló élő adatokat az internetről szereztem be Python segítségével, majd a nyers adatokat betöltöttem egy HTML fájlba, majd CSS és JavaScripttel formáztam meg. Az OBS-en való megjelenítéshez Companion-t használtam, minek a segítségével egy gomb megnyomásval végbe ment az egész folyamat, a letöltéstől egészen a megjelenítésig.</p>
+                    </div>
+                    <div class="col-12 col-md-6">
+                        <img class="img-fluid rounded-4 p-0" src="img/live3.jpg">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 7. SMIDKARPIT -->
+        <div class="work-details d-none opacity-0" style="transition: 600ms ease-in-out;" id="smidkarpit">
+            <div class="links d-flex flex-wrap justify-content-end gap-2">
+                <a class="back btn text-light d-flex align-items-center" style="background: #FE0000;" href="#" role="button"><img class="me-2" style="height: 25px; filter:invert(1);" src="img/back.svg"> Vissza</a>
+                <a class="back btn d-flex align-items-center btn-dark fw-light" style="color: #F7DF1E;" href="https://landing.epikforge.com/smid-karpit/" target="_blank"><img class="me-2" src="img/web.svg"> Website Link</a>
+                <a class="back btn d-flex align-items-center btn-dark fw-light" style="color: #F7DF1E;" href="https://github.com/teremyalex/smid-karpit" target="_blank"><img class="me-2" src="img/github2.svg"> GitHub
+                    Projekt</a>
+                <a class="back btn d-flex align-items-center btn-dark fw-light" style="color: #F7DF1E;" href="https://www.figma.com/design/6dApiTw6Mkp7cZG2itenRt/Smid?node-id=58-20&t=cgGM1gPT0M4dAQYY-1" target="_blank"><img class="me-2" src="img/figma2.svg"> Figma Design</a>
+            </div>
+            <div class="mb-4">
+                <div class="fs-5 fw-bold mb-1" style="color:#FE0000;">#KLIENS</div>
+                <div class="row justify-content-between align-items-start ms-1 border-start" style="border-image: linear-gradient(0deg, #F6F6F6, #FE0000) 1;">
+                    <div class="col-12 col-md-6">
+                        <h4 class="fs-2 fw-medium lh-1 m-0">Smid Kárpit</h4>
+                        <p>A Smid Kárpit egy Nyíregyházán működő kárpitos vállalkozás, amely bútorok teljes körű újrakárpitozását kínálja. Szolgáltatásaik közé tartozik a szövetek, rugók, és szivacsok cseréje, valamint kisebb fa javítások is. Nagy hangsúlyt fektetnek a minőségi alapanyagok használatára, és széles szín- és szövetválasztékkal dolgoznak.</p>
+                    </div>
+                    <div class="col-12 col-md-6">
+                        <img class="img-fluid rounded-4 p-0" src="img/smidkarpit1.jpg">
+                    </div>
+                </div>
+            </div>
+            <div class="mb-4">
+                <div class="fs-5 fw-bold mb-1" style="color:#FE0000;">#FELADAT</div>
+                <div class="row justify-content-between align-items-start ms-1 border-start" style="border-image: linear-gradient(0deg, #F6F6F6, #FE0000) 1;">
+                    <div class="col-12 col-md-6">
+                        <h4 class="fs-2 fw-medium lh-1 m-0">Landing Page</h4>
+                        <p>A feladatom egy letisztult, reszponzív weboldal létrehozása volt, amely bemutatja a Smid Kárpit szolgáltatásait és kiemeli a minőség iránti elkötelezettségüket. Az oldal célja, hogy vizuálisan vonzó módon mutassa be a kárpitozás, szövetcsere és kisebb bútorjavítás lehetőségeit, miközben könnyű navigációt biztosít az érdeklődők számára. Emellett a design és a tartalom segíti az ügyfeleket abban, hogy bizalmat építsenek a vállalkozás iránt.</p>
+                    </div>
+                    <div class="col-12 col-md-6">
+                        <img class="img-fluid rounded-4 p-0" src="img/smidkarpit2.jpg">
+                    </div>
+                </div>
+            </div>
+            <div class="mb-4">
+                <div class="fs-5 fw-bold mb-1" style="color:#FE0000;">#TECHNOLÓGIÁK</div>
+                <div class="row justify-content-between align-items-start ms-1 border-start" style="border-image: linear-gradient(0deg, #F6F6F6, #FE0000) 1;">
+                    <div class="col-12 col-md-6">
+                        <h4 class="fs-2 fw-medium lh-1 m-0">HTML, CSS, Figma, Photoshop, AI</h4>
+                        <p>A landing page design-ja Figmában készült, melyet Photoshop és az AI egészítettek ki. Az oldal HTML és CSS használatával készült egy adatbekérő űrlappal, amit, ha kitölt a látogató, akkor a kliens visszahívja őt időpont egyeztetés miatt.</p>
+                    </div>
+                    <div class="col-12 col-md-6">
+                        <img class="img-fluid rounded-4 p-0" src="img/smidkarpit3.jpg">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 8. YOURMEE -->
+        <div class="work-details d-none opacity-0" style="transition: 600ms ease-in-out;" id="yourmee">
+            <div class="links d-flex flex-wrap justify-content-end gap-2">
+                <a class="back btn text-light d-flex align-items-center" style="background: #FE0000;" href="#" role="button"><img class="me-2" style="height: 25px; filter:invert(1);" src="img/back.svg"> Vissza</a>
+                <a class="back btn d-flex align-items-center btn-dark fw-light" style="color: #F7DF1E;" href="https://landing.epikforge.com/yourmee/" target="_blank"><img class="me-2" src="img/web.svg"> Website Link</a>
+                <a class="back btn d-flex align-items-center btn-dark fw-light" style="color: #F7DF1E;" href="https://github.com/teremyalex/yourmee" target="_blank"><img class="me-2" src="img/github2.svg"> GitHub
+                    Projekt</a>
+                <a class="back btn d-flex align-items-center btn-dark fw-light" style="color: #F7DF1E;" href="https://www.figma.com/design/gZ5YCoszEyefOfXetiko43/F%C3%BCrjPiac?m=auto&t=cgGM1gPT0M4dAQYY-1" target="_blank"><img class="me-2" src="img/figma2.svg"> Figma Design</a>
+            </div>
+            <div class="mb-4">
+                <div class="fs-5 fw-bold mb-1" style="color:#FE0000;">#KLIENS</div>
+                <div class="row justify-content-between align-items-start ms-1 border-start" style="border-image: linear-gradient(0deg, #F6F6F6, #FE0000) 1;">
+                    <div class="col-12 col-md-6">
+                        <h4 class="fs-2 fw-medium lh-1 m-0">Yourméé</h4>
+                        <p>A Yourméé egy nyíregyházi vállalkozás, amely prémium minőségű fürjtojásokat és azokból készült száraztésztákat kínál. Termékeik között megtalálhatók a 40 fürjtojással készült tészták, füstölt-pácolt fürjtojások, valamint speciális fürjtojás nyitó ollók. A cég nagy hangsúlyt fektet a természetes alapanyagok használatára, termékeik tartósítószer-, színezék- és adalékanyag-mentesek. Céljuk, hogy különleges gasztronómiai élményt nyújtsanak vásárlóiknak, ötvözve a hagyományos ízeket az innovatív megközelítéssel.</p>
+                    </div>
+                    <div class="col-12 col-md-6">
+                        <img class="img-fluid rounded-4 p-0" src="img/yourmee1.jpg">
+                    </div>
+                </div>
+            </div>
+            <div class="mb-4">
+                <div class="fs-5 fw-bold mb-1" style="color:#FE0000;">#FELADAT</div>
+                <div class="row justify-content-between align-items-start ms-1 border-start" style="border-image: linear-gradient(0deg, #F6F6F6, #FE0000) 1;">
+                    <div class="col-12 col-md-6">
+                        <h4 class="fs-2 fw-medium lh-1 m-0">Landing Page</h4>
+                        <p>A feladatom egy reszponzív weboldal létrehozása volt, amely támogatja a Yourméé prémium tésztáinak online értékesítését. Az oldal fő funkciója három testreszabható tészta csomag bemutatása, ahol a vásárlók saját igényeik szerint válogathatják össze a csomag tartalmát. A vásárlási folyamatot úgy terveztem meg, hogy a szállítási költséget dinamikusan, a termékek súlya alapján számolja ki a rendszer. Az eredmény egy felhasználóbarát és könnyen navigálható webshop lett, amely hatékonyan segíti a termékek értékesítését.</p>
+                    </div>
+                    <div class="col-12 col-md-6">
+                        <img class="img-fluid rounded-4 p-0" src="img/yourmee2.jpg">
+                    </div>
+                </div>
+            </div>
+            <div class="mb-4">
+                <div class="fs-5 fw-bold mb-1" style="color:#FE0000;">#TECHNOLÓGIÁK</div>
+                <div class="row justify-content-between align-items-start ms-1 border-start" style="border-image: linear-gradient(0deg, #F6F6F6, #FE0000) 1;">
+                    <div class="col-12 col-md-6">
+                        <h4 class="fs-2 fw-medium lh-1 m-0">HTML, CSS, JavaScript, Figma, Photoshop, AI</h4>
+                        <p>A landing page design-ja Figmában készült, melyet Photoshop és annak beépített AI funkciói egészítettek ki. Az oldal HTML, CSS és JavaScript használatával készült, különös figyelmet fordítva a kosár- és vásárlási folyamat reszponzív működésére és a dinamikus szállítási költség számítására.</p>
+                    </div>
+                    <div class="col-12 col-md-6">
+                        <img class="img-fluid rounded-4 p-0" src="img/yourmee3.jpg">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 9. HONEYHILL -->
+        <div class="work-details d-none opacity-0" style="transition: 600ms ease-in-out;" id="honeyhill">
+            <div class="links d-flex flex-wrap justify-content-end gap-2">
+                <a class="back btn text-light d-flex align-items-center" style="background: #FE0000;" href="#" role="button"><img class="me-2" style="height: 25px; filter:invert(1);" src="img/back.svg"> Vissza</a>
+                <a class="back btn d-flex align-items-center btn-dark fw-light" style="color: #F7DF1E;" href="https://landing.epikforge.com/honeyhill/kettos-hatas/" target="_blank"><img class="me-2" src="img/web.svg"> Website Link</a>
+                <a class="back btn d-flex align-items-center btn-dark fw-light" style="color: #F7DF1E;" href="https://github.com/teremyalex/honeyhill" target="_blank"><img class="me-2" src="img/github2.svg"> GitHub
+                    Projekt</a>
+                <a class="back btn d-flex align-items-center btn-dark fw-light" style="color: #F7DF1E;" href="https://www.figma.com/design/s52lUj3Cdw0pW5qTRhl3cu/Honey-Hill?m=auto&t=cgGM1gPT0M4dAQYY-1" target="_blank"><img class="me-2" src="img/figma2.svg"> Figma Design</a>
+            </div>
+            <div class="mb-4">
+                <div class="fs-5 fw-bold mb-1" style="color:#FE0000;">#KLIENS</div>
+                <div class="row justify-content-between align-items-start ms-1 border-start" style="border-image: linear-gradient(0deg, #F6F6F6, #FE0000) 1;">
+                    <div class="col-12 col-md-6">
+                        <h4 class="fs-2 fw-medium lh-1 m-0">Honey Hill</h4>
+                        <p>A HoneyHill egy magyar vállalkozás, amely prémium méhészeti termékeket kínál, mint például tiszta méhpempő, propolisz, virágpor és méhkenyér. Kiemelt termékeik közé tartozik a méhmérges balzsam és a propoliszos krém, amelyek Érték és Minőség Nagydíjjal is elismertek. A cég nagy hangsúlyt fektet a természetes alapanyagokra és a személyre szabott, szakszerű tanácsadásra, hogy vásárlóik a legmegfelelőbb módon alkalmazhassák termékeiket. Céljuk, hogy a méhek természet adta erejével támogassák az egészség megőrzését és helyreállítását.</p>
+                    </div>
+                    <div class="col-12 col-md-6">
+                        <img class="img-fluid rounded-4 p-0" src="img/honeyhill1.jpg">
+                    </div>
+                </div>
+            </div>
+            <div class="mb-4">
+                <div class="fs-5 fw-bold mb-1" style="color:#FE0000;">#FELADAT</div>
+                <div class="row justify-content-between align-items-start ms-1 border-start" style="border-image: linear-gradient(0deg, #F6F6F6, #FE0000) 1;">
+                    <div class="col-12 col-md-6">
+                        <h4 class="fs-2 fw-medium lh-1 m-0">Landing Page</h4>
+                        <p>A feladatom egy reszponzív landing oldal létrehozása volt a HoneyHill „Kettős Hatás” termékcsomagjának népszerűsítésére. Az oldal a Royal Méh Balzsam és a Méhpempő termékekre fókuszált, kiemelve azok természetes hatóanyagait és egészségmegőrző előnyeit. A landing page célja, hogy vizuálisan vonzó és informatív módon mutassa be a csomagot, miközben egyszerű és felhasználóbarát vásárlási lehetőséget biztosít. Az oldal szerkezete támogatja a látogatók gyors tájékozódását és a vásárlási folyamat zökkenőmentességét.</p>
+                    </div>
+                    <div class="col-12 col-md-6">
+                        <img class="img-fluid rounded-4 p-0" src="img/honeyhill2.jpg">
+                    </div>
+                </div>
+            </div>
+            <div class="mb-4">
+                <div class="fs-5 fw-bold mb-1" style="color:#FE0000;">#TECHNOLÓGIÁK</div>
+                <div class="row justify-content-between align-items-start ms-1 border-start" style="border-image: linear-gradient(0deg, #F6F6F6, #FE0000) 1;">
+                    <div class="col-12 col-md-6">
+                        <h4 class="fs-2 fw-medium lh-1 m-0">HTML, CSS, JavaScript, Figma, Photoshop, AI</h4>
+                        <p>A landing page design-ja Figmával, Photoshoppal és AI-vel készült. Az oldal HTML, CSS és JavaScript használatával készült, különös figyelmet fordítva a kosár- és vásárlási folyamat reszponzív működésére.</p>
+                    </div>
+                    <div class="col-12 col-md-6">
+                        <img class="img-fluid rounded-4 p-0" src="img/honeyhill3.jpg">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<!--#EGYÉB-->
+<section class="tudas py-5 px-1">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-5" style="text-align:justify;">
+                <h3 class="display-1 fw-bold lh-1" style="font-family: 'Montserrat'; color: #FE0000;">#EGYÉB</h3>
+                <p>Az online marketing, média és értékesítés területén szerzett tapasztalataim kiegészítik webfejlesztési ismereteimet, lehetővé téve, hogy komplex projekteken dolgozzak. Erős UX/UI és WordPress ismeretekkel rendelkezem, amelyek mellett kiemelten foglalkoztam hírlevel rendszerek automatizálásával és SEO optimalizálással is. Az utóbbi időben mesterséges intelligenciával és PPC kampányokkal is foglalkoztam, továbbá kiadványszerkesztési, 3D modellezési és videóvágási alapismeretekkel is rendelkezem. Mindezek mellett nyitott vagyok az új technológiák és módszerek elsajátítására, hogy folyamatosan bővítsem a tudásomat.</p>
+            </div>
+            <div class="col col-lg-5 col-xl-4 offset-lg-1" >
+                <div style="height:40px; background: linear-gradient(90deg, #FFD8D8, #FF8989);" class="rounded mb-2">
+                     <div class="rounded h-100 ps-2 text-light d-flex align-items-center fs-5" style="background: linear-gradient(90deg, #FF5C5C, #FE0000); max-width: calc(100%*0.9);">UX/UI</div>
+                </div>
+
+                <div style="height:40px; background: linear-gradient(90deg, #FFD8D8, #FF8989);" class="rounded mb-2">
+                     <div class="rounded h-100 ps-2 text-light d-flex align-items-center fs-5" style="background: linear-gradient(90deg, #FF5C5C, #FE0000); max-width: calc(100%*0.9);">Hírlevél</div>
+                </div>
+
+                <div style="height:40px; background: linear-gradient(90deg, #FFD8D8, #FF8989);" class="rounded mb-2">
+                     <div class="rounded h-100 ps-2 text-light d-flex align-items-center fs-5" style="background: linear-gradient(90deg, #FF5C5C, #FE0000); max-width: calc(100%*0.85);">Wordpress</div>
+                </div>
+
+                <div style="height:40px; background: linear-gradient(90deg, #FFD8D8, #FF8989);" class="rounded mb-2">
+                     <div class="rounded h-100 ps-2 text-light d-flex align-items-center fs-5" style="background: linear-gradient(90deg, #FF5C5C, #FE0000); max-width: calc(100%*0.85);">AI</div>
+                </div>
+
+                <div style="height:40px; background: linear-gradient(90deg, #FFD8D8, #FF8989);" class="rounded mb-2">
+                     <div class="rounded h-100 ps-2 text-light d-flex align-items-center fs-5" style="background: linear-gradient(90deg, #FF5C5C, #FE0000); max-width: calc(100%*0.8);">SEO</div>
+                </div>
+
+                <div style="height:40px; background: linear-gradient(90deg, #FFD8D8, #FF8989);" class="rounded mb-2">
+                     <div class="rounded h-100 ps-2 text-light d-flex align-items-center fs-5" style="background: linear-gradient(90deg, #FF5C5C, #FE0000); max-width: calc(100%*0.8);">PPC</div>
+                </div>
+
+                <div style="height:40px; background: linear-gradient(90deg, #FFD8D8, #FF8989);" class="rounded mb-2">
+                     <div class="rounded h-100 ps-2 text-light d-flex align-items-center fs-5" style="background: linear-gradient(90deg, #FF5C5C, #FE0000); max-width: calc(100%*0.75);">Kiadvány szerkesztés</div>
+                </div>
+
+                <div style="height:40px; background: linear-gradient(90deg, #FFD8D8, #FF8989);" class="rounded mb-2">
+                     <div class="rounded h-100 ps-2 text-light d-flex align-items-center fs-5" style="background: linear-gradient(90deg, #FF5C5C, #FE0000); max-width: calc(100%*0.6);">3D</div>
+                </div>
+
+                <div style="height:40px; background: linear-gradient(90deg, #FFD8D8, #FF8989);" class="rounded mb-2">
+                     <div class="rounded h-100 ps-2 text-light d-flex align-items-center fs-5" style="background: linear-gradient(90deg, #FF5C5C, #FE0000); max-width: calc(100%*0.5);">Élő közvetítés</div>
+                </div>
+
+                <div style="height:40px; background: linear-gradient(90deg, #FFD8D8, #FF8989);" class="rounded mb-2">
+                     <div class="rounded h-100 ps-2 text-light d-flex align-items-center fs-5" style="background: linear-gradient(90deg, #FF5C5C, #FE0000); max-width: calc(100%*0.45);">Videóvágás</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!--#KAPCSOLAT>-->
+<section class="kapcsolat py-5 px-1">
+    <div class="row">
+        <h3 class="display-1 fw-bold lh-1 text-center" style="font-family: 'Montserrat'; color: #FE0000;">#KAPCSOLAT</h3>
+        <div class="contact mx-auto mb-1 text-center">
+            <img class="me-1" style="width: 18px;" src="img/at.svg"> <a class="text-decoration-none text-dark" href="mailto:teremyalex@gmail.com">teremyalex@gmail.com</a>
+        </div>
+        <div class="contact mx-auto mb-4 text-center">
+            <img class="me-1" style="width: 18px;" src="img/phone.svg"> <a class="text-decoration-none text-dark" href="tel:+36303817830">+3630/381-7830</a>
+        </div>
+        <div class="social m-auto text-center">
+            <a href="https://linkedin.com/in/teremyalex"><img style="width: 30px;" src="img/linkedin.svg"></a>
+            <a href="https://github.com/teremyalex?tab=repositories"><img style="width: 30px;" src="img/github.svg"></a>
+        </div>
+    </div>
+</section>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+</body>
+
+<script>
+    function portfolioDetails(work){
+        document.getElementById('grid').classList.add('off');
+        document.querySelector('.portfolio h3').classList.add('col-12');
+        setTimeout(()=>{
+            document.getElementById('grid').classList.add("d-none");
+            document.getElementById(work).classList.remove("d-none");
+        },400)
+        setTimeout(()=>{
+            document.getElementById(work).classList.remove("opacity-0");
+            document.querySelector('.portfolio').scrollIntoView({ behavior: 'smooth' });
+        },420)
+    }
+    document.querySelectorAll('.back').forEach(back => {
+        back.addEventListener('click', (event)=>{
+            event.preventDefault();
+            document.querySelectorAll('.work-details').forEach(work => {
+                work.classList.add("opacity-0");
+                setTimeout(()=>{
+                    work.classList.add("d-none");
+                    document.getElementById('grid').classList.remove("d-none");
+                },400)
+                setTimeout(()=>{
+                    document.querySelector('.portfolio h3').classList.remove('col-12');
+                    document.getElementById('grid').classList.remove('off');
+                },420)
+            })
+        })
+    })
+
+</script>
+
+</html>
