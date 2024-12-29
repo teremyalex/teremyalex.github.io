@@ -590,11 +590,11 @@ body{font-size: 14px;}
             <div>
                 <div>
                     <h3>#EGYÉB</h3>
-                    <p>Az online marketing, média és értékesítés területén szerzett tapasztalataim kiegészítik webfejlesztési ismereteimet, lehetővé téve, hogy komplex projekteken dolgozzak. Erős UX/UI és WordPress ismeretekkel rendelkezem, amelyek mellett kiemelten foglalkoztam hírlevel rendszerek automatizálásával és SEO optimalizálással is. Az utóbbi időben mesterséges intelligenciával és PPC kampányokkal is foglalkoztam, továbbá kiadványszerkesztési, 3D modellezési és videóvágási alapismeretekkel is rendelkezem. Mindezek mellett nyitott vagyok az új technológiák és módszerek elsajátítására, hogy folyamatosan bővítsem a tudásomat.</p>
+                    <p id="egyeb-text">Az online marketing, média és értékesítés területén szerzett tapasztalataim kiegészítik webfejlesztési ismereteimet, lehetővé téve, hogy komplex projekteken dolgozzak. Erős UX/UI és WordPress ismeretekkel rendelkezem, amelyek mellett kiemelten foglalkoztam hírlevel rendszerek automatizálásával és SEO optimalizálással is. Az utóbbi időben mesterséges intelligenciával és PPC kampányokkal is foglalkoztam, továbbá kiadványszerkesztési, 3D modellezési és videóvágási alapismeretekkel is rendelkezem. Mindezek mellett nyitott vagyok az új technológiák és módszerek elsajátítására, hogy folyamatosan bővítsem a tudásomat.</p>
                 </div>
                 <div>
                     <div class="bar">
-                        <div style="max-width: calc(100%*0.9);">UX/UI</div>
+                        <div style="max-width: calc(100%*0.9);" onClick="egyebInfo(uxui)">UX/UI</div>
                     </div>
                     <div class="bar">
                         <div style="max-width: calc(100%*0.9);">Hírlevél</div>
@@ -673,6 +673,19 @@ body{font-size: 14px;}
             })
         })
     })
+
+    function egyebInfo(text){
+        let uxui = "Az online marketing, média és értékesítés területén szerzett tapasztalataim kiegészítik webfejlesztési ismereteimet, lehetővé téve, hogy komplex projekteken dolgozzak. Erős UX/UI és WordPress ismeretekkel rendelkezem, amelyek mellett kiemelten foglalkoztam hírlevel rendszerek automatizálásával és SEO optimalizálással is. Az utóbbi időben mesterséges intelligenciával és PPC kampányokkal is foglalkoztam, továbbá kiadványszerkesztési, 3D modellezési és videóvágási alapismeretekkel is rendelkezem. Mindezek mellett nyitott vagyok az új technológiák és módszerek elsajátítására, hogy folyamatosan bővítsem a tudásomat.";
+
+        document.getElementById('egyeb-text').textContent = "";
+        
+        let i = 0;
+        let intervalId = setInterval(()=>{ 
+            document.getElementById('egyeb-text').textContent += text[i]
+            i++
+          if(i >= text.length) clearInterval(intervalId)
+        }, 1) 
+    }
 
 </script>
     
