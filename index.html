@@ -746,8 +746,8 @@ body{font-size: 14px;}
     }
 
     const stars = [
-        { element: document.getElementById('stars1'), factor: 10 },
-        { element: document.getElementById('stars2'), factor: 25 },
+        { element: document.getElementById('stars1'), factor: 8 },
+        { element: document.getElementById('stars2'), factor: 20 },
         { element: document.getElementById('stars3'), factor: 35 }
     ];
 
@@ -767,8 +767,8 @@ body{font-size: 14px;}
 
     function animate() {
         stars.forEach((star, i) => {
-            state[i].currentX += (state[i].targetX - state[i].currentX) * 0.05;
-            state[i].currentY += (-(state[i].targetX - state[i].currentX) * 0.48) * 0.05;
+            state[i].currentX += (state[i].targetX - state[i].currentX) * 0.025;
+            state[i].currentY += (-(state[i].targetX - state[i].currentX) * 0.48) * 0.025;
 
             star.element.style.transform = `translate(${state[i].currentX}px, ${state[i].currentY}px)`;
         });
