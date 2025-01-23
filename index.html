@@ -10,7 +10,7 @@
     </head>
     
 <style>
-body{background:linear-gradient(186deg, #81D5E9 0%, #C7EFF9 6%, #F6F6F6 40%); background-repeat: no-repeat; color: #242325; font-family: 'Poppins'; font-size:16px; font-weight: 300; margin: 0;}
+body{background:linear-gradient(186deg, #81D5E9 0%, #C7EFF9 6%, #F6F6F6 40%); background-repeat: no-repeat; color: #242325; font-family: 'Poppins'; font-size:16px; font-weight: 300; margin: 0; overflow-x: hidden;}
 /* #HEADER */
 .header{background:url(img/header.png) top center no-repeat; padding: 236px 10px 200px; box-sizing:border-box;}
 .header > div{display:flex; flex-wrap:wrap; max-width:1024px; margin: 0 auto;}
@@ -44,10 +44,11 @@ body{background:linear-gradient(186deg, #81D5E9 0%, #C7EFF9 6%, #F6F6F6 40%); ba
 .portfolio h3{font-family: 'Montserrat'; font-size: 90px; font-weight:700; color: #FE0000; margin:0 0 20px; line-height: 63px; text-align:right;}
 .portfolio #grid {display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; transition: transform 450ms cubic-bezier(0.08, 0.66, 0.22, 1), opacity 400ms cubic-bezier(0.08, 0.66, 0.22, 1);}
 .portfolio #grid.off{transform:translateX(-600px); opacity: 0;}
-.portfolio .work{position: relative; opacity: 0; border-radius: 15px; box-shadow: 0 7px 18px -2px rgba(35,37,37,0.4); overflow:hidden; cursor: pointer; transition: 1s ease-in-out}
+.portfolio .work{position: relative; opacity: 0; border-radius: 15px; box-shadow: 0 7px 18px -2px rgba(35,37,37,0.4); overflow:hidden; cursor: pointer; transform: scale(0.75); transform-origin: center; transition: 700ms ease-in-out}
+.portfolio .work.visible{opacity: 1; transform: scale(1);}
 
 .portfolio .work::after {content: ""; position: absolute; width: 150%; height: 300%; transform: scale(1) rotateZ(-45deg); background: white; top: 550px; left: -30%; opacity: 0.1; transition: 500ms cubic-bezier(0.07, 0.74, 0.58, 1);}
-.portfolio .work:hover::after {top: 0px;}
+.portfolio .work:hover::after {top: 0;}
 .portfolio .work img{display: block; margin: 0 auto; width:100%;}
 
 .portfolio .links {display: flex; flex-wrap:wrap; justify-content: flex-end; gap: 10px;}
@@ -58,7 +59,7 @@ body{background:linear-gradient(186deg, #81D5E9 0%, #C7EFF9 6%, #F6F6F6 40%); ba
 .portfolio .work-details {display: none; opacity:0; transition: 600ms ease-in-out;}
 .portfolio .cat {font-size: 20px; font-weight: 700; color: #FE0000; margin: 0 0 5px;}
 .portfolio .block{margin: 0 0 30px;}
-.portfolio .block-flex {display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-start; padding: 0px 0 0 20px; margin: 0 0 0 6px; border-left: 1px solid; border-image: linear-gradient(0deg, #F6F6F6, #FE0000) 1;}
+.portfolio .block-flex {display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-start; padding: 0 0 0 20px; margin: 0 0 0 6px; border-left: 1px solid; border-image: linear-gradient(0deg, #F6F6F6, #FE0000) 1;}
 .portfolio .block-flex div{width:50%;}
 .portfolio .block-flex img{width:44%; display:block; border-radius: 15px;}
 .portfolio h4 {font-size: 32px; font-family: 'Poppins'; font-weight: 500; line-height: 37px; margin: 0;}
@@ -128,9 +129,11 @@ body{font-size: 14px;}
 </style>
     
     <body>
-        
         <!--#HEADER-->
         <section class="header">
+            <star id="stars1" style="position:absolute; top:0; left:0; width: 100%; background: url('img/stars1.png') center no-repeat; background-size:cover; min-height: 640px; z-index: -1;"></star>
+            <star id="stars2" style="position:absolute; top:0; left:0; width: 100%; background: url('img/stars2.png') center no-repeat; background-size:cover; min-height: 640px; z-index: -2;"></star>
+            <star id="stars3" style="position:absolute; top:0; left:0; width: 100%; background: url('img/stars3.png') center no-repeat; background-size:cover; min-height: 640px; z-index: -3;"></star>
             <div>
                 <div>
                     <h1>TEREMY<br>ALEX</h1>
@@ -690,9 +693,11 @@ body{font-size: 14px;}
 
     //GRID ANIMATION
     const gridAnim = new IntersectionObserver(entries => {
-        entries.forEach(entry => {
+        entries.forEach((entry, index) => {
             if (entry.isIntersecting) {
-                entry.target.style.opacity = "1"
+                setTimeout(() => {
+                    entry.target.classList.add('visible')
+                }, 150*index)
             }
         })
     })
@@ -739,6 +744,46 @@ body{font-size: 14px;}
           }
         }, 1)
     }
+
+    const stars = [
+        { element: document.getElementById('stars1'), factor: 10 },
+        { element: document.getElementById('stars2'), factor: 25 },
+        { element: document.getElementById('stars3'), factor: 35 }
+    ];
+
+    const state = stars.map(() => ({
+        targetX: 0, targetY: 0, currentX: 0, currentY: 0
+    }));
+
+    window.addEventListener('mousemove', (e) => {
+        const centerX = window.innerWidth / 2;
+        const centerY = window.innerHeight / 2;
+
+        stars.forEach((star, i) => {
+            state[i].targetX = (e.clientX - centerX) / star.factor;
+            state[i].targetY = (e.clientY - centerY) / star.factor;
+        });
+    });
+
+    function animate() {
+        stars.forEach((star, i) => {
+            state[i].currentX += (state[i].targetX - state[i].currentX) * 0.05;
+            state[i].currentY += (-(state[i].targetX - state[i].currentX) * 0.48) * 0.05;
+
+            star.element.style.transform = `translate(${state[i].currentX}px, ${state[i].currentY}px)`;
+        });
+
+        requestAnimationFrame(animate);
+    }
+
+    animate();
+
+
+
+
+
+
+
 
 </script>
     
