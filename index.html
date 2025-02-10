@@ -63,7 +63,8 @@ body{background:linear-gradient(186deg, #81D5E9 0%, #C7EFF9 6%, #F6F6F6 40%); ba
 .portfolio .block{margin: 0 0 30px;}
 .portfolio .block-flex {display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-start; padding: 0 0 0 20px; margin: 0 0 0 6px; border-left: 1px solid; border-image: linear-gradient(0deg, #F6F6F6, #FE0000) 1;}
 .portfolio .block-flex div{width:50%;}
-.portfolio .block-flex img{width:44%; display:block; border-radius: 15px;}
+.portfolio .block-flex img{width:44%; display:block; border-radius: 15px; opacity: 0; transform: scale(0.8); transform-origin: center; transition: 500ms ease-in-out;}
+.portfolio .block-flex img.visible{opacity: 1; transform: scale(1);}
 .portfolio h4 {font-size: 32px; font-family: 'Poppins'; font-weight: 500; line-height: 37px; margin: 0;}
 .portfolio p {margin: 0; text-align: justify;}
 
@@ -662,6 +663,15 @@ body{font-size: 14px;}
         setTimeout(()=>{
             document.getElementById(work).style.opacity = "1";
             document.querySelector('.portfolio').scrollIntoView({ behavior: 'smooth' });
+
+            const detailAnim = new IntersectionObserver(entries => {
+                entries.forEach((entry, index) => {
+                    if (entry.isIntersecting) setTimeout(() => entry.target.classList.add('visible'), 80*index)
+                    else entry.target.classList.remove('visible')
+                })
+            })
+            document.querySelectorAll('.block-flex img').forEach(img => detailAnim.observe(img))
+
         },420)
     }
     document.querySelectorAll('.back').forEach(back => {
@@ -672,11 +682,8 @@ body{font-size: 14px;}
                 setTimeout(()=>{
                     work.style.display = "none";
                     document.getElementById('grid').style.display = "grid";
-
                 },400)
-                setTimeout(()=>{
-                    document.getElementById('grid').classList.remove('off');
-                },420)
+                setTimeout(()=> document.getElementById('grid').classList.remove('off'),420)
             })
         })
     })
@@ -684,42 +691,26 @@ body{font-size: 14px;}
     //BAR ANIMATION
     const barAnim = new IntersectionObserver(entries => {
         entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.style.maxWidth = document.querySelector('.bar').clientWidth * entry.target.dataset.width + "px"
-            }
-        })
+            if (entry.isIntersecting) entry.target.style.maxWidth = document.querySelector('.bar').clientWidth * entry.target.dataset.width + "px"})
     })
-    document.querySelectorAll('.bar div').forEach(bar => {
-        barAnim.observe(bar);
-    })
+    document.querySelectorAll('.bar div').forEach(bar => barAnim.observe(bar))
 
     //STACK ANIMATION
     const stackAnim = new IntersectionObserver(entries => {
         entries.forEach((entry, index) => {
-            if (entry.isIntersecting) {
-                setTimeout(() => {
-                    entry.target.classList.add('visible')
-                }, 80*index)
-            }
+            if (entry.isIntersecting) setTimeout(() => entry.target.classList.add('visible'), 80*index)
         })
     })
-    document.querySelectorAll('.icons img').forEach(icon => {
-        stackAnim.observe(icon);
-    })
+    document.querySelectorAll('.icons img').forEach(icon => stackAnim.observe(icon))
 
     //GRID ANIMATION
     const gridAnim = new IntersectionObserver(entries => {
         entries.forEach((entry, index) => {
-            if (entry.isIntersecting) {
-                setTimeout(() => {
-                    entry.target.classList.add('visible')
-                }, 170*index)
-            }
+            if (entry.isIntersecting) setTimeout(() => entry.target.classList.add('visible'), 170*index)
         })
     })
-    document.querySelectorAll('.work').forEach(work => {
-        gridAnim.observe(work);
-    })
+    document.querySelectorAll('.work').forEach(work => gridAnim.observe(work))
+    document.querySelectorAll('.block-flex img').forEach(img => gridAnim.observe(img))
 
 
 
