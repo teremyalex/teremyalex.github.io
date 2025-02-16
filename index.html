@@ -25,7 +25,7 @@ body{background:linear-gradient(186deg, #81D5E9 0%, #C7EFF9 6%, #F6F6F6 40%); ba
 
 
 /* #RÓLAM */
-.rolam{padding: 100px 10px; transform: translateY(10%); opacity: 0; transition: 550ms ease-in-out;}
+.rolam{padding: 100px 10px; transform: translateY(10%); opacity: 0; transition: 500ms ease-in-out;}
 .rolam.visible{transform: translateY(0); opacity: 1;}
 .rolam > div{display:flex; flex-wrap:wrap; justify-content: space-between; align-items: flex-start; max-width:1024px; margin: 0 auto;}
 .rolam img{width: 32%; border-radius:50%; display: block; margin: 0;}
@@ -34,7 +34,8 @@ body{background:linear-gradient(186deg, #81D5E9 0%, #C7EFF9 6%, #F6F6F6 40%); ba
 .rolam p{margin: 0 0 10px;}
 
 /* #ISMERET */
-.tudas{padding: 100px 10px;}
+.tudas{padding: 100px 10px; transform: translateY(10%); opacity: 0; transition: 500ms ease-in-out;}
+.tudas.visible{transform: translateY(0); opacity: 1;}
 .tudas > div{display:flex; flex-wrap:wrap; max-width:1024px; margin: 0 auto;}
 .tudas > div > div{width:50%; text-align:justify;}
 .tudas h3{font-family: 'Montserrat'; font-size: 90px; font-weight:700; color: #FE0000; margin:0 0 20px; line-height: 63px;}
@@ -43,7 +44,8 @@ body{background:linear-gradient(186deg, #81D5E9 0%, #C7EFF9 6%, #F6F6F6 40%); ba
 .tudas .back{color: #FE0000; font-weight: 700; margin:0 0 0 6px; text-decoration: none;}
 
 /* #PORTFÓLIÓ */
-.portfolio{padding: 100px 10px;}
+.portfolio{padding: 100px 10px; transform: translateY(10%); opacity: 0; transition: 500ms ease-in-out;}
+.portfolio.visible{transform: translateY(0); opacity: 1;}
 .portfolio > div{max-width:1024px; margin: 0 auto;}
 .portfolio h3{font-family: 'Montserrat'; font-size: 90px; font-weight:700; color: #FE0000; margin:0 0 20px; line-height: 63px; text-align:right;}
 .portfolio #grid {display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; transition: transform 450ms cubic-bezier(0.08, 0.66, 0.22, 1), opacity 400ms cubic-bezier(0.08, 0.66, 0.22, 1);}
@@ -72,7 +74,8 @@ body{background:linear-gradient(186deg, #81D5E9 0%, #C7EFF9 6%, #F6F6F6 40%); ba
 
 
 /* #KAPCSOLAT */
-.kapcsolat{padding: 100px 10px;}
+.kapcsolat{padding: 100px 10px; transform: translateY(10%); opacity: 0; transition: 500ms ease-in-out;}
+.kapcsolat.visible{transform: translateY(0); opacity: 1;}
 .kapcsolat > div{max-width:1024px; margin: 0 auto;}
 .kapcsolat h3{font-family: 'Montserrat'; font-size: 90px; font-weight:700; color: #FE0000; margin:0 0 50px; line-height: 63px; text-align:center;}
 .kapcsolat .contact{display: flex; gap: 5px; width: 212px; margin: 0 auto;}
@@ -706,18 +709,23 @@ body{font-size: 14px;}
     Array.from(document.querySelector('.header > div > div').children).forEach(child => stackAnim.observe(child))
     document.querySelectorAll('.icons img').forEach(icon => stackAnim.observe(icon))
 
-    //ROLAM ANIMATION
-    const rolamAnim = new IntersectionObserver(entries => {
+    //SECTION ANIMATION
+    const sectionAnim = new IntersectionObserver(entries => {
         entries.forEach((entry, index) => {
-            if (entry.isIntersecting) setTimeout(() => entry.target.classList.add('visible'), 200)
+            if (entry.isIntersecting) setTimeout(() => entry.target.classList.add('visible'), 300)
         })
     })
-    rolamAnim.observe(document.querySelector('.rolam'))
+    sectionAnim.observe(document.querySelector('.rolam'))
+    sectionAnim.observe(document.querySelector('.portfolio'))
+    document.querySelectorAll('.tudas').forEach(tudas => sectionAnim.observe(tudas))
+    sectionAnim.observe(document.querySelector('.kapcsolat'))
 
     //GRID ANIMATION
     const gridAnim = new IntersectionObserver(entries => {
         entries.forEach((entry, index) => {
-            if (entry.isIntersecting) setTimeout(() => entry.target.classList.add('visible'), 170*index)
+            setTimeout(()=>{
+                if (entry.isIntersecting) setTimeout(() => entry.target.classList.add('visible'), 170*index)
+            }, 300)
         })
     })
     document.querySelectorAll('.work').forEach(work => gridAnim.observe(work))
