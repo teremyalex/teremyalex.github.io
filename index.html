@@ -19,7 +19,7 @@ body{background:linear-gradient(186deg, #81D5E9 0%, #C7EFF9 6%, #F6F6F6 40%); ba
 .header .frontend{font-family: 'Montserrat'; font-size: 36px; font-weight:400; font-style:italic; transform: translateY(100px); opacity: 0; transition: 500ms ease-in-out;}
 .header .designer{font-family: 'Montserrat'; font-size: 24px; font-weight: 300; font-style:italic; margin: 0 0 20px; transform: translateY(100px); opacity: 0; transition: 500ms ease-in-out;}
 .header .icons{display:flex; flex-wrap:wrap; justify-content: flex-end; gap: 25px; transform: translateY(100px); opacity: 0; transition: 500ms ease-in-out;}
-.header .icons img{height:50px; opacity: 0; transform: scale(0.8); transform-origin: center; transition: 500ms ease-in-out;}
+.header .icons img{height:50px; cursor:pointer; opacity: 0; transform: scale(0.8); transform-origin: center; transition: 500ms ease-in-out;}
 .header .icons img.visible{opacity: 1; transform: scale(1);}
 .header .visible{transform: translateY(0); opacity: 1;}
 
@@ -52,9 +52,6 @@ body{background:linear-gradient(186deg, #81D5E9 0%, #C7EFF9 6%, #F6F6F6 40%); ba
 .portfolio #grid.off{transform:translateX(-600px); opacity: 0;}
 .portfolio .work{position: relative; opacity: 0; border-radius: 15px; box-shadow: 0 7px 18px -2px rgba(35,37,37,0.4); overflow:hidden; cursor: pointer; transform: scale(0.8); transform-origin: center; transition: 500ms ease-in-out;}
 .portfolio .work.visible{opacity: 1; transform: scale(1);}
-
-.portfolio .work::after {content: ""; position: absolute; width: 150%; height: 300%; transform: scale(1) rotateZ(-45deg); background: white; top: 550px; left: -30%; opacity: 0.1; transition: 500ms cubic-bezier(0.07, 0.74, 0.58, 1);}
-.portfolio .work:hover::after {top: 0;}
 .portfolio .work img{display: block; margin: 0 auto; width:100%;}
 
 .portfolio .links {display: flex; flex-wrap:wrap; justify-content: flex-end; gap: 10px;}
@@ -215,6 +212,9 @@ body{font-size: 14px;}
             <div>
                 <h3>#PORTFÓLIÓ</h3>
                 <div id="grid">
+                    <div class="work" onclick="portfolioDetails('luicey')">
+                        <img src="img/luicey.jpg">
+                    </div>
                     <div class="work" onclick="portfolioDetails('gombadr')">
                         <img src="img/gombadr.jpg">
                     </div>
@@ -250,6 +250,46 @@ body{font-size: 14px;}
                     </div>
 
 
+                </div>
+
+                <!-- LUICEY -->
+                <div class="work-details" id="luicey">
+                    <div class="links">
+                        <a class="back" href="#"><img src="img/back.svg"> Vissza</a>
+                        <a href="https://teremyalex.github.io/luicey" target="_blank"><img src="img/web.svg"> Website Link</a>
+                        <a href="https://github.com/teremyalex/luicey" target="_blank"><img src="img/github2.svg"> GitHub Projekt</a>
+                        <a href="https://www.figma.com/design/v1yah3ZtFnV3nQeL4lvj4D/Luicey?m=auto&t=Bh5LEAiy6e24P7L9-1" target="_blank"><img src="img/figma2.svg"> Figma Design</a>
+                    </div>
+                    <div class="block">
+                        <div class="cat">#KLIENS</div>
+                        <div class="block-flex">
+                            <div>
+                                <h4>Luicey</h4>
+                                <p>A Luicey egy prémium gyümölcslé márka, amely kizárólag természetes alapanyagokból készül, mesterséges adalékok nélkül. Célja, hogy friss és egészséges alternatívát kínáljon a tudatos vásárlóknak, miközben modern, letisztult arculattal rendelkezik. Termékei fenntartható csomagolásban érhetők el, hogy minimalizálják a környezeti hatásokat.</p>
+                            </div>
+                            <img src="img/luicey1.jpg">
+                        </div>
+                    </div>
+                    <div class="block">
+                        <div class="cat">#FELADAT</div>
+                        <div class="block-flex">
+                            <div>
+                                <h4>Weboldal</h4>
+                                <p>Ebben a projektben egy prémium gyümölcslé márka hivatalos honlapját fejlesztettem React és TypeScript segítségével. A feladatom egy modern, letisztult és felhasználóbarát weboldal létrehozása volt, amely bemutatja a márka termékeit és filozófiáját. A projekt során React Routerrel valósítottam meg a többoldalas navigációt, valamint a design és interaktív elemek kialakítására is nagy hangsúlyt fektettem, hogy a weboldal vizuálisan vonzó és könnyen használható legyen.</p>
+                            </div>
+                            <img src="img/luicey2.jpg">
+                        </div>
+                    </div>
+                    <div class="block">
+                        <div class="cat">#TECHNOLÓGIÁK</div>
+                        <div class="block-flex">
+                            <div>
+                                <h4>HTML, CSS, React, TypeScript, Figma, Photoshop, Leonardo AI</h4>
+                                <p>A weboldal design-ja Figmával, Photoshoppal és Leonardo AI-jal készült. Az oldal React és TypeScripttel készült, különös figyelmet fordítva az interaktív felhasználói felületre.</p>
+                            </div>
+                            <img src="img/luicey3.jpg">
+                        </div>
+                    </div>
                 </div>
 
                 <!-- GOMBADR -->
@@ -901,10 +941,94 @@ body{font-size: 14px;}
 
     animate();
 
+    // GRID HOVER ANIMATION
+    document.querySelectorAll('#grid .work').forEach(work => {
+        let targetX = 0, targetY = 0
+        let currentX = 0, currentY = 0
+        let currentScale = 1, targetScale = 1
+        let isAnimating = false
+
+        function animate() {
+            if (!isAnimating) return
+
+            currentX += (targetX - currentX) * 0.15
+            currentY += (targetY - currentY) * 0.15
+            currentScale += (targetScale - currentScale) * 0.1
 
 
+            work.style.transform = `perspective(1500px) scale(${currentScale}) rotateY(${currentX}deg) rotateX(${currentY}deg)`;
 
+            if (Math.abs(targetX - currentX) > 0.1 || Math.abs(targetY - currentY) > 0.1) {
+                requestAnimationFrame(animate);
+            } else {
+                isAnimating = false;
+            }
+        }
 
+        work.addEventListener("mousemove", (e) => {
+            targetX = (e.offsetX - work.clientWidth / 2) / 20;
+            targetY = (-e.offsetY + work.clientWidth / 2) / 20;
+            targetScale = 1.04
+
+            if (!isAnimating) {
+                isAnimating = true;
+                work.style.transition = "none";
+                animate();
+            }
+        });
+
+        work.addEventListener("mouseout", () => {
+            targetX = 0
+            targetY = 0
+            targetScale = 1
+
+            if (!isAnimating) {
+                isAnimating = true;
+                work.style.transition = "500ms ease-in-out";
+                animate();
+            }
+        });
+    });
+
+    // ICONS ANIMATION
+    document.querySelectorAll('.icons img').forEach(icon => {
+        let targetX = 0, targetY = 0;
+        let currentX = 0, currentY = 0;
+        let isAnimating = false;
+
+        function animateMagnet() {
+            if (!isAnimating) return;
+
+            currentX += (targetX - currentX) * 0.1;
+            currentY += (targetY - currentY) * 0.1;
+
+            icon.style.transform = `translate(${currentX}px, ${currentY}px)`;
+
+            if (Math.abs(targetX - currentX) > 0.1 || Math.abs(targetY - currentY) > 0.1) requestAnimationFrame(animateMagnet)
+            else isAnimating = false
+        }
+
+        icon.addEventListener("mousemove", (e) => {
+            const rect = icon.getBoundingClientRect()
+            targetX = (e.clientX - rect.left - rect.width / 2) * 0.5;
+            targetY = (e.clientY - rect.top - rect.height / 2) * 0.5;
+            if (!isAnimating) {
+                isAnimating = true;
+                icon.style.transition = "none";
+                animateMagnet();
+            }
+        });
+
+        icon.addEventListener("mouseleave", () => {
+            targetX = 0;
+            targetY = 0;
+            if (!isAnimating) {
+                isAnimating = true;
+                icon.style.transition = "500ms ease-in-out";
+                animateMagnet();
+            }
+        });
+    });
 
 
 
