@@ -11,6 +11,14 @@
     
 <style>
 body{background:linear-gradient(186deg, #81D5E9 0%, #C7EFF9 6%, #F6F6F6 40%); background-repeat: no-repeat; color: #242325; font-family: 'Poppins'; font-size:16px; font-weight: 300; margin: 0; overflow-x: hidden;}
+/* #LOADING ANIMATION */
+.loading{position: fixed; top: 0; left: 0; height: 100vh; width: 100vw; display: flex; z-index:100;}
+.loading-bar{background: #FE0000; width: 25%; transition: 500ms ease-in-out;}
+.loading-bar.visible{transform: translateY(-100vh);}
+.loading-bar:nth-child(1){transition-delay: 100ms;}
+.loading-bar:nth-child(2){transition-delay: 200ms;}
+.loading-bar:nth-child(3){transition-delay: 300ms;}
+.loading-bar:nth-child(4){transition-delay: 400ms;}
 /* #HEADER */
 .header{background:url(img/header.png) top center no-repeat; padding: 236px 10px 200px; box-sizing:border-box;}
 .header > div{display:flex; flex-wrap:wrap; max-width:1024px; margin: 0 auto;}
@@ -113,7 +121,7 @@ body{font-size: 14px;}
 .header .frontend {font-size: 24px;}
 .header .designer {font-size: 20px;}
 .header .icons {gap: 10px;}
-.header .icons img {height: 40px;}
+.header .icons img {height: 40px; padding: 0;}
     
 /* #RÓLAM */
 .rolam {padding: 50px 10px;}
@@ -131,12 +139,20 @@ body{font-size: 14px;}
 .kapcsolat h3 {font-size: 42px; line-height: 35px;}
 }
 @media (max-width:400px){
-    .header .icons img {height: 28px;}
+    .header .icons img {height: 28px; padding: 0;}
 }
     
 </style>
     
     <body>
+
+        <!--#LOAD ANIMATION-->
+        <div class="loading">
+            <div class="loading-bar"></div>
+            <div class="loading-bar"></div>
+            <div class="loading-bar"></div>
+            <div class="loading-bar"></div>
+        </div>
         <!--#HEADER-->
         <section class="header">
             <star id="stars1" style="position:absolute; top:0; left:0; width: 100%; background: url('img/stars1.png') center no-repeat; background-size:cover; min-height: 640px; z-index: -1;"></star>
@@ -794,6 +810,10 @@ body{font-size: 14px;}
     </body>
 
 <script>
+    //LOADING ANIMATION
+    setTimeout(()=>document.querySelectorAll('.loading-bar').forEach(bar=>bar.classList.add('visible')), 200)
+    setTimeout(()=>document.querySelector('.loading').style.display = 'none', 1000)
+
     function portfolioDetails(work){
         document.getElementById('grid').classList.add('off');
         setTimeout(()=>{
