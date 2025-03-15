@@ -810,9 +810,7 @@ body{font-size: 14px;}
     </body>
 
 <script>
-    //LOADING ANIMATION
-    setTimeout(()=>document.querySelectorAll('.loading-bar').forEach(bar=>bar.classList.add('visible')), 200)
-    setTimeout(()=>document.querySelector('.loading').style.display = 'none', 1000)
+
 
     function portfolioDetails(work){
         document.getElementById('grid').classList.add('off');
@@ -1050,7 +1048,9 @@ body{font-size: 14px;}
         });
     });
 
-
+    //LOADING ANIMATION
+    setTimeout(()=>document.querySelectorAll('.loading-bar').forEach(bar=>bar.classList.add('visible')), 200)
+    setTimeout(()=>document.querySelector('.loading').style.display = 'none', 1000)
 
 </script>
     
