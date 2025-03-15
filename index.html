@@ -871,7 +871,7 @@ body{font-size: 14px;}
         entries.forEach((entry, index) => {
             if (entry.isIntersecting) setTimeout(() => entry.target.classList.add('visible'), 300)
         })
-    }, {threshold: 0.1})
+    }, {threshold: window.innerWidth<500 ? 0 : 0.1})
     sectionAnim.observe(document.querySelector('.rolam'))
     sectionAnim.observe(document.querySelector('.portfolio'))
     document.querySelectorAll('.tudas').forEach(tudas => sectionAnim.observe(tudas))
@@ -885,7 +885,7 @@ body{font-size: 14px;}
                 if (entry.isIntersecting) setTimeout(() => entry.target.classList.add('visible'), 170*index)
             }, 300)
         })
-    }, {threshold: 0.1})
+    }, {threshold: window.innerWidth<500 ? 0 : 0.1})
     document.querySelectorAll('.work').forEach(work => gridAnim.observe(work))
     document.querySelectorAll('.block-flex img').forEach(img => gridAnim.observe(img))
 
@@ -1051,7 +1051,7 @@ body{font-size: 14px;}
     }
 
     //LOADING ANIMATION
-    setTimeout(()=>document.querySelectorAll('.loading-bar').forEach(bar=>bar.classList.add('visible')), 200)
+    setTimeout(()=>document.querySelectorAll('.loading-bar').forEach(bar=>bar.classList.add('visible')), 50)
     setTimeout(()=>document.querySelector('.loading').style.display = 'none', 1000)
 
 </script>
