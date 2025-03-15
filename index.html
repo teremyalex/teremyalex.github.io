@@ -859,8 +859,12 @@ body{font-size: 14px;}
             if (entry.isIntersecting) setTimeout(() => entry.target.classList.add('visible'), 100*index)
         })
     })
-    Array.from(document.querySelector('.header > div > div').children).forEach(child => stackAnim.observe(child))
-    document.querySelectorAll('.icons img').forEach(icon => stackAnim.observe(icon))
+    setTimeout(()=>{
+        Array.from(document.querySelector('.header > div > div').children).forEach(child => stackAnim.observe(child))
+        document.querySelectorAll('.icons img').forEach(icon => stackAnim.observe(icon))
+    }, 500)
+
+
 
     //SECTION ANIMATION
     const sectionAnim = new IntersectionObserver(entries => {
@@ -872,6 +876,7 @@ body{font-size: 14px;}
     sectionAnim.observe(document.querySelector('.portfolio'))
     document.querySelectorAll('.tudas').forEach(tudas => sectionAnim.observe(tudas))
     sectionAnim.observe(document.querySelector('.kapcsolat'))
+
 
     //GRID ANIMATION
     const gridAnim = new IntersectionObserver(entries => {
@@ -885,47 +890,7 @@ body{font-size: 14px;}
     document.querySelectorAll('.block-flex img').forEach(img => gridAnim.observe(img))
 
 
-
-    
-    //EGYÉB ANIMATION
-    let reset = "Az online marketing, média és értékesítés területén szerzett tapasztalataim kiegészítik webfejlesztési ismereteimet, lehetővé téve, hogy komplex projekteken dolgozzak. Erős UX/UI és WordPress ismeretekkel rendelkezem, amelyek mellett kiemelten foglalkoztam hírlevel rendszerek automatizálásával és SEO optimalizálással is. Az utóbbi időben mesterséges intelligenciával és PPC kampányokkal is foglalkoztam, továbbá kiadványszerkesztési, 3D modellezési és videóvágási alapismeretekkel is rendelkezem. Mindezek mellett nyitott vagyok az új technológiák és módszerek elsajátítására, hogy folyamatosan bővítsem a tudásomat."
-    let uxui = "14 éve kezdtem el grafikával foglalkozni, és azóta is a vizuális kreativitás határozza meg a munkámat. Vizuális típus vagyok, így kiemelten fontos számomra, hogy az általam tervezett felületek nemcsak funkcionálisan, hanem esztétikailag is rendben legyenek. Szenvedélyem a design, és szeretem, ha minden részlet szépen kidolgozott, hogy a felhasználók számára egyértelmű, élvezetes élményt nyújtsanak.";
-    let hirlevel = "8 éve foglalkozom hírlevelekkel, és ez idő alatt komoly tapasztalatot szereztem listák építésében és kezelésében. A legnagyobb lista, amit felépítettem, több mint 150.000 címet tartalmazott. Automatizációkat fejlesztettem, hogy a marketing folyamatok hatékonyabbak legyenek, valamint automatizált értékesítési csatornákat hoztam létre, amelyek segítségével a hírlevelek nemcsak kommunikációs, hanem üzleti szempontból is eredményesek lettek.";
-    let wordpress = "Már 9 éve foglalkozom WordPress-szel, ezalatt rendszeresen készítettem saját sablonokat az általam tervezett design alapján. Jól ismerem a bővítmények működését, és nagy tapasztalatom van a WooCommerce webshop motor használatában, így komplex e-kereskedelmi megoldásokat is könnyedén kivitelezek.";
-    let ai = "Mind a design, mind a programozás során aktívan használom az AI-t, amely hatékonyan kiegészíti és felgyorsítja a munkafolyamataimat. Képgenerálásban jelentős segítséget nyújt, míg a programozás során inkább az AI-t kérdezem, mint hogy Google-ben keresgéljek. Tanulásra is rendszeresen igénybe veszem a gyorsasága, pontossága és részletessége miatt. Összességében az AI rengeteget segített a fejlődésemben, és a mai napig nélkülözhetetlen eszköz a tanulásban és a munkában.";
-    let seo = "Több mint 10 éve foglalkozom cikkírással, és ezzel párhuzamosan SEO-val is. Minden általam készített aloldal és cikk SEO szempontok alapján készült, amit a keresőből érkező havi 10.000 feletti kattintásszám is igazol. A Search Console-t és a Google Analytics-et rendszeresen használom az eredmények nyomon követésére és az optimalizálási lehetőségek feltárására.";
-    let ppc = "Több éves tapasztalattal rendelkezem Facebook és Google hirdetések készítésében. Számos kreatívot készítettem már, jól ismerem a hirdetési algoritmusok működését és az AB tesztelési folyamatokat. Ezenkívül a statisztikák és kimutatások elemzése sem jelent gondot, hiszen pontosan tudom, hogyan kell értelmezni az adatokat a kampányok finomhangolásához.";
-    let kiadvany = "Több könyvet és ebook-ot írtam, amelyeket teljes egészében én szerkesztettem és terveztem. A kiadványaimat InDesign segítségével tördeltem és designoltam, valamint az illusztrációkhoz a fotózást is én végeztem. Az erős véleményformáló készségemnek köszönhetően minden kiadványom jól strukturált, letisztult és vizuálisan igényes.";
-    let haromD = "A grafikai tanulmányaimat kiegészítettem 3D tervezéssel, amelynek során megtanultam modellezni, textúrázni, shaderezni és renderelni. Dolgoztam már játékokon, valamint konyhák 3D-s tervezésén is. Az alkotói folyamat során Autodesk Mayát és korábban ZBrush-t használtam, ami lehetővé tette, hogy komplex és részletes 3D modelleket készítsek.";
-    let live = "Rendszeresen közvetítek élőben sakkversenyekről, ahol én vagyok a technikai felelős, a rendező és az operátor is, így minden munkafolyamatot átlátok. Többkamerás produkciókat valósítottam meg, a grafikai anyagokat és a programozást is én készítettem hozzájuk. Bár ezek kisebb projektek voltak, de rengeteg tapasztalat szereztem. Nem egyszer, nem kétszer én vezettem be világszinten elsőként alkalmazott infografikai újításokat, amik jelentősen hozzájárultak a közvetítések minőségéhez.";
-    let videovagas = "Rendszeresen vágok videókat, elsősorban sakkversenyeken készült felvételekből. Jelenleg a DaVinci Resolve-t használom, amellyel többkamerás videókat is készítettem. Ezen kívül YouTube short videókat is készítek, amelyek közül több is milliós nézettséget ért el. Tapasztalataimnak köszönhetően könnyedén szerkesztem a felvételeket professzionális és esztétikus végeredménnyé.";
-
-    let run = false;
-    let intervalId;
-    function egyebInfo(text){
-        if(run) clearInterval(intervalId)
-        document.getElementById('egyeb-text').textContent = ""
-        if(window.innerWidth < 600) document.getElementById('egyeb').scrollIntoView({ behavior: 'smooth' })
-        let i = 0
-        intervalId = setInterval(()=>{ 
-            run = true
-            document.getElementById('egyeb-text').textContent += text[i]
-            i++
-          if(i >= text.length){
-              clearInterval(intervalId)
-              run = false
-              if(text !== reset) {
-                  let newA = document.createElement('A')
-                  newA.classList.add('back')
-                  newA.href = 'javascript:void(0)'
-                  newA.textContent = "<<<Vissza"
-                  newA.addEventListener('click', () => egyebInfo(reset))
-                  document.getElementById('egyeb-text').appendChild(newA)
-              }
-          }
-        }, 1)
-    }
-
+    //HEADER STARS ANIMATION
     const stars = [
         { element: document.getElementById('stars1'), factor: 8 },
         { element: document.getElementById('stars2'), factor: 20 },
@@ -953,13 +918,11 @@ body{font-size: 14px;}
 
             star.element.style.transform = `translate(${state[i].currentX}px, ${state[i].currentY}px)`;
         });
-
         requestAnimationFrame(animate);
     }
-
     animate();
 
-    // GRID HOVER ANIMATION
+    //GRID HOVER ANIMATION
     document.querySelectorAll('#grid .work').forEach(work => {
         let targetX = 0, targetY = 0
         let currentX = 0, currentY = 0
@@ -1047,6 +1010,45 @@ body{font-size: 14px;}
             }
         });
     });
+
+    //EGYÉB ANIMATION
+    let reset = "Az online marketing, média és értékesítés területén szerzett tapasztalataim kiegészítik webfejlesztési ismereteimet, lehetővé téve, hogy komplex projekteken dolgozzak. Erős UX/UI és WordPress ismeretekkel rendelkezem, amelyek mellett kiemelten foglalkoztam hírlevel rendszerek automatizálásával és SEO optimalizálással is. Az utóbbi időben mesterséges intelligenciával és PPC kampányokkal is foglalkoztam, továbbá kiadványszerkesztési, 3D modellezési és videóvágási alapismeretekkel is rendelkezem. Mindezek mellett nyitott vagyok az új technológiák és módszerek elsajátítására, hogy folyamatosan bővítsem a tudásomat."
+    let uxui = "14 éve kezdtem el grafikával foglalkozni, és azóta is a vizuális kreativitás határozza meg a munkámat. Vizuális típus vagyok, így kiemelten fontos számomra, hogy az általam tervezett felületek nemcsak funkcionálisan, hanem esztétikailag is rendben legyenek. Szenvedélyem a design, és szeretem, ha minden részlet szépen kidolgozott, hogy a felhasználók számára egyértelmű, élvezetes élményt nyújtsanak.";
+    let hirlevel = "8 éve foglalkozom hírlevelekkel, és ez idő alatt komoly tapasztalatot szereztem listák építésében és kezelésében. A legnagyobb lista, amit felépítettem, több mint 150.000 címet tartalmazott. Automatizációkat fejlesztettem, hogy a marketing folyamatok hatékonyabbak legyenek, valamint automatizált értékesítési csatornákat hoztam létre, amelyek segítségével a hírlevelek nemcsak kommunikációs, hanem üzleti szempontból is eredményesek lettek.";
+    let wordpress = "Már 9 éve foglalkozom WordPress-szel, ezalatt rendszeresen készítettem saját sablonokat az általam tervezett design alapján. Jól ismerem a bővítmények működését, és nagy tapasztalatom van a WooCommerce webshop motor használatában, így komplex e-kereskedelmi megoldásokat is könnyedén kivitelezek.";
+    let ai = "Mind a design, mind a programozás során aktívan használom az AI-t, amely hatékonyan kiegészíti és felgyorsítja a munkafolyamataimat. Képgenerálásban jelentős segítséget nyújt, míg a programozás során inkább az AI-t kérdezem, mint hogy Google-ben keresgéljek. Tanulásra is rendszeresen igénybe veszem a gyorsasága, pontossága és részletessége miatt. Összességében az AI rengeteget segített a fejlődésemben, és a mai napig nélkülözhetetlen eszköz a tanulásban és a munkában.";
+    let seo = "Több mint 10 éve foglalkozom cikkírással, és ezzel párhuzamosan SEO-val is. Minden általam készített aloldal és cikk SEO szempontok alapján készült, amit a keresőből érkező havi 10.000 feletti kattintásszám is igazol. A Search Console-t és a Google Analytics-et rendszeresen használom az eredmények nyomon követésére és az optimalizálási lehetőségek feltárására.";
+    let ppc = "Több éves tapasztalattal rendelkezem Facebook és Google hirdetések készítésében. Számos kreatívot készítettem már, jól ismerem a hirdetési algoritmusok működését és az AB tesztelési folyamatokat. Ezenkívül a statisztikák és kimutatások elemzése sem jelent gondot, hiszen pontosan tudom, hogyan kell értelmezni az adatokat a kampányok finomhangolásához.";
+    let kiadvany = "Több könyvet és ebook-ot írtam, amelyeket teljes egészében én szerkesztettem és terveztem. A kiadványaimat InDesign segítségével tördeltem és designoltam, valamint az illusztrációkhoz a fotózást is én végeztem. Az erős véleményformáló készségemnek köszönhetően minden kiadványom jól strukturált, letisztult és vizuálisan igényes.";
+    let haromD = "A grafikai tanulmányaimat kiegészítettem 3D tervezéssel, amelynek során megtanultam modellezni, textúrázni, shaderezni és renderelni. Dolgoztam már játékokon, valamint konyhák 3D-s tervezésén is. Az alkotói folyamat során Autodesk Mayát és korábban ZBrush-t használtam, ami lehetővé tette, hogy komplex és részletes 3D modelleket készítsek.";
+    let live = "Rendszeresen közvetítek élőben sakkversenyekről, ahol én vagyok a technikai felelős, a rendező és az operátor is, így minden munkafolyamatot átlátok. Többkamerás produkciókat valósítottam meg, a grafikai anyagokat és a programozást is én készítettem hozzájuk. Bár ezek kisebb projektek voltak, de rengeteg tapasztalat szereztem. Nem egyszer, nem kétszer én vezettem be világszinten elsőként alkalmazott infografikai újításokat, amik jelentősen hozzájárultak a közvetítések minőségéhez.";
+    let videovagas = "Rendszeresen vágok videókat, elsősorban sakkversenyeken készült felvételekből. Jelenleg a DaVinci Resolve-t használom, amellyel többkamerás videókat is készítettem. Ezen kívül YouTube short videókat is készítek, amelyek közül több is milliós nézettséget ért el. Tapasztalataimnak köszönhetően könnyedén szerkesztem a felvételeket professzionális és esztétikus végeredménnyé.";
+
+    let run = false;
+    let intervalId;
+    function egyebInfo(text){
+        if(run) clearInterval(intervalId)
+        document.getElementById('egyeb-text').textContent = ""
+        if(window.innerWidth < 600) document.getElementById('egyeb').scrollIntoView({ behavior: 'smooth' })
+        let i = 0
+        intervalId = setInterval(()=>{
+            run = true
+            document.getElementById('egyeb-text').textContent += text[i]
+            i++
+            if(i >= text.length){
+                clearInterval(intervalId)
+                run = false
+                if(text !== reset) {
+                    let newA = document.createElement('A')
+                    newA.classList.add('back')
+                    newA.href = 'javascript:void(0)'
+                    newA.textContent = "<<<Vissza"
+                    newA.addEventListener('click', () => egyebInfo(reset))
+                    document.getElementById('egyeb-text').appendChild(newA)
+                }
+            }
+        }, 1)
+    }
 
     //LOADING ANIMATION
     setTimeout(()=>document.querySelectorAll('.loading-bar').forEach(bar=>bar.classList.add('visible')), 200)
