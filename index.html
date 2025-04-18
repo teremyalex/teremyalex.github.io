@@ -107,6 +107,7 @@ body{background:linear-gradient(186deg, #81D5E9 0%, #C7EFF9 6%, #F6F6F6 40%); ba
 
 /* #PORTFÓLIÓ */
 .portfolio h3 {font-size: 66px; line-height: 45px;}
+.portfolio #grid{grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));}
 .portfolio .flex{flex-direction: column-reverse;}
 .portfolio .flex .content{width: 100%; margin: 0 0 20px;}
 .portfolio .flex .design{width: 85%; height: 450px; margin: 0 auto 20px;}
@@ -139,6 +140,7 @@ body{font-size: 14px;}
 /* #PORTFÓLIÓ */
 .portfolio {padding: 50px 10px;}
 .portfolio h3 {font-size: 42px; line-height: 35px;}
+.portfolio #grid{grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 8px;}
 /* #KAPCSOLAT */
 .kapcsolat {padding: 50px 10px;}
 .kapcsolat h3 {font-size: 42px; line-height: 35px;}
@@ -236,11 +238,26 @@ body{font-size: 14px;}
                     <div class="work" onclick="portfolioDetails('luicey')">
                         <img src="img/luicey.jpg">
                     </div>
+                    <div class="work" onclick="portfolioDetails('bocsiviki')">
+                        <img src="img/bocsiviki.jpg">
+                    </div>
+                    <div class="work" onclick="portfolioDetails('epikforge')">
+                        <img src="img/epikforge.jpg">
+                    </div>
                     <div class="work" onclick="portfolioDetails('gombadr')">
                         <img src="img/gombadr.jpg">
                     </div>
                     <div class="work" onclick="portfolioDetails('rachelcare-karacsony')">
                         <img src="img/rachelcare.jpg">
+                    </div>
+                    <div class="work" onclick="portfolioDetails('bpluszk')">
+                        <img src="img/bpluszk.jpg">
+                    </div>
+                    <div class="work" onclick="portfolioDetails('rachelcare-nonap')">
+                        <img src="img/nonap.jpg">
+                    </div>
+                    <div class="work" onclick="portfolioDetails('honeyhill')">
+                        <img src="img/honeyhill.jpg">
                     </div>
                     <div class="work" onclick="portfolioDetails('nyhchess')">
                         <img src="img/nyhchess.jpg">
@@ -257,18 +274,13 @@ body{font-size: 14px;}
                     <div class="work" onclick="portfolioDetails('live')">
                         <img src="img/live.jpg">
                     </div>
-                    <div class="work" onclick="portfolioDetails('bpluszk')">
-                        <img src="img/bpluszk.jpg">
-                    </div>
-                    <div class="work" onclick="portfolioDetails('rachelcare-nonap')">
-                        <img src="img/nonap.jpg">
-                    </div>
                     <div class="work" onclick="portfolioDetails('smidkarpit')">
                         <img src="img/smidkarpit.jpg">
                     </div>
                     <div class="work" onclick="portfolioDetails('yourmee')">
                         <img src="img/yourmee.jpg">
                     </div>
+
 
 
                 </div>
@@ -308,6 +320,92 @@ body{font-size: 14px;}
                         <div class="design">
                             <div class="scroll">
                                 <img src="img/luicey-full.jpg">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- BOCSIVIKI -->
+                <div class="work-details" id="bocsiviki">
+                    <div class="links">
+                        <a class="back" href="#"><img src="img/back.svg"> Vissza</a>
+                        <!--<a href="https://landing.epikforge.com/webfejlesztes" target="_blank"><img src="img/web.svg"> Website Link</a>-->
+                        <!--<a href="https://github.com/teremyalex/epikforge/webfejlesztes" target="_blank"><img src="img/github2.svg"> GitHub Projekt</a>-->
+                        <a href="https://www.figma.com/design/ppUf0NN4HoKgB8k7NrZgd1/BocsiViki?node-id=2-4&t=HgxX6ZnNiFrgaitj-1" target="_blank"><img src="img/figma2.svg"> Figma Design</a>
+                    </div>
+                    <div class="flex">
+                        <div class="content">
+                            <div class="block">
+                                <div class="cat">#KLIENS</div>
+                                <div>
+                                    <h4>Bocsi Viki</h4>
+                                    <p>Bocsi Viki táplálkozástudományi szakértő, aki 2014-ben indította el saját márkáját. Azóta országos étel-házhozszállítási szolgáltatást kínál, amely személyre szabott, egészséges ételeket biztosít ügyfeleinek. A kínálat glutén-, tej-, cukor-, szója- és kukoricamentes, adalékanyagok nélkül készül, dietetikusok és szakértők bevonásával.</p>
+                                </div>
+                            </div>
+
+                            <div class="block">
+                                <div class="cat">#FELADAT</div>
+                                <div>
+                                    <h4>Weboldal</h4>
+                                    <p>A projekt során egy letisztult, UX-központú weboldalt terveztem és annak frontend részét fejlesztettem, amely hatékonyan kommunikálja a bocsiviki.hu egészséges étkezési szolgáltatásait és tanácsadásait. A cél az volt, hogy a felhasználók könnyen eligazodjanak a szolgáltatások között, és egyszerűen rendeljenek személyre szabott, mentes ételeket.</p>
+                                </div>
+                            </div>
+
+                            <div class="block">
+                                <div class="cat">#TECHNOLÓGIÁK</div>
+                                <div>
+                                    <h4>HTML, CSS, JavaScript, Figma, Photoshop, Leonardo AI</h4>
+                                    <p>A weboldal design-ja Figmával, Photoshoppal és Leonardo AI-jal készült. Az oldal HTML, CSS és JavaScript használatával készült, különös figyelmet fordítva az interaktív felhasználói felületre.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="design">
+                            <div class="scroll">
+                                <img src="img/bocsiviki-full.jpg">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- EPIKFORGE -->
+                <div class="work-details" id="epikforge">
+                    <div class="links">
+                        <a class="back" href="#"><img src="img/back.svg"> Vissza</a>
+                        <a href="https://landing.epikforge.com/webfejlesztes" target="_blank"><img src="img/web.svg"> Website Link</a>
+                        <a href="https://github.com/teremyalex/epikforge/webfejlesztes" target="_blank"><img src="img/github2.svg"> GitHub Projekt</a>
+                        <a href="https://www.figma.com/design/qmae382stanKD1thRY0Bws/Webfejleszt%C3%A9s?node-id=1-2&t=HgxX6ZnNiFrgaitj-1" target="_blank"><img src="img/figma2.svg"> Figma Design</a>
+                    </div>
+                    <div class="flex">
+                        <div class="content">
+                            <div class="block">
+                                <div class="cat">#KLIENS</div>
+                                <div>
+                                    <h4>Epikforge</h4>
+                                    <p>Az Epikforge egy kreatív marketing ügynökség, amely stratégiai gondolkodással és modern vizuális megoldásokkal támogatja ügyfelei növekedését. Weboldalak fejlesztése eddig is a szolgáltatások része volt, most azonban külön webfejlesztési részleg indul, amely kizárólag erre a területre koncentrál. Célunk, hogy egyedi, gyors és átlátható weboldalakat készítsünk, amelyek tökéletesen illeszkednek az ügyfél arculatához és üzleti céljaihoz. Az új részleg professzionális, UX-központú és mobilbarát megoldásokat kínál.</p>
+                                </div>
+                            </div>
+
+                            <div class="block">
+                                <div class="cat">#FELADAT</div>
+                                <div>
+                                    <h4>Landing Page</h4>
+                                    <p>A feladatom egy letisztult, bizalomkeltő landing oldal megtervezése és lefejlesztése volt, amely bemutatja az Epikforge webfejlesztési szolgáltatásait. A cél egy modern, UX-központú felület létrehozása volt, amely jól kommunikálja a cég új fókuszát.</p>
+                                </div>
+                            </div>
+
+                            <div class="block">
+                                <div class="cat">#TECHNOLÓGIÁK</div>
+                                <div>
+                                    <h4>HTML, CSS, JavaScript, Figma, Photoshop, Leonardo AI</h4>
+                                    <p>A landing page design-ja Figmával, Photoshoppal és Leonardo AI-jal készült. Az oldal HTML, CSS és JavaScript használatával készült, különös figyelmet fordítva az interaktív felhasználói felületre.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="design">
+                            <div class="scroll">
+                                <img src="img/epikforge-full.jpg">
                             </div>
                         </div>
                     </div>
@@ -354,7 +452,6 @@ body{font-size: 14px;}
                             </div>
                         </div>
                     </div>
-
                 </div>
 
                 <!-- RACHELCARE -->
@@ -449,6 +546,135 @@ body{font-size: 14px;}
                         </div>
                     </div>
 
+                </div>
+
+                <!-- BPLUSZK -->
+                <div class="work-details" id="bpluszk">
+                    <div class="links">
+                        <a class="back" href="#"><img src="img/back.svg"> Vissza</a>
+                        <a href="https://landing.epikforge.com/bpluszk/" target="_blank"><img src="img/web.svg"> Website Link</a>
+                        <a href="https://github.com/teremyalex/bpluszk" target="_blank"><img src="img/github2.svg"> GitHub Projekt</a>
+                        <a href="https://www.figma.com/design/rG7ZTEAsX7OMKhgY39Sk2Z/B%2BK?node-id=2-2&t=kujDiHM9N7cBs59h-1" target="_blank"><img src="img/figma2.svg"> Figma Design</a>
+                    </div>
+                    <div class="flex">
+                        <div class="content">
+                            <div class="block">
+                                <div class="cat">#KLIENS</div>
+                                <div>
+                                    <h4>B+K Trade Kft</h4>
+                                    <p>A B+K Trade Kft ipari tisztítási megoldásokra és higiéniai termékek forgalmazására szakosodott. Termékkínálatukban magasnyomású mosók, tisztítószerek és takarítóeszközök szerepelnek, szolgáltatásaik közé pedig higiéniai rendszerek kiépítése, oktatás és szaktanácsadás tartozik.</p>
+                                </div>
+                            </div>
+
+                            <div class="block">
+                                <div class="cat">#FELADAT</div>
+                                <div>
+                                    <h4>Landing Page</h4>
+                                    <p>A feladatom egy modern, reszponzív landing page létrehozása volt a B+K Trade Kft higiéniai költségoptimalizáló szolgáltatásának népszerűsítésére. Az oldal lényege, hogy felhívja a cégvezetők, cégtulajdonosok, beszerzési vezetők figyelmét a higiéniai költségek hatékony csökkentésére. A landing page célja, hogy vizuálisan vonzó és informatív módon mutassa be a szolgáltatást, miközben egyszerű és felhasználóbarát legyen az elérhetőségek megadása.</p>
+                                </div>
+                            </div>
+
+                            <div class="block">
+                                <div class="cat">#TECHNOLÓGIÁK</div>
+                                <div>
+                                    <h4>HTML, CSS, TypeScript, Figma, Photoshop, AI</h4>
+                                    <p>A landing page design-ja Figmával, Photoshoppal és AI-jal készült. Az oldal HTML, CSS és TypeScript használatával készült, különös figyelmet fordítva az interaktív felhasználói felületre.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="design">
+                            <div class="scroll">
+                                <img src="img/bpluszk-full.jpg">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- RACHELCARE NŐNAP -->
+                <div class="work-details" id="rachelcare-nonap">
+                    <div class="links">
+                        <a class="back" href="#"><img src="img/back.svg"> Vissza</a>
+                        <a href="https://rachelcare.hu/nonap" target="_blank"><img src="img/web.svg"> Website Link</a>
+                        <a href="https://github.com/teremyalex/nonap" target="_blank"><img src="img/github2.svg"> GitHub Projekt</a>
+                        <a href="https://www.figma.com/design/OAOsXdEjCxabxnaN16kqT9/Rachel-Care?node-id=86-4&t=1cFdaqWrdjVmZqDD-1" target="_blank"><img src="img/figma2.svg"> Figma Design</a>
+                    </div>
+                    <div class="flex">
+                        <div class="content">
+                            <div class="block">
+                                <div class="cat">#KLIENS</div>
+                                <div>
+                                    <h4>Rachel Care</h4>
+                                    <p>A Rachel Care egy modern kozmetikai márka, amely a legújabb kozmetikai összetevőket ötvözi a természet erejével. Termékeik, például az anti-aging arckrémek és szemkörnyékápolók, nemcsak intenzív hidratálást és bőrfeszesítést nyújtanak, hanem természetes hatóanyagok szinergikus kombinációját alkalmazzák a bőr szépségének és egészségének megőrzéséhez.</p>
+                                </div>
+                            </div>
+
+                            <div class="block">
+                                <div class="cat">#FELADAT</div>
+                                <div>
+                                    <h4>Landing Page</h4>
+                                    <p>Feladatom egy nőnapi landing page létrehozása volt, amely illeszkedik a Rachel Care többi értékesítési oldalához. Az oldal díszdobozos nőnapi csomagokat kínált, ünnepi hangulatot teremtve a vásárlók számára.</p>
+                                </div>
+                            </div>
+
+                            <div class="block">
+                                <div class="cat">#TECHNOLÓGIÁK</div>
+                                <div>
+                                    <h4>HTML, CSS, JavaScript, Figma, Photoshop, Leonardo AI</h4>
+                                    <p>A landing page design-ja Figmában készült, melyet Photoshop és Leonardo AI egészített ki. Az oldal HTML, CSS és JavaScript használatával készült, különös figyelmet fordítva a kosár- és vásárlási folyamat reszponzív működésére.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="design">
+                            <div class="scroll">
+                                <img src="img/nonap-full.jpg">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- HONEYHILL -->
+                <div class="work-details" id="honeyhill">
+                    <div class="links">
+                        <a class="back" href="#"><img src="img/back.svg"> Vissza</a>
+                        <a href="https://landing.epikforge.com/honeyhill/arckrem" target="_blank"><img src="img/web.svg"> Website Link</a>
+                        <a href="https://github.com/teremyalex/honeyhill" target="_blank"><img src="img/github2.svg"> GitHub Projekt</a>
+                        <a href="https://www.figma.com/design/s52lUj3Cdw0pW5qTRhl3cu/Honey-Hill?node-id=2262-1332&t=HgxX6ZnNiFrgaitj-1" target="_blank"><img src="img/figma2.svg"> Figma Design</a>
+                    </div>
+                    <div class="flex">
+                        <div class="content">
+                            <div class="block">
+                                <div class="cat">#KLIENS</div>
+                                <div>
+                                    <h4>HoneyHill</h4>
+                                    <p>A HoneyHill egy családi vállalkozás, amely több mint 30 éves méhészeti tapasztalatra építve kínál prémium minőségű méhpempőt, propoliszt és egyéb természetes készítményeket. A HoneyHill termékei számos elismerést nyertek, például az Érték és Minőség Nagydíjat, és céljuk, hogy a méhek természetes erejét a modern életvitelbe integrálják.</p>
+                                </div>
+                            </div>
+
+                            <div class="block">
+                                <div class="cat">#FELADAT</div>
+                                <div>
+                                    <h4>Landing Page</h4>
+                                    <p>A feladatom több modern, reszponzív landing page létrehozása volt a HoneyHill termékeinek népszerűsítésére és értékesítésére. A landing page célja, hogy vizuálisan vonzó és informatív módon mutassa be a termékeit, miközben egyszerű és felhasználóbarát legyen az értékesítés folyamata.</p>
+                                </div>
+                            </div>
+
+                            <div class="block">
+                                <div class="cat">#TECHNOLÓGIÁK</div>
+                                <div>
+                                    <h4>HTML, CSS, JavaScript, Figma, Photoshop, Leonardo AI</h4>
+                                    <p>A landing page design-ja Figmával, Photoshoppal és Leonardo AI-jal készült. Az oldal HTML, CSS és JavaScript használatával készült, különös figyelmet fordítva az interaktív felhasználói felületre.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="design">
+                            <div class="scroll">
+                                <img src="img/honeyhill-full.jpg">
+                            </div>
+                        </div>
+                    </div>
                 </div>
 
                 <!-- DIETMAKER -->
@@ -618,91 +844,7 @@ body{font-size: 14px;}
                     </div>
                 </div>
 
-                <!-- BPLUSZK -->
-                <div class="work-details" id="bpluszk">
-                    <div class="links">
-                        <a class="back" href="#"><img src="img/back.svg"> Vissza</a>
-                        <a href="https://landing.epikforge.com/bpluszk/" target="_blank"><img src="img/web.svg"> Website Link</a>
-                        <a href="https://github.com/teremyalex/bpluszk" target="_blank"><img src="img/github2.svg"> GitHub Projekt</a>
-                        <a href="https://www.figma.com/design/rG7ZTEAsX7OMKhgY39Sk2Z/B%2BK?node-id=2-2&t=kujDiHM9N7cBs59h-1" target="_blank"><img src="img/figma2.svg"> Figma Design</a>
-                    </div>
-                    <div class="flex">
-                        <div class="content">
-                            <div class="block">
-                                <div class="cat">#KLIENS</div>
-                                <div>
-                                    <h4>B+K Trade Kft</h4>
-                                    <p>A B+K Trade Kft ipari tisztítási megoldásokra és higiéniai termékek forgalmazására szakosodott. Termékkínálatukban magasnyomású mosók, tisztítószerek és takarítóeszközök szerepelnek, szolgáltatásaik közé pedig higiéniai rendszerek kiépítése, oktatás és szaktanácsadás tartozik.</p>
-                                </div>
-                            </div>
 
-                            <div class="block">
-                                <div class="cat">#FELADAT</div>
-                                <div>
-                                    <h4>Landing Page</h4>
-                                    <p>A feladatom egy modern, reszponzív landing page létrehozása volt a B+K Trade Kft higiéniai költségoptimalizáló szolgáltatásának népszerűsítésére. Az oldal lényege, hogy felhívja a cégvezetők, cégtulajdonosok, beszerzési vezetők figyelmét a higiéniai költségek hatékony csökkentésére. A landing page célja, hogy vizuálisan vonzó és informatív módon mutassa be a szolgáltatást, miközben egyszerű és felhasználóbarát legyen az elérhetőségek megadása.</p>
-                                </div>
-                            </div>
-
-                            <div class="block">
-                                <div class="cat">#TECHNOLÓGIÁK</div>
-                                <div>
-                                    <h4>HTML, CSS, TypeScript, Figma, Photoshop, AI</h4>
-                                    <p>A landing page design-ja Figmával, Photoshoppal és AI-jal készült. Az oldal HTML, CSS és TypeScript használatával készült, különös figyelmet fordítva az interaktív felhasználói felületre.</p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="design">
-                            <div class="scroll">
-                                <img src="img/bpluszk-full.jpg">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- RACHELCARE NŐNAP -->
-                <div class="work-details" id="rachelcare-nonap">
-                    <div class="links">
-                        <a class="back" href="#"><img src="img/back.svg"> Vissza</a>
-                        <a href="https://rachelcare.hu/nonap" target="_blank"><img src="img/web.svg"> Website Link</a>
-                        <a href="https://github.com/teremyalex/nonap" target="_blank"><img src="img/github2.svg"> GitHub Projekt</a>
-                        <a href="https://www.figma.com/design/OAOsXdEjCxabxnaN16kqT9/Rachel-Care?node-id=86-4&t=1cFdaqWrdjVmZqDD-1" target="_blank"><img src="img/figma2.svg"> Figma Design</a>
-                    </div>
-                    <div class="flex">
-                        <div class="content">
-                            <div class="block">
-                                <div class="cat">#KLIENS</div>
-                                <div>
-                                    <h4>Rachel Care</h4>
-                                    <p>A Rachel Care egy modern kozmetikai márka, amely a legújabb kozmetikai összetevőket ötvözi a természet erejével. Termékeik, például az anti-aging arckrémek és szemkörnyékápolók, nemcsak intenzív hidratálást és bőrfeszesítést nyújtanak, hanem természetes hatóanyagok szinergikus kombinációját alkalmazzák a bőr szépségének és egészségének megőrzéséhez.</p>
-                                </div>
-                            </div>
-
-                            <div class="block">
-                                <div class="cat">#FELADAT</div>
-                                <div>
-                                    <h4>Landing Page</h4>
-                                    <p>Feladatom egy nőnapi landing page létrehozása volt, amely illeszkedik a Rachel Care többi értékesítési oldalához. Az oldal díszdobozos nőnapi csomagokat kínált, ünnepi hangulatot teremtve a vásárlók számára.</p>
-                                </div>
-                            </div>
-
-                            <div class="block">
-                                <div class="cat">#TECHNOLÓGIÁK</div>
-                                <div>
-                                    <h4>HTML, CSS, JavaScript, Figma, Photoshop, Leonardo AI</h4>
-                                    <p>A landing page design-ja Figmában készült, melyet Photoshop és Leonardo AI egészített ki. Az oldal HTML, CSS és JavaScript használatával készült, különös figyelmet fordítva a kosár- és vásárlási folyamat reszponzív működésére.</p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="design">
-                            <div class="scroll">
-                                <img src="img/nonap-full.jpg">
-                            </div>
-                        </div>
-                    </div>
-                </div>
 
                 <!-- SMIDKARPIT -->
                 <div class="work-details" id="smidkarpit">
