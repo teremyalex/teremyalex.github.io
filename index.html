@@ -28,7 +28,7 @@ body{background:linear-gradient(186deg, #81D5E9 0%, #C7EFF9 6%, #F6F6F6 40%); ba
 .header .frontend{font-family: 'Montserrat'; font-size: 36px; font-weight:400; font-style:italic; transform: translateY(100px); opacity: 0; transition: 500ms ease-in-out;}
 .header .designer{font-family: 'Montserrat'; font-size: 24px; font-weight: 300; font-style:italic; margin: 0 0 20px; transform: translateY(100px); opacity: 0; transition: 500ms ease-in-out;}
 .header .icons{display:flex; flex-wrap:wrap; justify-content: flex-end; gap: 5px; transform: translateY(100px); opacity: 0; transition: 500ms ease-in-out;}
-.header .icons img{height:50px; padding: 10px; cursor:pointer; opacity: 0; transform: scale(0.8); transform-origin: center; transition: 500ms ease-in-out;}
+.header .icons img{height:50px; padding: 10px; opacity: 0; transform: scale(0.8); transform-origin: center; transition: 500ms ease-in-out;}
 .header .icons img.visible{opacity: 1; transform: scale(1);}
 .header .visible{transform: translateY(0); opacity: 1;}
 
@@ -51,6 +51,11 @@ body{background:linear-gradient(186deg, #81D5E9 0%, #C7EFF9 6%, #F6F6F6 40%); ba
 .tudas .bar{background: linear-gradient(90deg, #FFD8D8, #FF8989); max-width: 377px; width: 100%; height: 40px; margin: 0 0 10px auto; border-radius: 8px;}  
 .tudas .bar div{background: linear-gradient(90deg, #FF5C5C, #FE0000); background-size:377px; width: 100%; max-width: 0; height: 40px; border-radius: 8px; padding: 0 0 0 10px; box-sizing: border-box; color: white; font-size: 20px; display: flex; align-items: center; white-space: nowrap; cursor: pointer; transition: 1s ease-in-out;}
 .tudas .back{color: #FE0000; font-weight: 700; margin:0 0 0 6px; text-decoration: none;}
+
+.stack{max-width: 444px; margin: 0 auto; font-family: 'Montserrat', sans-serif; font-size: 20px; color: white;}
+.stack > div{display: flex; gap: 10px; margin: 0 0 10px;}
+.stack .box{display: flex; align-items: center; justify-content: center; gap: 10px; background: #FE0000; border-radius: 8px; opacity: 0; transform: scale(0.5); transition: 500ms ease-in-out;}
+.stack .box.visible{opacity: 1; transform: scale(1);}
 
 /* #PORTFÓLIÓ */
 .portfolio{padding: 100px 10px; box-sizing: border-box; transform: translateY(100px); opacity: 0; transition: 500ms ease-in-out;}
@@ -138,6 +143,9 @@ body{font-size: 14px;}
 /* #ISMERET */
 .tudas {padding: 50px 10px;}
 .tudas h3 {font-size: 42px; line-height: 35px;}
+
+.stack{font-size: 14px;}
+.stack img{height: 30px;}
 /* #PORTFÓLIÓ */
 .portfolio {padding: 50px 10px;}
 .portfolio h3 {font-size: 42px; line-height: 35px;}
@@ -205,6 +213,28 @@ body{font-size: 14px;}
                     <h3>#STACK</h3>
                     <p>Frontend fejlesztőként HTML, CSS, JavaScript/TypeScript, React/NEXT.js alapon készítek dinamikus és reszponzív weboldalakat. Fontos számomra, hogy amit létrehozok, az ne csak jól nézzen ki, hanem technikailag is hibátlanul működjön. Az erős grafikai alapjaim segítenek abban, hogy a funkció és a design egyensúlyban legyen. Szeretek olyan projekteken dolgozni, ahol a kreatív ötletek és a technikai kihívások találkoznak, és közben folyamatosan fejleszthetem a tudásomat.</p>
                 </div>
+
+                <div class="stack">
+                    <div>
+                        <div class="box" style="width: calc(55% - 5px); height: 136px;"><img src="img/html-w.svg">HTML</div>
+                        <div style="width: calc(45% - 5px);">
+                            <div class="box" style="height: 63px; margin: 0 0 10px;"><img src="img/css-w.svg">CSS</div>
+                            <div class="box" style="height: 63px;"><img src="img/bootstrap-w.svg">Booststrap</div>
+                        </div>
+                    </div>
+
+                    <div>
+                        <div style="width: calc(45% - 5px);">
+                            <div class="box" style="height: 63px; margin: 0 0 10px;"><img src="img/react-w.svg">React</div>
+                            <div class="box" style="height: 63px; margin: 0 0 10px;"><img src="img/next-w.svg">NEXT.js</div>
+                            <div class="box" style="height: 63px;"><img src="img/typescript-w.svg">TypeScript</div>
+                        </div>
+                        <div class="box" style="width: calc(55% - 5px); height: 209px;"><img src="img/javascript-w.svg">JavaScript</div>
+                    </div>
+
+                </div>
+
+                <!--
                 <div>
                     <div class="bar">
                         <div data-width="0.95">HTML</div>
@@ -227,7 +257,7 @@ body{font-size: 14px;}
                     <div class="bar">
                         <div data-width="0.1">Python</div>
                     </div>
-                </div>
+                </div>-->
             </div>
         </section>
 
@@ -1061,12 +1091,13 @@ body{font-size: 14px;}
     //SECTION ANIMATION
     const sectionAnim = new IntersectionObserver(entries => {
         entries.forEach((entry, index) => {
-            if (entry.isIntersecting) setTimeout(() => entry.target.classList.add('visible'), 300)
+            if (entry.isIntersecting) setTimeout(() => setTimeout(() =>entry.target.classList.add('visible'), 100*index), 300)
         })
     }, {threshold: window.innerWidth<500 ? 0 : 0.1})
     sectionAnim.observe(document.querySelector('.rolam'))
-    sectionAnim.observe(document.querySelector('.portfolio'))
     document.querySelectorAll('.tudas').forEach(tudas => sectionAnim.observe(tudas))
+    document.querySelectorAll('.stack .box').forEach(box => sectionAnim.observe(box))
+    sectionAnim.observe(document.querySelector('.portfolio'))
     sectionAnim.observe(document.querySelector('.kapcsolat'))
 
 
