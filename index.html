@@ -1091,28 +1091,28 @@ body{font-size: 14px;}
 
     const state = stars.map(() => ({
         targetX: 0, targetY: 0, currentX: 0, currentY: 0
-    }));
+    }))
 
     window.addEventListener('mousemove', (e) => {
-        const centerX = window.innerWidth / 2;
-        const centerY = window.innerHeight / 2;
+        const centerX = window.innerWidth / 2
+        const centerY = window.innerHeight / 2
 
         stars.forEach((star, i) => {
-            state[i].targetX = (e.clientX - centerX) / star.factor;
-            state[i].targetY = (e.clientY - centerY) / star.factor;
-        });
-    });
+            state[i].targetX = (e.clientX - centerX) / star.factor
+            state[i].targetY = (e.clientY - centerY) / star.factor
+        })
+    })
 
     function animate() {
         stars.forEach((star, i) => {
-            state[i].currentX += (state[i].targetX - state[i].currentX) * 0.025;
-            state[i].currentY += (-(state[i].targetX - state[i].currentX) * 0.48) * 0.025;
+            state[i].currentX += (state[i].targetX - state[i].currentX) * 0.025
+            state[i].currentY += (-(state[i].targetX - state[i].currentX) * 0.48) * 0.025
 
-            star.element.style.transform = `translate(${state[i].currentX}px, ${state[i].currentY}px)`;
+            star.element.style.transform = `translate(${state[i].currentX}px, ${state[i].currentY}px)`
         });
-        requestAnimationFrame(animate);
+        requestAnimationFrame(animate)
     }
-    animate();
+    if(window.innerWidth>1023) animate()
 
     //GRID HOVER ANIMATION
     document.querySelectorAll('#grid .work').forEach(work => {
