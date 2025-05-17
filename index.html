@@ -78,10 +78,16 @@ body{background:linear-gradient(186deg, #81D5E9 0%, #C7EFF9 6%, #F6F6F6 40%); ba
 .portfolio .cat {font-size: 20px; font-weight: 700; color: #FE0000; margin: 0 0 5px;}
 .portfolio .block{ padding: 0 0 0 20px; margin: 0 0 30px 6px; border-left: 1px solid; border-image: linear-gradient(0deg, #F6F6F6, #FE0000) 1;}
 .portfolio .flex .content{width:50%;}
-.portfolio .flex .design{width:44%; display:block; border-radius: 15px; max-height: max-content; overflow: hidden; box-shadow: 0 7px 18px -2px rgba(35,37,37,0.4); opacity: 0; transform: scale(0.8); transform-origin: center; transition: 500ms ease-in-out; position: relative;}
+.portfolio .flex .designs{width:44%; position: relative;}
+.portfolio .flex .designs .arrow{text-align: center;}
+.portfolio .flex .designs .arrow button{background: transparent; border: 0; cursor: pointer; transition: 100ms ease-in-out;}
+.portfolio .flex .designs .arrow button:active{transform: scale(0.95); transform-origin: center;}
+.portfolio .flex .designs .arrow button img{display: block; height: 25px;}
+.portfolio .flex .design{display:block; border-radius: 15px; max-height: max-content; overflow: hidden; box-shadow: 0 7px 18px -2px rgba(35,37,37,0.4); opacity: 0; transform: scale(0.8); transform-origin: center; transition: 500ms ease-in-out; position: relative;}
 .portfolio .flex .design.visible{opacity: 1; transform: scale(1);}
 .portfolio .flex .design .scroll{overflow-y: auto; max-height: 100%; scrollbar-width: none;}
-.portfolio .flex .design .scroll img{display: block; width: 100%; height: auto;}
+.portfolio .flex .design .scroll img{display: none; width: 100%; height: auto;}
+.portfolio .flex .design .scroll img.visible{display: block;}
 .portfolio #live img {display: block; max-width: 100%;}
 .portfolio h4 {font-size: 32px; font-family: 'Poppins', sans-serif; font-weight: 500; line-height: 37px; margin: 0;}
 .portfolio p {margin: 0; text-align: justify;}
@@ -116,7 +122,8 @@ body{background:linear-gradient(186deg, #81D5E9 0%, #C7EFF9 6%, #F6F6F6 40%); ba
 .portfolio #grid{grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));}
 .portfolio .flex{flex-direction: column-reverse;}
 .portfolio .flex .content{width: 100%; margin: 0 0 20px;}
-.portfolio .flex .design{width: 85%; height: 450px; margin: 0 auto 20px;}
+.portfolio .flex .designs{width: 85%; margin: 0 auto 20px;}
+.portfolio .flex .design{height: 450px;}
 .portfolio .links a.back{width: 72px;}
 .portfolio .links a{width: 115px; height: 30px; font-size: 11px; border-radius: 4px;}
 .portfolio .links img{height: 20px; margin: 0 5px;}
@@ -266,49 +273,46 @@ body{font-size: 14px;}
             <div>
                 <h3>#PORTFÓLIÓ</h3>
                 <div id="grid">
-                    <div class="work" onclick="portfolioDetails('luicey')">
+                    <div class="work" onclick="workClick('luicey')">
                         <img src="img/luicey.jpg">
                     </div>
-                    <div class="work" onclick="portfolioDetails('bocsiviki')">
+                    <div class="work" onclick="workClick('bocsiviki')">
                         <img src="img/bocsiviki.jpg">
                     </div>
-                    <div class="work" onclick="portfolioDetails('epikforge')">
+                    <div class="work" onclick="workClick('epikforge')">
                         <img src="img/epikforge.jpg">
                     </div>
-                    <div class="work" onclick="portfolioDetails('gombadr')">
+                    <div class="work" onclick="workClick('gombadr')">
                         <img src="img/gombadr.jpg">
                     </div>
-                    <div class="work" onclick="portfolioDetails('rachelcare-karacsony')">
+                    <div class="work" onclick="workClick('rachelcare-karacsony')">
                         <img src="img/rachelcare.jpg">
                     </div>
-                    <div class="work" onclick="portfolioDetails('bpluszk')">
+                    <div class="work" onclick="workClick('bpluszk')">
                         <img src="img/bpluszk.jpg">
                     </div>
-                    <div class="work" onclick="portfolioDetails('rachelcare-nonap')">
-                        <img src="img/nonap.jpg">
-                    </div>
-                    <div class="work" onclick="portfolioDetails('honeyhill')">
+                    <div class="work" onclick="workClick('honeyhill')">
                         <img src="img/honeyhill.jpg">
                     </div>
-                    <div class="work" onclick="portfolioDetails('nyhchess')">
+                    <div class="work" onclick="workClick('nyhchess')">
                         <img src="img/nyhchess.jpg">
                     </div>
-                    <div class="work" onclick="portfolioDetails('dietmaker')">
+                    <div class="work" onclick="workClick('dietmaker')">
                         <img src="img/dietmaker.jpg">
                     </div>
-                    <div class="work" onclick="portfolioDetails('alacord')">
+                    <div class="work" onclick="workClick('alacord')">
                         <img src="img/alacord.jpg">
                     </div>
-                    <div class="work" onclick="portfolioDetails('hillvital')">
+                    <div class="work" onclick="workClick('hillvital')">
                         <img src="img/hillvital.jpg">
                     </div>
-                    <div class="work" onclick="portfolioDetails('live')">
+                    <div class="work" onclick="workClick('live')">
                         <img src="img/live.jpg">
                     </div>
-                    <div class="work" onclick="portfolioDetails('smidkarpit')">
+                    <div class="work" onclick="workClick('smidkarpit')">
                         <img src="img/smidkarpit.jpg">
                     </div>
-                    <div class="work" onclick="portfolioDetails('yourmee')">
+                    <div class="work" onclick="workClick('yourmee')">
                         <img src="img/yourmee.jpg">
                     </div>
 
@@ -348,9 +352,12 @@ body{font-size: 14px;}
                                 </div>
                             </div>
                         </div>
-                        <div class="design">
-                            <div class="scroll">
-                                <img src="img/luicey-full.jpg">
+
+                        <div class="designs">
+                            <div class="design">
+                                <div class="scroll">
+                                    <img class="visible" src="img/luicey-full.jpg">
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -390,10 +397,11 @@ body{font-size: 14px;}
                                 </div>
                             </div>
                         </div>
-
-                        <div class="design">
-                            <div class="scroll">
-                                <img src="img/bocsiviki-full.jpg">
+                        <div class="designs">
+                            <div class="design">
+                                <div class="scroll">
+                                    <img class="visible" src="img/bocsiviki-full.jpg">
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -433,10 +441,11 @@ body{font-size: 14px;}
                                 </div>
                             </div>
                         </div>
-
-                        <div class="design">
-                            <div class="scroll">
-                                <img src="img/epikforge-full.jpg">
+                        <div class="designs">
+                            <div class="design">
+                                <div class="scroll">
+                                    <img class="visible" src="img/epikforge-full.jpg">
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -477,9 +486,20 @@ body{font-size: 14px;}
                             </div>
                         </div>
 
-                        <div class="design">
-                            <div class="scroll">
-                                <img src="img/gombadr-full.jpg" alt="">
+
+                        <div class="designs">
+                            <div class="arrow">
+                                <button type="button" onclick="switchWork('prev')"><img style="transform: rotate(180deg)" src="img/play.svg"></button>
+                                <button type="button" onclick="switchWork('next')"><img src="img/play.svg"></button>
+                            </div>
+
+                            <div class="design">
+                                <div class="scroll">
+                                    <img class="visible" src="img/gombadr-full.jpg" alt="">
+                                    <img src="img/gombadr-full2.jpg" alt="">
+                                    <img src="img/gombadr-full3.jpg" alt="">
+                                    <img src="img/gombadr-full4.jpg" alt="">
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -520,9 +540,18 @@ body{font-size: 14px;}
                             </div>
                         </div>
 
-                        <div class="design">
-                            <div class="scroll">
-                                <img src="img/rachelcare-karacsony-full.jpg" alt="">
+                        <div class="designs">
+                            <div class="arrow">
+                                <button type="button" onclick="switchWork('prev')"><img style="transform: rotate(180deg)" src="img/play.svg"></button>
+                                <button type="button" onclick="switchWork('next')"><img src="img/play.svg"></button>
+                            </div>
+
+                            <div class="design">
+                                <div class="scroll">
+                                    <img class="visible" src="img/rachelcare-full.jpg" alt="">
+                                    <img src="img/rachelcare-full2.jpg" alt="">
+                                    <img src="img/rachelcare-full3.jpg" alt="">
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -569,10 +598,16 @@ body{font-size: 14px;}
                                 </div>
                             </div>
                         </div>
+                        <div class="designs">
+                            <div class="arrow">
+                                <button type="button" onclick="switchWork('prev')"><img style="transform: rotate(180deg)" src="img/play.svg"></button>
+                                <button type="button" onclick="switchWork('next')"><img src="img/play.svg"></button>
+                            </div>
 
-                        <div class="design">
-                            <div class="scroll">
-                                <img src="img/nyhchess-full.jpg" alt="">
+                            <div class="design">
+                                <div class="scroll">
+                                    <img class="visible" src="img/nyhchess-full.jpg" alt="">
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -613,53 +648,11 @@ body{font-size: 14px;}
                                 </div>
                             </div>
                         </div>
-
-                        <div class="design">
-                            <div class="scroll">
-                                <img src="img/bpluszk-full.jpg" alt="">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- RACHELCARE NŐNAP -->
-                <div class="work-details" id="rachelcare-nonap">
-                    <div class="links">
-                        <a class="back" href="#"><img src="img/back.svg" alt=""> Vissza</a>
-                        <a href="https://rachelcare.hu/nonap" target="_blank"><img src="img/web.svg"> Website Link</a>
-                        <a href="https://github.com/teremyalex/nonap" target="_blank"><img src="img/github2.svg"> GitHub Projekt</a>
-                        <a href="https://www.figma.com/design/OAOsXdEjCxabxnaN16kqT9/Rachel-Care?node-id=86-4&t=1cFdaqWrdjVmZqDD-1" target="_blank"><img src="img/figma2.svg"> Figma Design</a>
-                    </div>
-                    <div class="flex">
-                        <div class="content">
-                            <div class="block">
-                                <div class="cat">#KLIENS</div>
-                                <div>
-                                    <h4>Rachel Care</h4>
-                                    <p>A Rachel Care egy modern kozmetikai márka, amely a legújabb kozmetikai összetevőket ötvözi a természet erejével. Termékeik, például az anti-aging arckrémek és szemkörnyékápolók, nemcsak intenzív hidratálást és bőrfeszesítést nyújtanak, hanem természetes hatóanyagok szinergikus kombinációját alkalmazzák a bőr szépségének és egészségének megőrzéséhez.</p>
+                        <div class="designs">
+                            <div class="design">
+                                <div class="scroll">
+                                    <img class="visible" src="img/bpluszk-full.jpg" alt="">
                                 </div>
-                            </div>
-
-                            <div class="block">
-                                <div class="cat">#FELADAT</div>
-                                <div>
-                                    <h4>Landing Page</h4>
-                                    <p>Feladatom egy nőnapi landing page létrehozása volt, amely illeszkedik a Rachel Care többi értékesítési oldalához. Az oldal díszdobozos nőnapi csomagokat kínált, ünnepi hangulatot teremtve a vásárlók számára.</p>
-                                </div>
-                            </div>
-
-                            <div class="block">
-                                <div class="cat">#TECHNOLÓGIÁK</div>
-                                <div>
-                                    <h4>HTML, CSS, JavaScript, Figma, Photoshop, Leonardo AI</h4>
-                                    <p>A landing page design-ja Figmában készült, melyet Photoshop és Leonardo AI egészített ki. Az oldal HTML, CSS és JavaScript használatával készült, különös figyelmet fordítva a kosár- és vásárlási folyamat reszponzív működésére.</p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="design">
-                            <div class="scroll">
-                                <img src="img/nonap-full.jpg">
                             </div>
                         </div>
                     </div>
@@ -700,9 +693,16 @@ body{font-size: 14px;}
                             </div>
                         </div>
 
-                        <div class="design">
-                            <div class="scroll">
-                                <img src="img/honeyhill-full.jpg">
+                        <div class="designs">
+                            <div class="arrow">
+                                <button type="button" onclick="switchWork('prev')"><img style="transform: rotate(180deg)" src="img/play.svg"></button>
+                                <button type="button" onclick="switchWork('next')"><img src="img/play.svg"></button>
+                            </div>
+
+                            <div class="design">
+                                <div class="scroll">
+                                    <img class="visible" src="img/honeyhill-full.jpg">
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -741,9 +741,11 @@ body{font-size: 14px;}
                             </div>
                         </div>
 
-                        <div class="design">
-                            <div class="scroll">
-                                <img src="img/dietmaker-full.jpg">
+                        <div class="designs">
+                            <div class="design">
+                                <div class="scroll">
+                                    <img class="visible" src="img/dietmaker-full.jpg">
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -782,9 +784,11 @@ body{font-size: 14px;}
                             </div>
                         </div>
 
-                        <div class="design">
-                            <div class="scroll">
-                                <img src="img/alacord-full.jpg">
+                        <div class="designs">
+                            <div class="design">
+                                <div class="scroll">
+                                    <img class="visible" src="img/alacord-full.jpg">
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -825,9 +829,16 @@ body{font-size: 14px;}
                             </div>
                         </div>
 
-                        <div class="design">
-                            <div class="scroll">
-                                <img src="img/hillvital-full.jpg">
+                        <div class="designs">
+                            <div class="arrow">
+                                <button type="button" onclick="switchWork('prev')"><img style="transform: rotate(180deg)" src="img/play.svg"></button>
+                                <button type="button" onclick="switchWork('next')"><img src="img/play.svg"></button>
+                            </div>
+
+                            <div class="design">
+                                <div class="scroll">
+                                    <img class="visible" src="img/hillvital-full.jpg">
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -866,11 +877,12 @@ body{font-size: 14px;}
                                 </div>
                             </div>
                         </div>
-
-                        <div class="design">
-                            <img src="img/live1.jpg">
-                            <img src="img/live2.jpg">
-                            <img src="img/live3.jpg">
+                        <div class="designs">
+                            <div class="design">
+                                <img class="visible" src="img/live1.jpg">
+                                <img class="visible" src="img/live2.jpg">
+                                <img class="visible" src="img/live3.jpg">
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -912,9 +924,11 @@ body{font-size: 14px;}
                             </div>
                         </div>
 
-                        <div class="design">
-                            <div class="scroll">
-                                <img src="img/smid-karpit-full.jpg">
+                        <div class="designs">
+                            <div class="design">
+                                <div class="scroll">
+                                    <img class="visible" src="img/smid-karpit-full.jpg">
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -955,9 +969,16 @@ body{font-size: 14px;}
                             </div>
                         </div>
 
-                        <div class="design">
-                            <div class="scroll">
-                                <img src="img/yourmee-full.jpg">
+                        <div class="designs">
+                            <div class="arrow">
+                                <button type="button" onclick="switchWork('prev')"><img style="transform: rotate(180deg)" src="img/play.svg"></button>
+                                <button type="button" onclick="switchWork('next')"><img src="img/play.svg"></button>
+                            </div>
+
+                            <div class="design">
+                                <div class="scroll">
+                                    <img class="visible" src="img/yourmee-full.jpg">
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -1032,7 +1053,11 @@ body{font-size: 14px;}
 
 <script>
 
-
+    let activeWork = ""
+    function workClick(work){
+        activeWork = work
+        portfolioDetails(work)
+    }
     function portfolioDetails(work){
         document.getElementById('grid').classList.add('off');
         setTimeout(()=>{
@@ -1047,7 +1072,7 @@ body{font-size: 14px;}
                 entries.forEach((entry, index) => {
                     if (entry.isIntersecting) setTimeout(() =>{
                         entry.target.classList.add('visible')
-                        if(window.innerWidth > 1023) entry.target.style.height = `${entry.target.previousElementSibling.clientHeight}px`
+                        if(window.innerWidth > 1023) entry.target.style.height = `${entry.target.closest(".designs").previousElementSibling.clientHeight}px`
                     }, 80*index)
                 })
             })
@@ -1067,6 +1092,21 @@ body{font-size: 14px;}
             })
         })
     })
+
+    function switchWork(direction){
+        const imgs = document.getElementById(activeWork).querySelectorAll('.design img')
+        let activeImg = [...imgs].find(img => img.classList.contains('visible'))
+        activeImg.classList.remove('visible')
+        if(direction === "next"){
+            if (activeImg.nextElementSibling) activeImg.nextElementSibling.classList.add('visible')
+            else imgs[0].classList.add('visible')
+        }
+        else {
+            if (activeImg.previousElementSibling) activeImg.previousElementSibling.classList.add('visible')
+            else imgs[imgs.length-1].classList.add('visible')
+        }
+        document.getElementById(activeWork).querySelector('.scroll').scrollTo({top: 0, behavior: 'smooth'})
+    }
 
     //BAR ANIMATION
     const barAnim = new IntersectionObserver(entries => {
