@@ -1392,7 +1392,7 @@ body{font-size: 14px;}
     async function dataClick(work, button){
         if(localStorage.getItem('kizaras') === 'true') return
         try{
-            const response =  await fetch(`https://13.50.152.40:3000/${work}/${button}`, {
+            const response =  await fetch(`https://api.alacord.hu/${work}/${button}`, {
                 method: 'PUT',
                 headers: {'Content-Type': 'application/json'}
             })
