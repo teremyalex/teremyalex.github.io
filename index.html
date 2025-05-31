@@ -1045,9 +1045,6 @@ body{font-size: 14px;}
                 </div>
 
 
-
-
-
             </div>
         </section>
 
@@ -1114,10 +1111,11 @@ body{font-size: 14px;}
 <script>
 
     let activeWork = ""
+    let seeWork = []
     function workClick(work){
         activeWork = work
         portfolioDetails(work)
-        dataClick(work, 'click')
+        newClick(work, 'click')
     }
     function portfolioDetails(work){
         document.getElementById('grid').classList.add('off');
@@ -1381,16 +1379,39 @@ body{font-size: 14px;}
 
 
     //DATABASE FETCHING
+    let github = []
+    let figma = []
+    let website = []
+
     document.querySelectorAll('.links').forEach(links => {
-        links.addEventListener('click', async event =>{
+        links.addEventListener('click', event =>{
             if(event.target.classList.contains('back')) return
-            const button = event.target.textContent.trim() === 'Website Link' ? 'website' : event.target.textContent.trim() === 'GitHub Projekt' ? 'github' : 'figma'
+            const button = event.target.textContent.trim() === 'Website Link' ? 'website' : event.target.textContent.trim() === 'GitHub Projekt' ? 'github' : event.target.textContent.trim() === 'Figma Design' ? 'figma' : null
             const work = event.target.closest('.work-details').id
-            await dataClick(work, button)
+            newClick(work, button)
         })
     })
-    async function dataClick(work, button){
+    function newClick(work, button){
         if(localStorage.getItem('kizaras') === 'true') return
+        if (button === 'website' && !website.includes(work)){
+            website.push(work)
+            dataClick(work, button)
+        }
+        else if (button === 'github' && !github.includes(work)){
+            github.push(work)
+            dataClick(work, button)
+        }
+        else if (button === 'figma' && !figma.includes(work)){
+            figma.push(work)
+            dataClick(work, button)
+        }
+        else if (button === 'click' && !seeWork.includes(work)){
+            seeWork.push(work)
+            dataClick(work, button)
+        }
+    }
+
+    async function dataClick(work, button){
         try{
             const response =  await fetch(`https://api.alacord.hu/${work}/${button}`, {
                 method: 'PUT',
@@ -1398,12 +1419,11 @@ body{font-size: 14px;}
             })
             if(!response.ok) throw new Error('Network response was not ok')
 
-            const data = await response.json()
-            console.log(data)
         } catch(error){
             console.error(error)
         }
     }
+
     if(localStorage.getItem('kizaras') === 'true') document.querySelector('.kizaras').classList.add('active')
     document.querySelector('.kizaras').addEventListener('click', (event) => {
         event.target.classList.toggle('active')
