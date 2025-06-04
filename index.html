@@ -58,6 +58,7 @@ body{background:linear-gradient(186deg, #81D5E9 0%, #C7EFF9 6%, #F6F6F6 40%); ba
 .stack > div{display: flex; gap: 10px; margin: 0 0 10px;}
 .stack .box{display: flex; align-items: center; justify-content: center; gap: 10px; background: #FE0000; border-radius: 8px; opacity: 0; transform: scale(0.5); transition: 500ms ease-in-out;}
 .stack .box.visible{opacity: 1; transform: scale(1);}
+.stack .box img{height:39px;}
 
 /* #PORTFÓLIÓ */
 .portfolio{padding: 100px 10px; box-sizing: border-box; transform: translateY(100px); opacity: 0; transition: 500ms ease-in-out;}
@@ -81,8 +82,9 @@ body{background:linear-gradient(186deg, #81D5E9 0%, #C7EFF9 6%, #F6F6F6 40%); ba
 .portfolio .block{ padding: 0 0 0 20px; margin: 0 0 30px 6px; border-left: 1px solid; border-image: linear-gradient(0deg, #F6F6F6, #FE0000) 1;}
 .portfolio .flex .content{width:50%;}
 .portfolio .flex .designs{width:44%; position: relative;}
-.portfolio .flex .designs .arrow{text-align: center;}
+.portfolio .flex .designs .arrow{text-align: right;}
 .portfolio .flex .designs .arrow button{background: transparent; border: 0; cursor: pointer; transition: 100ms ease-in-out;}
+.portfolio .flex .designs .arrow button.heart{margin: 0 0 0 20px;}
 .portfolio .flex .designs .arrow button:active{transform: scale(0.95); transform-origin: center;}
 .portfolio .flex .designs .arrow button img{display: block; height: 25px;}
 .portfolio .flex .design{display:block; border-radius: 15px; max-height: max-content; overflow: hidden; box-shadow: 0 7px 18px -2px rgba(35,37,37,0.4); opacity: 0; transform: scale(0.8); transform-origin: center; transition: 500ms ease-in-out; position: relative;}
@@ -214,7 +216,7 @@ body{font-size: 14px;}
                 <div>
                     <h3>#RÓLAM</h3>
                     <p>Vizuális típus vagyok, aki a design iránti szenvedélyét programozással ötvözi. Számomra a programozás olyan, mint egy rejtvény: izgalmas kihívás, amely kreativitást és logikai gondolkodást igényel.</p>
-                    <p>Szeretek csapatban dolgozni, ahol az ötletek összeadódnak, de ha komplexebb feladatokról van szó, szívesen vonulok el önállóan, hogy teljes figyelmet fordíthassak a megoldásra. Fontos számomra a folyamatos tanulás, jelenleg a NEXT.js és fullstack tudásom mélyítem, amennyire csak lehet.</p>
+                    <p>Szeretek csapatban dolgozni, ahol az ötletek összeadódnak, de ha komplexebb feladatokról van szó, szívesen vonulok el önállóan, hogy teljes figyelmet fordíthassak a megoldásra. Fontos számomra a folyamatos tanulás, jelenleg a Node.js és fullstack tudásom mélyítem, amennyire csak lehet.</p>
                     <p>Erős design- és marketingtudással rendelkezem, amelyet többéves tapasztalatom során fejlesztettem ki. Ez segít abban, hogy a projektjeim ne csak esztétikusak és funkcionálisak legyenek, hanem üzletileg is hatékonyak. Mindig nagy figyelmet fordítok a határidők pontos betartására, mert hiszem, hogy a megbízhatóság az egyik legfontosabb érték a munkában.</p>
                 </div>    
             </div>
@@ -225,7 +227,7 @@ body{font-size: 14px;}
             <div>
                 <div>
                     <h3>#STACK</h3>
-                    <p>Frontend fejlesztőként HTML, CSS, JavaScript/TypeScript, React/NEXT.js alapon készítek dinamikus és reszponzív weboldalakat. Fontos számomra, hogy amit létrehozok, az ne csak jól nézzen ki, hanem technikailag is hibátlanul működjön. Az erős grafikai alapjaim segítenek abban, hogy a funkció és a design egyensúlyban legyen. Szeretek olyan projekteken dolgozni, ahol a kreatív ötletek és a technikai kihívások találkoznak, és közben folyamatosan fejleszthetem a tudásomat.</p>
+                    <p>Frontend fejlesztőként HTML, CSS, JavaScript/TypeScript, React/NEXT.js alapon készítek dinamikus és reszponzív weboldalakat. Az utóbbi időben egyre inkább elmozdulok fullstack irányba is Node.js, Express és AWS használatával. Fontos számomra, hogy amit létrehozok, az ne csak jól nézzen ki, hanem technikailag is hibátlanul működjön. Az erős grafikai alapjaim segítenek abban, hogy a funkció és a design egyensúlyban legyen. Szeretek olyan projekteken dolgozni, ahol a kreatív ötletek és a technikai kihívások találkoznak, és közben folyamatosan fejleszthetem a tudásomat.</p>
                 </div>
 
                 <div class="stack">
@@ -244,6 +246,11 @@ body{font-size: 14px;}
                             <div class="box" style="height: 63px;"><img src="img/typescript-w.svg">TypeScript</div>
                         </div>
                         <div class="box" style="width: calc(55% - 5px); height: 209px;"><img src="img/javascript-w.svg">JavaScript</div>
+                    </div>
+
+                    <div>
+                        <div class="box" style="width: calc(45% - 5px); height: 63px;"><img src="img/express.svg">Express</div>
+                        <div class="box" style="width: calc(55% - 5px); height: 63px;"><img src="img/node.svg">Node.js</div>
                     </div>
 
                 </div>
@@ -282,6 +289,9 @@ body{font-size: 14px;}
                 <div id="grid">
                     <div class="work" onclick="workClick('luicey')">
                         <img src="img/luicey.jpg">
+                    </div>
+                    <div class="work" onclick="workClick('egresi')">
+                        <img src="img/egresi.jpg">
                     </div>
                     <div class="work" onclick="workClick('bocsiviki')">
                         <img src="img/bocsiviki.jpg">
@@ -367,6 +377,49 @@ body{font-size: 14px;}
                             <div class="design">
                                 <div class="scroll">
                                     <img class="visible" src="img/luicey-full.jpg">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- EGRESI KATA -->
+                <div class="work-details" id="egresi">
+                    <div class="links">
+                        <a class="back" href="#"><img src="img/back.svg"> Vissza</a>
+                        <a href="https://teremyalex.github.io/egresi" target="_blank"><img src="img/web.svg"> Website Link</a>
+                        <a href="https://github.com/teremyalex/egresi" target="_blank"><img src="img/github2.svg"> GitHub Projekt</a>
+                        <a href="https://www.figma.com/design/5EDtncupIoMrpGFTS2GmvN/Egresi-Kata-Cosmetics?node-id=2-2&t=2PeikPSDSDzR1Jjg-1" target="_blank"><img src="img/figma2.svg"> Figma Design</a>
+                    </div>
+                    <div class="flex">
+                        <div class="content">
+                            <div class="block">
+                                <div class="cat">#KLIENS</div>
+                                <div>
+                                    <h4>Egresi Kata Cosmetics</h4>
+                                    <p>Az Egresi Kata Cosmetics egy újonnan induló kozmetikai márkai, ami főleg a prémium piacra kíván betörni. </p>
+                                </div>
+                            </div>
+                            <div class="block">
+                                <div class="cat">#FELADAT</div>
+                                <div>
+                                    <h4>Landing Page</h4>
+                                    <p>Ebben a projektben egy prémium minőségű, fehér, minimalista landing paget kellett fejlesztettem egy új ránctalanító krémről. A landing page célja, hogy megismertesse az Egresi Kata Cosmetics márkát, és fókuszáltan értékesítse az Anti-Aging termékét. Nagy hangsúlyt fektettem a design-ra, ami modern, trendi és beauty lett.</p>
+                                </div>
+                            </div>
+                            <div class="block">
+                                <div class="cat">#TECHNOLÓGIÁK</div>
+                                <div>
+                                    <h4>HTML, CSS, NEXT.js, TypeScript, Figma, Photoshop, Leonardo AI</h4>
+                                    <p>A landing page design-ja Figmával, Photoshoppal és Leonardo AI-jal készült. Az oldal NEXT.js és TypeScripttel készült.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="designs">
+                            <div class="design">
+                                <div class="scroll">
+                                    <img class="visible" src="img/egresi-full.jpg">
                                 </div>
                             </div>
                         </div>
@@ -501,7 +554,9 @@ body{font-size: 14px;}
                             <div class="arrow">
                                 <button type="button" onclick="switchWork('prev')"><img style="transform: rotate(180deg)" src="img/play.svg"></button>
                                 <button type="button" onclick="switchWork('next')"><img src="img/play.svg"></button>
+                                <!--<button type="button" class="heart" onclick="heartClick()"><img src="img/heart.svg"></button>-->
                             </div>
+
 
                             <div class="design">
                                 <div class="scroll">
@@ -1196,7 +1251,7 @@ body{font-size: 14px;}
             })
         })
     })
-
+    //WORK ARROW SWITCH
     function switchWork(direction){
         const imgs = document.getElementById(activeWork).querySelectorAll('.design img')
         let activeImg = [...imgs].find(img => img.classList.contains('visible'))
@@ -1468,6 +1523,18 @@ body{font-size: 14px;}
             console.error(error)
         }
     }
+
+    //HEART
+    function heartClick(){
+        if(document.querySelector("#" + activeWork + " .heart img").classList.contains('checked')) {
+            document.querySelector("#" + activeWork + " .heart img").classList.remove('checked')
+            document.querySelector("#" + activeWork + " .heart img").src = "img/heart.svg"
+        } else {
+            document.querySelector("#" + activeWork + " .heart img").classList.add('checked')
+            document.querySelector("#" + activeWork + " .heart img").src = "img/heart-check.svg"
+        }
+    }
+
 
     if(localStorage.getItem('kizaras') === 'true') document.querySelector('.kizaras').classList.add('active')
     document.querySelector('.kizaras').addEventListener('click', (event) => {
