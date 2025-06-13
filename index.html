@@ -1214,7 +1214,7 @@ body{font-size: 14px;}
     function workClick(work){
         activeWork = work
         portfolioDetails(work)
-        //newClick(work, 'click')
+        newClick(work, 'click')
     }
     function portfolioDetails(work){
         document.getElementById('grid').classList.add('off');
@@ -1487,7 +1487,7 @@ body{font-size: 14px;}
             if(event.target.classList.contains('back')) return
             const button = event.target.textContent.trim() === 'Website Link' ? 'website' : event.target.textContent.trim() === 'GitHub Projekt' ? 'github' : event.target.textContent.trim() === 'Figma Design' ? 'figma' : null
             const work = event.target.closest('.work-details').id
-            //newClick(work, button)
+            newClick(work, button)
         })
     })
     function newClick(work, button){
@@ -1512,7 +1512,7 @@ body{font-size: 14px;}
 
     async function dataClick(work, button){
         try{
-            const response =  await fetch(`https://api.alacord.hu/${work}/${button}`, {
+            const response =  await fetch(`https://serverless-orcin-eta.vercel.app/api/${work}/${button}`, {
                 method: 'PUT',
                 headers: {'Content-Type': 'application/json'}
             })
