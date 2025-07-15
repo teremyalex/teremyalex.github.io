@@ -93,7 +93,8 @@ body{background:linear-gradient(186deg, #81D5E9 0%, #C7EFF9 6%, #F6F6F6 40%); ba
 .portfolio .flex .design .scroll{overflow-y: auto; max-height: 100%; scrollbar-width: none;}
 .portfolio .flex .design .scroll img{display: none; width: 100%; height: auto;}
 .portfolio .flex .design .scroll img.visible{display: block;}
-.portfolio #live img {display: block; max-width: 100%;}
+.portfolio #live .design, .portfolio #bank-app .design{height: inherit !important;}
+.portfolio #live img, .portfolio #bank-app img {display: block; max-width: 100%;}
 .portfolio h4 {font-size: 32px; font-family: 'Poppins', sans-serif; font-weight: 500; line-height: 37px; margin: 0;}
 .portfolio p {margin: 0; text-align: justify;}
 
@@ -199,10 +200,10 @@ body{font-size: 14px;}
                     <div class="icons">
                         <img src="img/html.svg">
                         <img src="img/css.svg">
-                        <img src="img/bootstrap.svg">
                         <img src="img/javascript.svg">
                         <img src="img/typescript.svg">
                         <img src="img/react.svg">
+                        <img src="img/next.svg">
                         <img src="img/figma.svg">
                         <img src="img/photoshop.svg">
                     </div>
@@ -255,31 +256,6 @@ body{font-size: 14px;}
                     </div>
 
                 </div>
-
-                <!--
-                <div>
-                    <div class="bar">
-                        <div data-width="0.95">HTML</div>
-                    </div>
-                    <div class="bar">
-                        <div data-width="0.92">CSS</div>
-                    </div>
-                    <div class="bar">
-                        <div data-width="0.88">Bootstrap</div>
-                    </div>
-                    <div class="bar">
-                        <div data-width="0.69">JavaScript/TypeScript</div>
-                    </div>
-                    <div class="bar">
-                        <div data-width="0.6">React/NEXT.js</div>
-                    </div>
-                    <div class="bar">
-                        <div data-width="0.25">jQuery</div>
-                    </div>
-                    <div class="bar">
-                        <div data-width="0.1">Python</div>
-                    </div>
-                </div>-->
             </div>
         </section>
 
@@ -338,6 +314,9 @@ body{font-size: 14px;}
                     </div>
                     <div class="work" onclick="workClick('yourmee')">
                         <img src="img/yourmee.jpg">
+                    </div>
+                    <div class="work" onclick="workClick('bank-app')">
+                        <img src="img/bank-app.jpg">
                     </div>
                 </div>
 
@@ -1140,6 +1119,40 @@ body{font-size: 14px;}
                                 <div class="scroll">
                                     <img class="visible" src="img/yourmee-full.jpg">
                                 </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- BANK APP -->
+                <div class="work-details" id="bank-app">
+                    <div class="links">
+                        <a class="back" href="#"><img src="img/back.svg"> Vissza</a>
+                        <a href="https://www.figma.com/design/tkMZZ96ZxXBr2FCxuuVBdM/Bank?node-id=0-1&t=ar3MajAeosgXhCNK-1" target="_blank"><img src="img/figma2.svg"> Figma Design</a>
+                    </div>
+                    <div class="flex">
+                        <div class="content">
+                            <div class="block">
+                                <div class="cat">#FELADAT</div>
+                                <div>
+                                    <h4>Mobil App</h4>
+                                    <p>Ez egy hobbi projekt volt, ami egy mobil bank app design-ját mutatja be. A feladat az volt, hogy a főbb screen-eket vizuálisan bemutassa..</p>
+                                </div>
+                            </div>
+
+                            <div class="block">
+                                <div class="cat">#TECHNOLÓGIÁK</div>
+                                <div>
+                                    <h4>Figma, Photoshop</h4>
+                                    <p>A tervezés előtte piackutatást végeztem más bankoknak milyen applikációi vannak. A design-ja Figmában készült, melyet Photoshoppal egészítettem ki. Különös figyelmet fordítotam a UX designra, hogy minél felhasználóbarátabb legyen.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="designs">
+                            <div class="design">
+                                <img class="visible" src="img/bank-app-full.jpg">
+                                <img class="visible" src="img/bank-app-full2.jpg">
                             </div>
                         </div>
                     </div>
