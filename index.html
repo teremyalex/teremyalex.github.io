@@ -1532,6 +1532,7 @@ body{font-size: 14px;}
                 headers: {'Content-Type': 'application/json'}
             })
             if(!response.ok) throw new Error('Network response was not ok')
+            let data = await response.json()
 
         } catch(error){
             console.error(error)
